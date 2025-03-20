@@ -1,0 +1,96 @@
+@use "colors";
+@use "meta";
+
+$item-count: 6; // the displayed item count is 1 less; the final item will be used as gap instead; README this value can be adjusted as needed
+$item-width: calc(meta.$master-width / $item-count);
+$item-gap: calc($item-width / ($item-count - 2)); // trust me on the math
+
+.carousel {
+    overflow-x: hidden;
+    position: relative;
+    min-width: meta.$master-width;
+    max-width: meta.$master-width;
+    .canvas {
+        transition: margin-left 1s;
+        display: flex;
+        flex-direction: row;
+        gap: $item-gap;
+        .item {
+            justify-content: center;
+            flex: 0 0 $item-width;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .controls {
+        width: fit-content;
+        margin: 0 auto;
+        height: 2rem;
+        .dot {
+            margin: auto 0;
+            width: 1rem;
+            height: 1rem;
+            border: none;
+            div {
+                width: 0.5rem;
+                height: 0.5rem;
+                background-color: grey;
+                border-radius: 100%;
+            }
+            &.active div {
+                background-color: purple;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    button.more {
+        color: white;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: fit-content;
+    }
+    /* FROM _colors.scss
+    $magenta: #E2007A;
+    $yellow: #FFCC00;
+    $cyan: #008BD0;
+    $purple: #6D1F80;
+    */
+    &.magenta {
+        button.more {
+            background-color: colors.$magenta;
+        }
+        .dot.active div {
+            background-color: colors.$magenta;
+        }
+    }
+    &.yellow {
+        button.more {
+            color: colors.$black;
+            background-color: colors.$yellow;
+        }
+        .dot.active div {
+            background-color: colors.$yellow;
+        }
+    }
+    &.cyan {
+        button.more {
+            background-color: colors.$cyan;
+        }
+        .dot.active div {
+            background-color: colors.$cyan;
+        }
+    }
+    &.purple {
+        button.more {
+            background-color: colors.$purple;
+        }
+        .dot.active div {
+            background-color: colors.$purple;
+        }
+    }
+}

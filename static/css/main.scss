@@ -1,0 +1,35 @@
+@use "font";
+@use "colors";
+@use "meta";
+
+@use "layout";
+@use "alignment";
+@use "functional-elements";
+
+@use "navbar";
+@use "banner";
+@use "footer";
+
+@use "home";
+
+@use "challanges";
+@use "carousel";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-size: 1rem;
+    color: colors.$black;
+    background-color: colors.$white;
+    background-image: url("/static/img/banner-bg.png");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-size: fill;
+}
+.wrapper {
+    width: meta.$master-width;
+    margin: 0 auto;
+}

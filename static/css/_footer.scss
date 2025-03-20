@@ -1,0 +1,19 @@
+#footer {
+    .separator {
+        width: 100%;
+        border: solid 1px white;
+        margin: 2rem 0;
+    }
+    .last-line {
+        justify-content: space-between;
+        align-items: center;
+        a {
+            display: flex;
+            height: fit-content;
+            img {
+                height: 1.2rem;
+                filter: invert(100%);
+            }
+        }   
+    }
+}

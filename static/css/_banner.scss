@@ -1,0 +1,19 @@
+#banner {
+    height: 100vh;
+    margin-top: -14.5rem;
+    padding-top: 0.1rem;
+    color: white;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0) 100%);
+    .wrapper {
+        margin-top: 19.3rem;
+        .text-content {
+            gap: 2rem;
+            width: 55%;
+        }
+    }
+    .cube-unfolded {
+        position: absolute;
+        right: -5rem;
+        top: 211px;
+    }
+}

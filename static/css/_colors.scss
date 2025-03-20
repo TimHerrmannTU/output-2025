@@ -1,0 +1,51 @@
+// challanges
+$magenta: #E2007A;
+$yellow: #FFCC00;
+$cyan: #008BD0;
+
+$purple: #6D1F80;
+
+$black: #232323;
+$white: #FFFFFF;
+
+.color-white {
+    color: white;
+}
+.color-black {
+    color: $black;
+}
+.color-magenta {
+    color: $magenta;
+}
+.color-yellow {
+    color: $yellow;
+}
+.color-cyan {
+    color: $cyan;
+}
+.color-purple {
+    color: $purple;
+}
+
+
+.bg-magenta {
+    background-color: $magenta;
+}
+.bg-yellow {
+    background-color: $yellow;
+}
+.bg-cyan {
+    background-color: $cyan;
+}
+.bg-purple {
+    background-color: $purple;
+}
+
+.dark-bg {
+    color: $white;
+    background-color: $black;
+}
+.light-bg {
+    color: $black;
+    background-color: $white;
+}

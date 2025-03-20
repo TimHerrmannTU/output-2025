@@ -1,0 +1,26 @@
+#challanges {
+    .cards {
+        justify-content: space-between;
+        .card {
+            h3 {
+                font-weight: 600;
+            }
+            img {
+                height: 350px;
+                width: 350px;
+            }
+        }
+    }
+    .gc {
+        color: #E2007A;
+    }
+    .cc {
+        color: #FFCC00;
+    }
+    .lp {
+        color: #008BD0;
+    }
+    button {
+        align-self: flex-end;
+    }
+}

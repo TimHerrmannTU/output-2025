@@ -1,0 +1,18 @@
+.main {
+    height: 850px;
+    position: relative;
+    .image-wrapper {
+        height: 750px;
+        width: 55%;
+        background-color: grey;
+    }
+    .text-wrapper {
+        padding: 3rem;
+        position: absolute;
+        z-index: 1;
+        bottom: 5rem;
+        right: 0;
+        width: 50%;
+        box-sizing: border-box;
+    }
+}

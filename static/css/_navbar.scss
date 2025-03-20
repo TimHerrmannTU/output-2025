@@ -1,0 +1,39 @@
+nav {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    * {
+        align-items: center;
+    }
+    .wrapper {
+        height: 100%;
+        justify-content: space-between;
+    }
+    &#navbar {
+        height: 9.5rem;
+        color: white;
+        .logo {
+            height: 3.75rem;
+        }
+        .links {
+            font-family: Open-Sans-Condensed;
+            margin-top: 10px;
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+        .login-button {
+            margin-top: 3px;
+        }
+    }
+    &#tud-navbar {
+        height: 5rem;
+        background-color: white;
+        color: #232323;
+        .logo img {
+            height: 2.8rem;
+        }
+        .links img {
+            height: 1.5rem;
+        }
+    }
+}

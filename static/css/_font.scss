@@ -1,0 +1,115 @@
+body {
+    font-family: Open-Sans;
+    font-weight: 400;
+    font-size: 1rem;
+}
+h1, h2, h3, h4, h5 {
+    font-family: Open-Sans-Condensed;
+    font-weight: 700;
+}
+h1 {
+    font-size: 7.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+h2 {
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 5.625rem; /* 128.571% */
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 2.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+p {
+    font-size: 1.5625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.fat {
+    font-weight: 700;
+}
+
+// OPEN SANS FOR NORMAL TEXT
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/OpenSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+// OPEN SANS CONDENSED FOR NORMAL HEADLINES
+@font-face {
+    font-family: Open-Sans-Condensed;
+    src: url("../fonts/OpenSans_Condensed-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans-Condensed;
+    src: url("../fonts/OpenSans_Condensed-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans-Condensed;
+    src: url("../fonts/OpenSans_Condensed-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans-Condensed;
+    src: url("../fonts/OpenSans_Condensed-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans-Condensed;
+    src: url("../fonts/OpenSans_Condensed-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: Open-Sans-Condensed;
+    src: url("../fonts/OpenSans_Condensed-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
