@@ -1,4 +1,14 @@
-$(function() {
+
+jQuery(document).ready(function($) {
+    // scaling the items to the desired width
+    $(".carousel").each(function() {
+        const itemsPerSlide = parseInt($(this).attr("items-per-slide"));
+        const canvasWidth = $(this).find(".canvas").width();
+        const itemWidth = canvasWidth / (itemsPerSlide+1);
+        const gapWidth = itemWidth / (itemsPerSlide-1);
+        $(this).find(".canvas .item").css("flex", `0 0 ${itemWidth}px`);
+        $(this).find(".canvas").css("gap", gapWidth);
+    })
     // adding the right ammount of buttons for the slides
     $(".carousel .canvas").each(function() {
         var canvasWidth = $(this).width();

@@ -32,14 +32,27 @@ h3 {
   text-transform: uppercase;
 }
 
-p {
+h4 {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+p, td, th, li, ul {
   font-size: 1.5625rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.fat {
+code {
+  font-size: 1.5625rem;
+  background-color: rgb(250, 250, 250);
+}
+
+.fat, b {
   font-weight: 700;
 }
 
@@ -211,6 +224,74 @@ p {
   margin-top: 1rem;
 }
 
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mt-6 {
+  margin-top: 6rem;
+}
+
+.mt-7 {
+  margin-top: 7rem;
+}
+
+.mt-8 {
+  margin-top: 8rem;
+}
+
+.mt-9 {
+  margin-top: 9rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.mb-5 {
+  margin-bottom: 5rem;
+}
+
+.mb-6 {
+  margin-bottom: 6rem;
+}
+
+.mb-7 {
+  margin-bottom: 7rem;
+}
+
+.mb-8 {
+  margin-bottom: 8rem;
+}
+
+.mb-9 {
+  margin-bottom: 9rem;
+}
+
 .pt-1 {
   padding-top: 1rem;
 }
@@ -333,6 +414,28 @@ a.active {
   border-bottom: 0.2rem solid white;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+table.center {
+  text-align: center;
+}
+table th, table td {
+  padding: 12px;
+  border: none;
+}
+table th {
+  font-weight: 600;
+}
+table tr:nth-of-type(2n-1) {
+  background-color: rgb(247, 247, 247);
+}
+table tr:nth-of-type(2n) {
+  background-color: rgb(252, 252, 252);
+}
+
 nav {
   position: relative;
   width: 100%;
@@ -381,7 +484,7 @@ nav#tud-navbar .links img {
   background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0) 100%);
 }
 #banner .wrapper {
-  margin-top: 19.3rem;
+  margin-top: 14.5rem;
 }
 #banner .wrapper .text-content {
   gap: 2rem;
@@ -389,8 +492,20 @@ nav#tud-navbar .links img {
 }
 #banner .cube-unfolded {
   position: absolute;
-  right: -5rem;
-  top: 211px;
+  right: -12rem;
+  top: 60px;
+}
+#banner.slim {
+  height: auto;
+  padding-bottom: 6rem;
+}
+#banner.slim .wrapper .text-content {
+  margin-top: 6rem;
+  width: 100%;
+}
+
+.no-big-cube #banner .cube-unfolded {
+  display: none;
 }
 
 #footer .separator {
@@ -431,26 +546,26 @@ nav#tud-navbar .links img {
   box-sizing: border-box;
 }
 
-#challanges .cards {
+#challenges .cards {
   justify-content: space-between;
 }
-#challanges .cards .card h3 {
+#challenges .cards .card h3 {
   font-weight: 600;
 }
-#challanges .cards .card img {
+#challenges .cards .card img {
   height: 350px;
   width: 350px;
 }
-#challanges .gc {
+#challenges .gc {
   color: #E2007A;
 }
-#challanges .cc {
+#challenges .cc {
   color: #FFCC00;
 }
-#challanges .lp {
+#challenges .lp {
   color: #008BD0;
 }
-#challanges button {
+#challenges button {
   align-self: flex-end;
 }
 
@@ -473,12 +588,30 @@ nav#tud-navbar .links img {
   gap: 50px;
 }
 .carousel .canvas .item {
+  position: relative;
   justify-content: center;
   flex: 0 0 200px;
+}
+.carousel .canvas .item:hover {
+  filter: none;
 }
 .carousel .canvas .item img {
   width: 100%;
   height: auto;
+}
+.carousel .canvas .item.labeled {
+  background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.carousel .canvas .item.labeled img {
+  z-index: -1;
+}
+.carousel .canvas .item.labeled .item-label {
+  position: absolute;
+  overflow: hidden;
+  bottom: 1.5rem;
+  left: 0;
+  padding: 0rem 1rem;
+  max-height: 50%;
 }
 .carousel .controls {
   width: -moz-fit-content;
@@ -538,6 +671,38 @@ nav#tud-navbar .links img {
   background-color: #6D1F80;
 }
 
+#timeline .time {
+  font-family: Open-Sans-Condensed;
+  font-weight: 600;
+}
+#timeline .time .hours {
+  font-size: 10rem;
+  line-height: 10rem;
+  letter-spacing: -20px;
+  padding-right: 20px;
+}
+#timeline .time .minutes {
+  font-size: 5rem;
+}
+#timeline .text-content {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 0.2rem solid #232323;
+}
+#timeline .text-content.active h3 {
+  color: #E2007A;
+}
+#timeline .text-content h3 {
+  margin-top: 0.4rem;
+}
+#timeline .text-content h3 img {
+  margin-left: 1rem;
+}
+#timeline .text-content p {
+  margin-top: 1.2rem;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -547,7 +712,7 @@ body {
   font-size: 1rem;
   color: #232323;
   background-color: #FFFFFF;
-  background-image: url("/static/img/banner-bg.png");
+  background-image: url("/wp-content/themes/2025/static/img/banner-bg.png");
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-size: fill;
