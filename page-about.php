@@ -11,7 +11,7 @@
     <?php 
     include get_template_directory() . "/includes/tud-navbar.php";
     include get_template_directory() . "/includes/navbar.php"; 
-    $main_headline = "PROJEKTE";
+    $main_headline = "IMPRESSIONEN";
     $sub_headline = "SCHAU REIN UND LASS DICH INSPIRIEREN!";
     include get_template_directory() . "/includes/banner-slim.php"; 
     ?>
@@ -21,23 +21,11 @@
             <div class="controls">
                 <?php include get_template_directory() . "/includes/year-dropdown.php";  ?>
                 <label class="labeled-checkbox r2 c1">
-                    <span>PROJEKTDEMO</span>
+                    <span>PROGRAMM</span>
                     <input type="checkbox">
                 </label>
                 <label class="labeled-checkbox r2 c2">
-                    <span>PROJEKTPOSTER</span>
-                    <input type="checkbox">
-                </label>
-                <label class="labeled-checkbox r2 c3">
-                    <span>FACHVORTRAG</span>
-                    <input type="checkbox">
-                </label>
-                <label class="labeled-checkbox r3 c1">
-                    <span>WORKSHOP</span>
-                    <input type="checkbox">
-                </label>
-                <label class="labeled-checkbox r3 c2">
-                    <span>AUSSTELLUNG</span>
+                    <span>PROJEKTSCHAU</span>
                     <input type="checkbox">
                 </label>
             </div>
