@@ -1,0 +1,92 @@
+<?php /* Template Name: projekte */ ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php bloginfo('name'); ?></title>
+    <?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+    <?php 
+    include get_template_directory() . "/includes/tud-navbar.php";
+    include get_template_directory() . "/includes/navbar.php"; 
+    $main_headline = "PROJEKTE";
+    $sub_headline = "SCHAU REIN UND LASS DICH INSPIRIEREN!";
+    include get_template_directory() . "/includes/banner-slim.php"; 
+    ?>
+
+    <div id="projekte" class="light-bg mb-6">
+        <div class="wrapper col gap-2">
+            <div class="controls">
+                <div class="dropdown mb-2">
+                    <select id="year">
+                        <option value="2025">OUTPUT.DD 2025</option>
+                        <option value="2024">OUTPUT.DD 2024</option>
+                        <option value="2023">OUTPUT.DD 2023</option>
+                        <option value="2022">OUTPUT.DD 2022</option>
+                        <option value="2021">OUTPUT.DD 2021</option>
+                        <option value="2020">OUTPUT.DD 2020</option>
+                    </select>
+                </div>
+                <label class="labeled-checkbox r2 c1">
+                    <span>PROJEKTDEMO</span>
+                    <input type="checkbox">
+                </label>
+                <label class="labeled-checkbox r2 c2">
+                    <span>PROJEKTPOSTER</span>
+                    <input type="checkbox">
+                </label>
+                <label class="labeled-checkbox r2 c3">
+                    <span>FACHVORTRAG</span>
+                    <input type="checkbox">
+                </label>
+                <label class="labeled-checkbox r3 c1">
+                    <span>WORKSHOP</span>
+                    <input type="checkbox">
+                </label>
+                <label class="labeled-checkbox r3 c2">
+                    <span>AUSSTELLUNG</span>
+                    <input type="checkbox">
+                </label>
+            </div>
+            <!-- PROJEKT LOOP -->
+            <div class="pro-grid">
+                <?php
+                $args = array(
+                    'post_type'      => 'projekte',  // Slug of the category
+                    'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
+                );
+                // Create a custom query
+                $query = new WP_Query($args);
+                // Check if posts are available
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        $img = get_field("project-details-thumbnail")["sizes"]["medium"];
+                        if (empty($img)) {
+                            $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
+                        }
+                        ?>
+                        <a class="pro-item labeled col" href="<?= the_permalink() ?>">
+                            <img src="<?= $img ?>"/>
+                            <div class="item-label">
+                                <div class="text-wrapper">
+                                    <p><?= get_field("project-details-name")  ?></p>
+                                </div>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+
+    <?php 
+    include get_template_directory() ."/includes/footer.php";
+    wp_footer();
+    ?>
+</body>
+</html>

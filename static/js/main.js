@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
-    // paralax scroll for the unfolded cube
-    var last_y = 0;
-    var offset_y = parseInt($("#banner .cube-unfolded").css("top").replace("px", ""));
+    var last_y = $(document).scrollTop();
+    var offset_y = parseInt($("#banner:not(.slim) .cube-unfolded").css("top").replace("px", ""));
     $(window).on( "scroll", function() {
         if (offset_y < 305) {
             var new_y = $(this).scrollTop();
@@ -11,10 +10,5 @@ jQuery(document).ready(function($) {
             }
             last_y = $(this).scrollTop()
         }
-    })
-    // expanding of the program points
-    $("#timeline .expandable").click(function() {
-        $(this).closest(".text-content").toggleClass("active")
-        $(this).closest(".text-content").find(".toggle-me").toggle()
     })
 })

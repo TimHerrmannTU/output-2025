@@ -9,7 +9,7 @@ $car_settings = array(
 );
 */
 ?>
-<div id="<?= $car_settings["post_type"] ?>">
+<div id="<?= $car_settings["post_type"] ?>-canvas">
     <div class="wrapper col gap-3 pt-5 pb-9">
         <h1 class="pb-2"><?= $car_settings["title"] ?></h1>
         <div class="carousel col gap-3 <?= $car_settings["color"] ?>" items-per-slide="<?= $car_settings["items_per_slide"] ?>">
@@ -27,30 +27,35 @@ $car_settings = array(
                     while ($query->have_posts()) {
                         $query->the_post();
                         $img = get_field($car_settings["acf_img_field_name"]);
-                        if (empty($img)) {
+                        if ($img) {
+                            $img = $img["url"];
+                        }
+                        else {
                             $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
                         }
                         if ($car_settings["labeled"]) {
                             ?>
-                            <a class="item labeled col" href="<?= the_permalink() ?>">
+                            <a class="pro-item canvas-item labeled col" href="<?= the_permalink() ?>">
                                 <img src="<?= $img ?>"/>
                                 <div class="item-label">
-                                    <p><?= get_field($car_settings["acf_label_field_name"])  ?></p>
+                                    <div class="text-wrapper">
+                                        <p><?= get_field($car_settings["acf_label_field_name"])  ?></p>
+                                    </div>
                                 </div>
                             </a>
                             <?php
                         }
                         else {
-                            ?><a class="item col" href="<?= the_permalink() ?>"><img src="<?= $img ?>"/></a><?php
+                            ?><a class="item canvas-item col" href="<?= the_permalink() ?>"><img src="<?= $img ?>"/></a><?php
                         }
                     }
                 }
                 ?>
             </div>
-            <div class="controls pt-2 row gap-2" slides="3">
+            <div class="controls pt-2 row gap-2">
                 <a class="dot active" index="0"><div></div></a>
             </div>
-            <button class="more color-white">Alle Sponsoren erkunden ...</button>
+            <button class="more color-white"><?= $car_settings["button_text"] ?></button>
         </div>
     </div>
 </div>

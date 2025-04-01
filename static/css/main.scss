@@ -16,6 +16,11 @@
 @use "challenges";
 @use "carousel";
 @use "timeline";
+@use "projekte";
+
+html {
+    font-size: 75%;
+}
 
 * {
     margin: 0px;

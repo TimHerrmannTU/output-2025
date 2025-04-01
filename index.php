@@ -15,7 +15,7 @@
     <div id="banner" class="full">
         <div class="wrapper" style="position: relative;">
             <div class="text-content col">
-                <h2>DIE PROJEKTSCHAU DER FAKULTÄT INFORMATIK.</h2>
+                <h2>DIE PROJEKTSCHAU DER INFORMATIK</h2>
                 <h2>19. JUNI 2025</h2>
                 <h3>WERDE TEIL VON OUTPUT UND<br> REICHE DEIN PROJEKT BIS 5. JUNI EIN!</h3>
                 <button class="white transparent-text mt-3">PROJEKT EINREICHEN</button>

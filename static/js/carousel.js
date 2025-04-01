@@ -1,20 +1,21 @@
 
 jQuery(document).ready(function($) {
     // scaling the items to the desired width
+    var itemsPerSlide = 0
     $(".carousel").each(function() {
-        const itemsPerSlide = parseInt($(this).attr("items-per-slide"));
+        itemsPerSlide = parseInt($(this).attr("items-per-slide"));
         const canvasWidth = $(this).find(".canvas").width();
         const itemWidth = canvasWidth / (itemsPerSlide+1);
         const gapWidth = itemWidth / (itemsPerSlide-1);
-        $(this).find(".canvas .item").css("flex", `0 0 ${itemWidth}px`);
+        $(this).find(".canvas .canvas-item").css("flex", `0 0 ${itemWidth}px`);
         $(this).find(".canvas").css("gap", gapWidth);
     })
     // adding the right ammount of buttons for the slides
     $(".carousel .canvas").each(function() {
         var canvasWidth = $(this).width();
-        var itemWidth = $(this).find(".item").width();
-        var itemsPerSlide = (canvasWidth/itemWidth)-1;
-        var itemCount = $(this).find(".item").length
+        var itemWidth = $(this).find(".canvas-item").width();
+        var itemCount = $(this).find(".canvas-item").length
+        console.log(itemsPerSlide, itemCount)
         var slideCount = Math.ceil(itemCount/itemsPerSlide);
         // dynamic generation
         var dotIndex = 1

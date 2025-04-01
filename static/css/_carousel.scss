@@ -15,32 +15,31 @@ $item-gap: calc($item-width / ($item-count - 2)); // trust me on the math
         display: flex;
         flex-direction: row;
         gap: $item-gap;
-        .item {
-            position: relative;
-            justify-content: center;
-            flex: 0 0 $item-width;
-            &:hover {
-                filter: none;
-            }
+    }
+    .item {
+        position: relative;
+        justify-content: center;
+        flex: 0 0 $item-width;
+        &:hover {
+            filter: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        &.labeled {
+            background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
             img {
-                width: 100%;
-                height: auto;
+                z-index: -1;
             }
-            &.labeled {
-                background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-                img {
-                    z-index: -1;
-                }
-                .item-label {
-                    position: absolute;
-                    overflow: hidden;
-                    bottom: 1.5rem;
-                    left: 0;
-                    padding: 0rem 1rem;
-                    max-height: 50%;
-                }
+            .item-label {
+                position: absolute;
+                overflow: hidden;
+                bottom: 1.5rem;
+                left: 0;
+                padding: 0rem 1rem;
+                max-height: 50%;
             }
-
         }
     }
     .controls {
