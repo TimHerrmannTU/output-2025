@@ -31,7 +31,7 @@
                 'post_type'      => 'program',  // Slug of the category
                 'posts_per_page' => -1,         // Number of posts to show (adjust as needed),
                 'meta_key'       => 'programm-details-startzeit',
-                'orderby'        => 'meta_value_num', 
+                'orderby'        => 'meta_value', 
                 'order'          => 'ASC'
             );
             // Create a custom query

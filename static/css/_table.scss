@@ -1,21 +1,29 @@
 table {
     border-collapse: collapse;
+    overflow: hidden;
     width: 100%;
     text-align: left;
-    &.center {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 5px;
+    &.slim {
+        width: fit-content;
+    }
+    &.center th,
+    &.center td {
         text-align: center;
     }
+    th {
+        background-color: rgb(50, 50, 50);
+        color: white;
+        text-align: left;
+    }
     th, td {
-        padding: 12px;
-        border: none;
+        padding: 5px 15px;
     }
     th {
         font-weight: 600;
     }
-    tr:nth-of-type(2n-1) {
-        background-color: rgb(247, 247, 247);
-    }
-    tr:nth-of-type(2n) {
-        background-color: rgb(252, 252, 252);
+    tr:nth-child(2n) td {
+        background-color: rgb(240, 240, 240);
     }
 }
