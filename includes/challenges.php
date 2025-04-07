@@ -13,7 +13,7 @@
         <div class="card lp col gap-1">
             <h3>LAN - PARTY</h3>
             <img src="<?= get_template_directory_uri(); ?>/static/img/lanParty.png"/>
-            <button class="more white transparent-text">Zur Anmeldung ...</button>
+            <a href="<?= get_site_url(); ?>/lan-party"><button class="more white transparent-text">Zur Anmeldung ...</button></a>
         </div>
     </div>
 </div>
