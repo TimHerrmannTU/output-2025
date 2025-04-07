@@ -89,8 +89,8 @@
                 </div>
                 <div class="col gap-2">
                     <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Auf zum ersten Rätsel der Schnitzeljagd!</h2></a>
-                    <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Bonusrätsel #1: Ceasar Verschlüsselung</h2></a>
-                    <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Bonusrätsel #2: ???</h2></a>
+                    <a class="color-yellow" href="/geo-caching/?sub=caesar"><h2>Bonusrätsel #1: Ceasar Verschlüsselung</h2></a>
+                    <a class="color-yellow" href="/geo-caching/?sub=hash"><h2>Bonusrätsel #2: Hashing</h2></a>
                 </div>
             </div>
         </div>
