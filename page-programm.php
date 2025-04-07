@@ -7,7 +7,7 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="background-image: url('/wp-content/uploads/2025/04/programm-banner.jpg')">
     <?php 
     include get_template_directory() . "/includes/tud-navbar.php";
     include get_template_directory() . "/includes/navbar.php"; 

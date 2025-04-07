@@ -1,10 +1,10 @@
 .main {
     height: 850px;
     position: relative;
-    .image-wrapper {
-        height: 750px;
-        width: 55%;
-        background-color: grey;
+    .banner-img {
+        width: 50%;
+        object-fit: cover;
+        height: 730px;
     }
     .text-wrapper {
         padding: 3rem;
@@ -12,7 +12,8 @@
         z-index: 1;
         bottom: 5rem;
         right: 0;
-        width: 50%;
+        width: 55%;
         box-sizing: border-box;
     }
+    
 }

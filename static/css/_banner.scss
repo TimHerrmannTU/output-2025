@@ -8,6 +8,7 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
     .wrapper {
         margin-top: $navbar-height;
         .text-content {
+            padding-top: 8rem;
             gap: 2rem;
             width: 55%;
         }
