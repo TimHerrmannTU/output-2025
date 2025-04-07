@@ -18,8 +18,8 @@
     <div class="light-bg">
         <div class="wrapper pt-7 pb-7">
             <div class="dark-bg w-50" style="padding: 4.62rem">
-                <h3 class="color-magenta mb-3">LOREM IPSUM DOLOR SIT</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                <h3 class="color-magenta mb-3">RAHMENPROGRAMM</h3>
+                <p>Am 19. Juni 2025 findet OUTPUT wieder in der Fakultät Informatik der TU  Dresden statt. Wir stellen die Vielfalt – von der Idee, über visuelle  Konzepte bis hin zu Demonstrationen – des Informatikstudiums und  aktuelle Forschungsschwerpunkte der Fakultät vor.</p>    
             </div>
         </div>
     </div>
@@ -29,8 +29,9 @@
             <?php
             $args = array(
                 'post_type'      => 'program',  // Slug of the category
-                'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
-                'orderby'        => 'programm-details-startzeit',
+                'posts_per_page' => -1,         // Number of posts to show (adjust as needed),
+                'meta_key'       => 'programm-details-startzeit',
+                'orderby'        => 'meta_value_num', 
                 'order'          => 'ASC'
             );
             // Create a custom query
