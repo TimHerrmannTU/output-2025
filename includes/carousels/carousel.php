@@ -55,7 +55,7 @@ $car_settings = array(
             <div class="controls pt-2 row gap-2">
                 <a class="dot active" index="0"><div></div></a>
             </div>
-            <button class="more color-white"><?= $car_settings["button_text"] ?></button>
+            <button class="more color-white" onclick="location.href='/<?= $car_settings["post_type"] ?>'"><?= $car_settings["button_text"] ?></button>
         </div>
     </div>
 </div>
