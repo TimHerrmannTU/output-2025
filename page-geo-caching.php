@@ -17,7 +17,7 @@
     
     // CUSTOM CONTENT HERE
     $sub_page_name = $_GET["sub"];
-    if (empty($sub_page_name)) { // EXPLANATION ?>
+    if (empty($sub_page_name)) { // LANDING PAGE ?>
         <div class="light-bg">
             <div class="wrapper col gap-3">
                 <div class="col gap-1">
