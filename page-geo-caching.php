@@ -38,7 +38,7 @@
                         <tbody>
                             <tr>
                                 <td>OSMAND</td>
-                                <td><a href="https://play.google.com/store/apps/details?id=net.osmand">Play-Store</a></td>
+                                <td><a class="color-yellow" href="https://play.google.com/store/apps/details?id=net.osmand">Play-Store</a></td>
                                 <td>
                                     + kein Setup nötig<br>
                                     + kein Account nötig<br>
@@ -48,7 +48,7 @@
                             </tr>
                             <tr>
                                 <td>c:geo</td>
-                                <td><a href="https://play.google.com/store/apps/details?id=cgeo.geocaching">Play-Store</a></td>
+                                <td><a class="color-yellow" href="https://play.google.com/store/apps/details?id=cgeo.geocaching">Play-Store</a></td>
                                 <td>
                                     + beste App fürs Cachen<br>
                                     - braucht GC-Account<br>
@@ -57,7 +57,7 @@
                             </tr>
                             <tr>
                                 <td>Offizielle App</td>
-                                <td><a href="https://play.google.com/store/apps/details?id=com.groundspeak.geocaching.intro">Play-Store</a></td>
+                                <td><a class="color-yellow" href="https://play.google.com/store/apps/details?id=com.groundspeak.geocaching.intro">Play-Store</a></td>
                                 <td>
                                     + einsteigerfreundlich<br>
                                     - braucht GC-Account
@@ -87,7 +87,11 @@
                     <p><strong>4.</strong> Rätsel lösen.</p>
                     <p><strong>5.</strong> Repeat...</p>
                 </div>
-                <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Auf zum ersten Rätsel!</h2></a>
+                <div class="col gap-2">
+                    <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Auf zum ersten Rätsel der Schnitzeljagd!</h2></a>
+                    <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Bonusrätsel #1: Ceasar Verschlüsselung</h2></a>
+                    <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Bonusrätsel #2: ???</h2></a>
+                </div>
             </div>
         </div>
     <?php }
