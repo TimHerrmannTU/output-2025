@@ -1,12 +1,14 @@
 <?php /* Template Name: lan-party */ ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php bloginfo('name'); ?> - LAN-Party Anmeldung</title>
     <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
     <?php
     include get_template_directory() . "/includes/tud-navbar.php";
@@ -21,11 +23,12 @@
             <h2 class="mb-3">Anmeldung zur LAN-Party</h2>
 
             <div class="row gap-3">
-                <div class="col w-50 gap-2">
+                <div class="col w-50">
                     <p>Fülle das folgende Formular aus, um dich für unsere LAN-Party anzumelden.</p>
                     <p><strong>Datum:</strong> 19. Juni 2025</p>
                     <p><strong>Uhrzeit:</strong> 18:00 Uhr bis 00:00 Uhr</p>
                     <p><strong>Standort:</strong> Hauptgebäude, Raum 101, Musterstraße 123, 12345 Musterstadt</p>
+                    <p><strong>Kosten pro Teilnehmer:</strong> 10€</p>
                     <!-- TODO: add correct infos -->
 
                     <ul class="mt-2">
@@ -42,38 +45,72 @@
                     // Verarbeite das Formular bei Submit
                     if (isset($_POST['submit_lan_party'])) {
                         // Altersüberprüfung
-                        if(isset($_POST['birthdate'])) {
+                        if (isset($_POST['birthdate'])) {
                             $birthdate = new DateTime($_POST['birthdate']);
                             $today = new DateTime('now');
                             $age = $today->diff($birthdate)->y;
 
-                            if($age < 18) {
+                            if ($age < 18) {
                                 $age_error = true;
+                                // TODO: Error anzeigen wenn man nicht 18 Jahre alt ist
                             } else {
                                 $age_error = false;
-                                // TODO: Error anzeigen wenn man nicht 18 Jahre alt ist
-                                $submission_success = true;
+
+                                // Neuen Post erstellen
+                                $new_post = [
+                                    "post_title" => sanitize_text_field($_POST['vorname']) . " " . sanitize_text_field($_POST['nachname']),
+                                    "post_content" => "",
+                                    "post_status" => "publish",
+                                    "post_type" => "lan-party-teilnehmer",
+                                ];
+                                $post_id = wp_insert_post($new_post);
+                                if ($post_id && !is_wp_error($post_id)) {
+                                    // Insert ACF fields
+                                    update_field('lan-party-teilnehmer-intern-vorname', sanitize_text_field($_POST['vorname']), $post_id);
+                                    update_field('lan-party-teilnehmer-intern-nachname', sanitize_text_field($_POST['nachname']), $post_id);
+                                    update_field('lan-party-teilnehmer-intern-ign', sanitize_text_field($_POST['ingame_name']), $post_id);
+                                    update_field('lan-party-teilnehmer-intern-alter', sanitize_text_field($_POST['birthdate']), $post_id);
+                                    update_field('lan-party-teilnehmer-intern-email', sanitize_email($_POST['email']), $post_id);
+                                    update_field('lan-party-teilnehmer-intern-wunsche', sanitize_textarea_field($_POST['wishes']), $post_id);
+                                    update_field('lan-party-teilnehmer-intern-fotos', isset($_POST['photo_consent']) ? 1 : 0, $post_id);
+                                    update_field('lan-party-teilnehmer-intern-datenschutzerklaerung', isset($_POST['privacy_accepted']) ? 1 : 0, $post_id);
+                                }
+
+                                if (!is_wp_error($post_id)) {
+                                    $submission_success = true;
+                                } else {
+                                    // Fehlerbehandlung bei Post-Erstellung
+                                    $submission_error = $post_id->get_error_message();
+                                }
                             }
                         }
                     }
 
                     if (!$submission_success) {
-                    ?>
+                        ?>
                         <form method="post" class="col gap-2">
-                            <?php if($age_error): ?>
-                            <div class="error-message p-3 bg-red color-white mb-2">
-                                <p><strong>Fehler:</strong> Du musst mindestens 18 Jahre alt sein, um an dieser Veranstaltung teilnehmen zu können.</p>
-                            </div>
+                            <?php if ($age_error): ?>
+                                <div class="error-message p-3 bg-red color-white mb-2">
+                                    <p><strong>Fehler:</strong> Du musst mindestens 18 Jahre alt sein, um an dieser Veranstaltung teilnehmen zu können.</p>
+                                </div>
                             <?php endif; ?>
 
                             <div class="form-group col gap-1">
-                                <label for="name">Vor- und Nachname*</label>
-                                <input type="text" id="name" name="name" required value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>">
+                                <label for="vorname">Vorname*</label>
+                                <input type="text" id="vorname" name="vorname" required
+                                    value="<?php echo isset($_POST['vorname']) ? htmlspecialchars($_POST['vorname']) : ''; ?>">
+                            </div>
+
+                            <div class="form-group col gap-1">
+                                <label for="nachname">Nachname*</label>
+                                <input type="text" id="nachname" name="nachname" required
+                                    value="<?php echo isset($_POST['nachname']) ? htmlspecialchars($_POST['nachname']) : ''; ?>">
                             </div>
 
                             <div class="form-group col gap-1">
                                 <label for="ingame_name">Ingame-Name*</label>
-                                <input type="text" id="ingame_name" name="ingame_name" required>
+                                <input type="text" id="ingame_name" name="ingame_name" required
+                                value="<?php echo isset($_POST['ingame_name']) ? htmlspecialchars($_POST['ingame_name']) : ''; ?>">
                             </div>
 
                             <div class="form-group col gap-1">
@@ -83,7 +120,8 @@
 
                             <div class="form-group col gap-1">
                                 <label for="email">E-Mail-Adresse*</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" required
+                                value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                             </div>
 
                             <div class="form-group col gap-1">
@@ -112,6 +150,10 @@
 
                             <p class="small">* Pflichtfelder</p>
                         </form>
+                    <?php } else { ?>
+                        <div class="success-message p-3 bg-green color-white mb-2">
+                            <p><strong>Erfolgreich!</strong> Deine Anmeldung zur LAN-Party wurde gespeichert.</p>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -119,8 +161,9 @@
     </div>
 
     <?php
-    include get_template_directory() ."/includes/footer.php";
+    include get_template_directory() . "/includes/footer.php";
     wp_footer();
     ?>
 </body>
+
 </html>
