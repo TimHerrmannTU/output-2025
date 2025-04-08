@@ -52,9 +52,9 @@
 
                             if ($age < 18) {
                                 $age_error = true;
+                                // TODO: Error anzeigen wenn man nicht 18 Jahre alt ist
                             } else {
                                 $age_error = false;
-                                // TODO: Error anzeigen wenn man nicht 18 Jahre alt ist
 
                                 // Neuen Post erstellen
                                 $new_post = [
@@ -109,7 +109,8 @@
 
                             <div class="form-group col gap-1">
                                 <label for="ingame_name">Ingame-Name*</label>
-                                <input type="text" id="ingame_name" name="ingame_name" required>
+                                <input type="text" id="ingame_name" name="ingame_name" required
+                                value="<?php echo isset($_POST['ingame_name']) ? htmlspecialchars($_POST['ingame_name']) : ''; ?>">
                             </div>
 
                             <div class="form-group col gap-1">
@@ -119,7 +120,8 @@
 
                             <div class="form-group col gap-1">
                                 <label for="email">E-Mail-Adresse*</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" required
+                                value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                             </div>
 
                             <div class="form-group col gap-1">
