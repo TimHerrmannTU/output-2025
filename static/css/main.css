@@ -633,6 +633,12 @@ nav#tud-navbar .links img {
   filter: invert(100%);
 }
 
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+}
+
 .main {
   height: 850px;
   position: relative;

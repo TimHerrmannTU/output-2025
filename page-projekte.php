@@ -54,7 +54,7 @@
                 if ($query->have_posts()) {
                     while ($query->have_posts()) {
                         $query->the_post();
-                        $img = get_field("project-details-thumbnail")["sizes"]["medium"];
+                        $img = get_field("project-details-thumbnail")["sizes"]["large"];
                         if (empty($img)) {
                             $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
                         }

@@ -7,48 +7,44 @@
     <title><?php bloginfo('name'); ?> - CC Anmeldung</title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body class="no-big-cube">
     <?php
     include get_template_directory() . "/includes/tud-navbar.php";
     include get_template_directory() . "/includes/navbar.php";
-    $main_headline = "LAN-PARTY";
-    $sub_headline = "MELDE DICH JETZT AN UND SEI DABEI!";
+    $main_headline = "CREATIVE-CHALLENGE";
+    $sub_headline = "ZEIG UNS DEINE KÜNSTLERICHE SEITE!";
     include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
     <div class="light-bg mb-6">
         <div class="wrapper col gap-3 pt-5 pb-5">
             <h2>Anmeldung zur Creative-Challenge</h2>
-            <form id="cc-register-form">
-                <div class="labeled-input">
-                    <label for="first-name">Vorname:</label>
-                    <input name="first-name" type="text">
+            <form id="cc-register-form" action="<?= admin_url('admin-post.php') ?>">
+                <input type="hidden" name="action" value="submit_art_post">
+                <label for="first-name">Vorname:</label>
+                <input name="first-name" type="text" placeholder="Max" required>
+                <label for="last-name">Nachname:</label>
+                <input name="last-name" type="text" placeholder="Mustermann" required>
+                <label for="e-mnail">Email:</label>
+                <input name="e-mail" type="email" placeholder="max.mustermann@mailbox.tu-dresden.de">
+                <label for="adress">Wohnort:</label>
+                <input name="adress" type="text" placeholder="01099 Dresden, Assieck 2">
+                <label for="job">Beschäftigung:</label>
+                <input name="job" type="text" placeholder="arbeitslos">
+                <label for="title">Title:</label>
+                <input name="title" type="text" placeholder="Wachsmalstiftzeichnung #238">
+                <label for="desc">Beschreibung:</label>
+                <textarea name="desc" placeholder="Diese Kunstwerk wurde von meiner 2 jährigen nichte inspiriert!">...</textarea>
+                <label for="file">Datei:</label>
+                <input name="file" type="file">
+                <div></div>
+                <div class="row gap-2">
+                    <label class="labeled-checkbox">
+                        <span>Ich habe die AGBs gelesen</span>
+                        <input name="agb" type="checkbox" class="ml-1">
+                    </label>
+                    <input type="submit" value="Absenden">
                 </div>
-                <div class="labeled-input">
-                    <label for="last-name">Nachname:</label>
-                    <input name="last-name" type="text">
-                </div>
-                <div class="labeled-input">
-                    <label for="e-mnail">Email:</label>
-                    <input name="e-mail" type="text">
-                </div>
-                <div class="labeled-input">
-                    <label for="adress">Wohnort:</label>
-                    <input name="adress" type="text">
-                </div>
-                <div class="labeled-input">
-                    <label for="job">Beschäftigung:</label>
-                    <input name="job" type="text">
-                </div>
-                <div class="labeled-input">
-                    <label for="title">Title:</label>
-                    <input name="title" type="text">
-                </div>
-                <div class="labeled-input">
-                    <label for="desc">Beschreibung:</label>
-                    <input name="desc" type="text">
-                </div>
-                <!--TODO: add image upload-->
             </form>
         </div>
     </div>
