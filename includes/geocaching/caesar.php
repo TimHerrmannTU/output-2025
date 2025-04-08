@@ -44,7 +44,7 @@
             <h4>Anleitung zum Entschlüsseln:</h4>
             <ol type="1">
                 <li><b>Betrachte jede Ziffer</b> im verschlüsselten String:<br><b>N 95° 45.146' E 457° 88.505</b></li>
-                <li><b>Verschiebe sie „rückwärts“</b> um 4 (modulo 10).<br>Anders gesagt: (d - 4) mod 10 (Oder, wem das lieber ist, (d+6) mod 10 (d + 6) mod 10.)</li>
+                <li><b>Verschiebe sie „rückwärts“</b> um 4 (modulo 10).<br>Anders gesagt: (d - 4) mod 10 (Oder, wem das lieber ist, (d+6) mod 10)</li>
                 <li><b>Ersetze jede verschlüsselte Ziffer</b> durch das Ergebnis dieser Rückverschiebung.</li>
                 <li><b>Alle anderen Zeichen</b> (Buchstaben, Gradzeichen, Apostroph, Punkt, Leerzeichen) bleiben so, wie sie sind.</li>
             </ol>
