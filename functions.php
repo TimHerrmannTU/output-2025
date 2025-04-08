@@ -9,24 +9,28 @@ function load_static_folder() {
 }
 add_action('wp_enqueue_scripts', 'load_static_folder');
 
-// creative challange post submission
+
+// creates posts of the type creative-challenge based on form fields
 add_action('admin_post_nopriv_submit_art_post', 'handle_art_post_submission');
 add_action('admin_post_submit_art_post', 'handle_art_post_submission');
 function handle_art_post_submission() {
-    // required fields
-    if (!isset($_POST['first-name'])) return;
+    // Ensure the form was submitted via POST
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        wp_die('Invalid request method.');
+    }
 
+    // Sanitize and create post data
     $post_data = [
-        'post_title'   => (sanitize_text_field($_POST['first-name'])." ".sanitize_text_field($_POST['first-name'])),
-        'post_content' => '',
+        'post_title'   => sanitize_text_field($_POST['first-name']) . " " . sanitize_text_field($_POST['last-name']),
+        'post_content' => sanitize_textarea_field($_POST['desc']),
         'post_status'  => 'publish',
         'post_type'    => 'creative-challenge',
     ];
 
     $post_id = wp_insert_post($post_data);
-    /*
     if ($post_id && !is_wp_error($post_id)) {
-        $acf_map = array(
+        // ACF fields
+        $acf_map = [
             "creative-challenge-intern-vorname" => "first-name",
             "creative-challenge-intern-nachname" => "last-name",
             "creative-challenge-intern-email" => "e-mail",
@@ -34,18 +38,47 @@ function handle_art_post_submission() {
             "creative-challenge-intern-job" => "job",
             "creative-challenge-intern-titel" => "title",
             "creative-challenge-intern-beschreibung" => "desc"
-        );
+        ];
+
         foreach ($acf_map as $acf_name => $input_name) {
-            update_field($acf_name, $_POST[$input_name], $post_id);
+            update_field($acf_name, sanitize_text_field($_POST[$input_name]), $post_id);
         }
 
-        wp_redirect(home_url()); // Or any success page you want
+        // Checkbox field
+        update_field("creative-challenge-intern-agb", isset($_POST["agb"]) ? true : false, $post_id);
+
+        // File upload handling
+        if (isset($_FILES['file']) && !empty($_FILES['file']['tmp_name'])) {
+            $file = $_FILES['file'];
+            $upload = wp_handle_upload($file, ['test_form' => false]);
+
+            if (!isset($upload['error'])) {
+                $attachment = [
+                    'post_mime_type' => $upload['type'],
+                    'post_title'     => sanitize_file_name($file['name']),
+                    'post_content'   => '',
+                    'post_status'    => 'inherit',
+                ];
+
+                $attach_id = wp_insert_attachment($attachment, $upload['file']);
+                require_once(ABSPATH . 'wp-admin/includes/image.php');
+                $attach_data = wp_generate_attachment_metadata($attach_id, $upload['file']);
+                wp_update_attachment_metadata($attach_id, $attach_data);
+
+                // Assign the file to the ACF field
+                update_field('creative-challenge-intern-upload', $attach_id, $post_id);
+            } else {
+                error_log("File upload failed: " . $upload['error']);
+            }
+        }
+
+        wp_redirect(home_url()); // Redirect after successful submission
         exit;
     } else {
         wp_die('Post creation failed');
     }
-    */
 }
+
 /**
  * Erstellt einen neuen LAN-Party-Teilnehmer und speichert die Formularfelder
  *

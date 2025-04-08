@@ -19,7 +19,7 @@
     <div class="light-bg mb-6">
         <div class="wrapper col gap-3 pt-5 pb-5">
             <h2>Anmeldung zur Creative-Challenge</h2>
-            <form id="cc-register-form" action="<?= admin_url('admin-post.php') ?>">
+            <form id="cc-register-form" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
                 <label for="first-name">Vorname:</label>
                 <input name="first-name" type="text" placeholder="Max" required>
@@ -37,14 +37,11 @@
                 <textarea name="desc" placeholder="Diese Kunstwerk wurde von meiner 2 jährigen nichte inspiriert!">...</textarea>
                 <label for="file">Datei:</label>
                 <input name="file" type="file">
-                <div></div>
-                <div class="row gap-2">
-                    <label class="labeled-checkbox">
-                        <span>Ich habe die AGBs gelesen</span>
-                        <input name="agb" type="checkbox" class="ml-1">
-                    </label>
-                    <input type="submit" value="Absenden">
-                </div>
+                <input type="submit" value="Absenden">
+                <label class="labeled-checkbox">
+                    <span>Ich habe die AGBs gelesen</span>
+                    <input name="agb" type="checkbox" style="margin-left:1rem">
+                </label>
             </form>
         </div>
     </div>
