@@ -56,25 +56,8 @@
                             } else {
                                 $age_error = false;
 
-                                // Neuen Post erstellen
-                                $new_post = [
-                                    "post_title" => sanitize_text_field($_POST['vorname']) . " " . sanitize_text_field($_POST['nachname']),
-                                    "post_content" => "",
-                                    "post_status" => "publish",
-                                    "post_type" => "lan-party-teilnehmer",
-                                ];
-                                $post_id = wp_insert_post($new_post);
-                                if ($post_id && !is_wp_error($post_id)) {
-                                    // Insert ACF fields
-                                    update_field('lan-party-teilnehmer-intern-vorname', sanitize_text_field($_POST['vorname']), $post_id);
-                                    update_field('lan-party-teilnehmer-intern-nachname', sanitize_text_field($_POST['nachname']), $post_id);
-                                    update_field('lan-party-teilnehmer-intern-ign', sanitize_text_field($_POST['ingame_name']), $post_id);
-                                    update_field('lan-party-teilnehmer-intern-alter', sanitize_text_field($_POST['birthdate']), $post_id);
-                                    update_field('lan-party-teilnehmer-intern-email', sanitize_email($_POST['email']), $post_id);
-                                    update_field('lan-party-teilnehmer-intern-wunsche', sanitize_textarea_field($_POST['wishes']), $post_id);
-                                    update_field('lan-party-teilnehmer-intern-fotos', isset($_POST['photo_consent']) ? 1 : 0, $post_id);
-                                    update_field('lan-party-teilnehmer-intern-datenschutzerklaerung', isset($_POST['privacy_accepted']) ? 1 : 0, $post_id);
-                                }
+                                // Erstelle neuen Teilnehmer über die Funktion
+                                $post_id = create_lan_party_participant($_POST);
 
                                 if (!is_wp_error($post_id)) {
                                     $submission_success = true;
