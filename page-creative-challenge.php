@@ -21,26 +21,42 @@
             <h2>Anmeldung zur Creative-Challenge</h2>
             <form id="cc-register-form" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
-                <label for="first-name">Vorname:</label>
-                <input name="first-name" type="text" placeholder="Max" required>
-                <label for="last-name">Nachname:</label>
-                <input name="last-name" type="text" placeholder="Mustermann" required>
-                <label for="e-mnail">Email:</label>
-                <input name="e-mail" type="email" placeholder="max.mustermann@mailbox.tu-dresden.de">
-                <label for="adress">Wohnort:</label>
-                <input name="adress" type="text" placeholder="01099 Dresden, Assieck 2">
-                <label for="job">Beschäftigung:</label>
-                <input name="job" type="text" placeholder="arbeitslos">
-                <label for="title">Title:</label>
-                <input name="title" type="text" placeholder="Wachsmalstiftzeichnung #238">
-                <label for="desc">Beschreibung:</label>
-                <textarea name="desc" placeholder="Diese Kunstwerk wurde von meiner 2 jährigen nichte inspiriert!">...</textarea>
-                <label for="file">Datei:</label>
+                
+                <div class="labeled-input">
+                    <label for="first-name">Vorname</label>
+                    <input name="first-name" type="text" required>
+                </div>
+                <div class="labeled-input">
+                    <label for="last-name">Nachname</label>
+                    <input name="last-name" type="text" required>
+                </div>
+                <div class="labeled-input">
+                    <label for="e-mnail">Email</label>
+                    <input name="e-mail" type="email">
+                </div>
+                <div class="labeled-input">
+                    <label for="adress">Wohnort</label>
+                    <input name="adress" type="text">
+                </div>
+                <div class="labeled-input">
+                    <label for="job">Beschäftigung</label>
+                    <input name="job" type="text">
+                </div>
+                <div class="labeled-input">
+                    <label for="title">Title</label>
+                    <input name="title" type="text">
+                </div>
+                    <div class="labeled-input">
+                    <label for="desc">Beschreibung</label>
+                    <textarea name="desc"> </textarea>
+                </div>
+
+                <label for="file">Datei</label>
                 <input name="file" type="file">
                 <input type="submit" value="Absenden">
                 <label class="labeled-checkbox">
                     <span>Ich habe die AGBs gelesen</span>
-                    <input name="agb" type="checkbox" style="margin-left:1rem">
+                    <input name="agb" type="checkbox">
                 </label>
             </form>
         </div>

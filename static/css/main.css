@@ -508,6 +508,23 @@ select, .labeled-checkbox {
   transform: rotate(45deg);
 }
 
+.labeled-input {
+  position: relative;
+  width: 100%;
+}
+.labeled-input > * {
+  line-height: 1;
+}
+.labeled-input input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.labeled-input label {
+  position: absolute;
+  left: 1rem;
+  top: 0.8rem;
+}
+
 table {
   border-collapse: collapse;
   overflow: hidden;
@@ -634,9 +651,9 @@ nav#tud-navbar .links img {
 }
 
 form {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .main {

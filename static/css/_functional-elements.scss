@@ -124,6 +124,20 @@ select, .labeled-checkbox {
     }
 }
 
-input[type=text] {
-    
+
+.labeled-input {
+    position: relative;
+    width: 100%;
+    > * {
+        line-height: 1;
+    }
+    input {
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+    label {
+        position: absolute;
+        left: 1rem;
+        top: 0.8rem;
+    }
 }
