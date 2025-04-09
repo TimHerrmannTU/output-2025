@@ -1,6 +1,6 @@
 @use "colors";
 
-button {
+button, input[type=submit] {
     position: relative;
     font-family: Open-Sans-Condensed;
     font-weight: 700;
@@ -35,6 +35,10 @@ button {
         font-weight: 600;
         width: fit-content;
     }
+}
+input[type=submit] {
+    font-size: 1.5625rem;
+    padding: 0 2rem;
 }
 
 a {
@@ -124,11 +128,11 @@ select, .labeled-checkbox {
     }
 }
 
-input, textarea {
+input:not([type=checkbox], [type=submit]), textarea {
     width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0px;
-    border: 1px solid colors.$grey;
+    border: 0.1rem solid colors.$grey;
     box-sizing: border-box;
     &:focus {
         outline: 0.2rem solid colors.$magenta;
@@ -136,8 +140,10 @@ input, textarea {
     }
 }
 textarea {
+    height: 100%;
     min-height: 4.5rem;
     resize: vertical;
+    line-height: 1;
 }
 
 .labeled-input { // also has javascript event binding in main.js
@@ -160,5 +166,21 @@ textarea {
             background-color: colors.$white;
             transition: all 0.3s ease-in-out;
         }
+    }
+}
+
+.file-upload {
+    border: 0.1rem solid colors.$grey;
+    color: colors.$grey;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    &:hover {
+        cursor: pointer;
+    }
+    input[type=file] {
+        display: none;
     }
 }
