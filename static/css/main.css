@@ -40,7 +40,7 @@ h4 {
   text-transform: uppercase;
 }
 
-p, td, th, li, ul, select, input, label {
+p, td, th, li, ul, select, input, textarea, label {
   font-size: 1.5625rem;
   font-style: normal;
   font-weight: 400;
@@ -508,21 +508,42 @@ select, .labeled-checkbox {
   transform: rotate(45deg);
 }
 
+input, textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0px;
+  border: 1px solid #6F6F6F;
+  box-sizing: border-box;
+}
+input:focus, textarea:focus {
+  outline: 0.2rem solid #E2007A;
+  border-color: transparent;
+}
+
+textarea {
+  min-height: 4.5rem;
+  resize: vertical;
+}
+
 .labeled-input {
   position: relative;
   width: 100%;
 }
-.labeled-input > * {
-  line-height: 1;
-}
-.labeled-input input {
-  width: 100%;
-  padding: 0.5rem 1rem;
-}
 .labeled-input label {
+  line-height: 1;
+  color: #6F6F6F;
   position: absolute;
   left: 1rem;
-  top: 0.8rem;
+  top: 1.3rem;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+.labeled-input:focus-within label, .labeled-input.has-content label {
+  font-size: 1rem;
+  top: -0.6rem;
+  padding: 0rem 1rem;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
 }
 
 table {

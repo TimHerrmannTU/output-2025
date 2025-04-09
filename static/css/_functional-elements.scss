@@ -124,20 +124,41 @@ select, .labeled-checkbox {
     }
 }
 
+input, textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0px;
+    border: 1px solid colors.$grey;
+    box-sizing: border-box;
+    &:focus {
+        outline: 0.2rem solid colors.$magenta;
+        border-color: transparent;
+    }
+}
+textarea {
+    min-height: 4.5rem;
+    resize: vertical;
+}
 
-.labeled-input {
+.labeled-input { // also has javascript event binding in main.js
     position: relative;
     width: 100%;
-    > * {
-        line-height: 1;
-    }
-    input {
-        width: 100%;
-        padding: 0.5rem 1rem;
-    }
     label {
+        line-height: 1;
+        color: colors.$grey;
         position: absolute;
         left: 1rem;
-        top: 0.8rem;
+        top: 1.3rem;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+    }
+    &:focus-within, &.has-content {
+        label {
+            font-size: 1rem;
+            top: -0.6rem;
+            padding: 0rem 1rem;
+            background-color: colors.$white;
+            transition: all 0.3s ease-in-out;
+        }
     }
 }
