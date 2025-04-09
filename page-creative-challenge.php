@@ -11,24 +11,70 @@
     <?php
     include get_template_directory() . "/includes/tud-navbar.php";
     include get_template_directory() . "/includes/navbar.php";
-    $main_headline = "CREATIVE-CHALLENGE";
-    $sub_headline = "ZEIG UNS DEINE KÜNSTLERICHE SEITE!";
+    $main_headline = "Creative Challenge: \"Würfelwelten\"";
+    $sub_headline = "Schickt uns bis zum <b>6. Juni 2025</b> eure Designs zum Motto „Würfelwelten“ - entfaltet eure Kreativität und werdet Teil unserer Ausstellung!";
     include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
     <div class="light-bg mb-6">
         <div class="wrapper col gap-3 pt-5 pb-5">
+            <h2>FAQ</h2>
+            <div class="col gap-3 indented">
+                <div class="col">
+                    <h4>Wer darf teilnehmen?</h4>
+                    <p>Alle Interessierten ab 18 Jahren dürfen je ein Kunstwerk einreichen.</p>
+                </div>
+                <div class="col">
+                    <h4>Welche Kunstwerke werden akzeptiert?</h4>
+                    <p>Sowohl digitale (2D und 3D) als auch traditionelle Kunstwerke, die sich um das Thema „Würfelwelten“ drehen.</p>
+                    <ul class="indented">
+                        <li>Handgefertigte Zeichnungen oder Gemälde müssen eingescannt oder hochwertig abfotografiert werden.</li>
+                        <li>3D-Kunst wird nur als gerendertes Bild akzeptiert.</li>
+                        <li><b>KI-generierte Bilder sind von der Teilnahme ausgeschlossen.</b></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Welche Formate dürfen eingereicht werden?</h4>
+                    <ul class="indented">
+                        <li>Erlaubte Formate: <b>JPEG</b> oder <b>PNG</b>.</li>
+                        <li>Dateibenennung: <b>Vorname_Nachname_Titel.jpg/png.</b></li>
+                        <li>Fügt eurem Werk in dem Formular noch einen Titel und eine kurze Beschreibung eurer Idee hinzu.</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Bis wann ist die Einreichung möglich?</h4>
+                    <p>Kunstwerke können bis zum <b>6. Juni 2025</b> über das Formular auf dieser Seite eingereicht werden.</p>
+                </div>
+                <div class="col">
+                    <h4>Wann findet die Siegerehrung statt?</h4>
+                    <p>Die Siegerehrung der Creative Challenge erfolgt im Rahmen von <b>OUTPUT.DD</b> am <b>19. Juni 2025</b> im APB.</p>
+                    <ul class="indented">
+                        <li><b>Hinweis:</b> Zur Entgegennahme der Preise ist die Anwesenheit bei der Präsenzveranstaltung in Dresden erforderlich. Eine digitale Übergabe ist nicht möglich.</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Was ist bei der Einreichung zu beachten?</h4>
+                    <ul class="indented">
+                        <li><b>Plagiate</b> und Verstöße gegen die Teilnahmebedingungen führen zum Ausschluss.</li>
+                        <li>Mit der Teilnahme wird der Veranstalter berechtigt, das eingereichte Bild für Werbezwecke zu nutzen und am <b>19. Juni 2025</b> auszustellen.</li>
+                        <li>Die <b>Urheberrechte</b> verbleiben vollständig bei den Künstler*innen.</li>
+                    </ul>
+                </div>
+                <p>Wir freuen uns auf eure kreativen Einsendungen!</p>
+            </div>
             <h2>Anmeldung zur Creative-Challenge</h2>
-            <form id="cc-register-form" class="col gap-2" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
+            <form id="cc-register-form" class="col gap-3" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
                 
-                <div class="labeled-input">
-                    <label for="first-name">Vorname</label>
-                    <input name="first-name" type="text" required>
-                </div>
-                <div class="labeled-input">
-                    <label for="last-name">Nachname</label>
-                    <input name="last-name" type="text" required>
+                <div class="row gap-3">
+                    <div class="labeled-input">
+                        <label for="first-name">Vorname</label>
+                        <input name="first-name" type="text" required>
+                    </div>
+                    <div class="labeled-input">
+                        <label for="last-name">Nachname</label>
+                        <input name="last-name" type="text" required>
+                    </div>
                 </div>
                 <div class="labeled-input">
                     <label for="e-mnail">Email</label>
@@ -42,8 +88,8 @@
                     <label for="job">Beschäftigung</label>
                     <input name="job" type="text">
                 </div>
-                <div class="row gap-2">
-                    <div class="col gap-2 w-100">
+                <div class="row gap-3">
+                    <div class="col gap-3 fg-1">
                         <div class="labeled-input">
                             <label for="title">Title</label>
                             <input name="title" type="text">
@@ -64,7 +110,7 @@
                         <input name="file" type="file">
                     </div>
                 </div>
-                <div class="row gap-2" style="justify-content: space-between">
+                <div class="row gap-3" style="justify-content: space-between">
                     <label class="labeled-checkbox">
                         <span>Ich habe die AGBs gelesen</span>
                         <input name="agb" type="checkbox" style="margin-left: 1rem" required>
