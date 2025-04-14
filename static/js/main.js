@@ -25,4 +25,19 @@ jQuery(document).ready(function($) {
             $(parent).removeClass("has-content")
         }
     })
+    // upload buttons
+    $('#upload-trigger').click(function() {
+        $('#upload-input').click()
+    })
+    $("#upload-input").on("change", function(e) {
+        const img = e.target.files[0]
+        if (img && img.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                $("#upload-trigger img.preview").attr("src", e.target.result)
+            };
+            reader.readAsDataURL(img);
+            $("#upload-trigger").addClass("uploaded")
+        }
+    })
 })

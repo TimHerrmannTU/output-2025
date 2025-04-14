@@ -169,7 +169,7 @@ textarea {
     }
 }
 
-.file-upload {
+#upload-trigger {
     border: 0.1rem solid colors.$grey;
     color: colors.$grey;
     width: fit-content;
@@ -180,7 +180,23 @@ textarea {
     &:hover {
         cursor: pointer;
     }
-    input[type=file] {
+    label {
+        pointer-events: none;
+    }
+    img.preview {
         display: none;
     }
+    &.uploaded {
+        > *:not(img.preview) {
+            display: none;
+        }
+        img.preview {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+#upload-input {
+    display: none;
 }

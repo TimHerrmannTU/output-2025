@@ -557,7 +557,7 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.file-upload {
+#upload-trigger {
   border: 0.1rem solid #6F6F6F;
   color: #6F6F6F;
   width: -moz-fit-content;
@@ -567,10 +567,25 @@ textarea {
   text-align: center;
   padding: 2rem;
 }
-.file-upload:hover {
+#upload-trigger:hover {
   cursor: pointer;
 }
-.file-upload input[type=file] {
+#upload-trigger label {
+  pointer-events: none;
+}
+#upload-trigger img.preview {
+  display: none;
+}
+#upload-trigger.uploaded > *:not(img.preview) {
+  display: none;
+}
+#upload-trigger.uploaded img.preview {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#upload-input {
   display: none;
 }
 
