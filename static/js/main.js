@@ -27,10 +27,10 @@ jQuery(document).ready(function($) {
     })
     // upload buttons
     $('#upload-trigger').click(function() {
+        console.log("test")
         $('#upload-input').click()
     })
     $("#upload-input").on("change", function(e) {
-        const img = e.target.files[0]
         if (img && img.type.startsWith('image/')) {
             const reader = new FileReader();
             reader.onload = function (e) {
@@ -39,5 +39,10 @@ jQuery(document).ready(function($) {
             reader.readAsDataURL(img);
             $("#upload-trigger").addClass("uploaded")
         }
+    })
+    // expandable text segment
+    $("[dd-function='expandable'] [dd-function='trigger']").click(function() {
+        $(this).find("img").toggleClass("flip")
+        $(this).closest("[dd-function='expandable']").find(".expand").toggle()
     })
 })

@@ -187,6 +187,7 @@ textarea {
         display: none;
     }
     &.uploaded {
+        padding: 0px;
         > *:not(img.preview) {
             display: none;
         }
@@ -199,4 +200,13 @@ textarea {
 }
 #upload-input {
     display: none;
+}
+
+[dd-function=expandable] {
+    [dd-function=trigger] {
+        cursor: pointer;
+        img.flip {
+            transform:rotate(180deg);
+        }
+    }
 }

@@ -41,14 +41,25 @@
                 while ($query->have_posts()) {
                     $query->the_post();
                     $starting_time = explode(":", get_field("programm-details-startzeit"));
+                    $desc_preview = get_field("programm-details-beschreibung-vorschau");
+                    $desc = get_field("programm-details-beschreibung");
                     ?>
                     <div class="item row">
                         <div class="time row">
                             <span class="hours"><?= $starting_time[0] ?></span><span class="minutes"><?= $starting_time[1] ?></span>
                         </div>
-                        <div class="text-content">
-                            <h3 class="row centered"><?= the_title() ?><img class="ml-1" src="<?= get_template_directory_uri(); ?>/static/svg/arrow.svg"/></h3>
-                            <p><?= get_field("programm-details-beschreibung") ?></p>
+                        <div class="text-content" dd-function="expandable">
+                            <h3 class="row centered" dd-function="trigger">
+                                <?= the_title() ?>
+                                <?php if ($desc_preview) { ?>
+                                    <img class="ml-1" src="<?= get_template_directory_uri(); ?>/static/svg/arrow.svg"/>
+                                <?php } ?>
+                            </h3>
+                            <?php if ($desc_preview) { ?>
+                                <p><?= $desc_preview ?></p>
+                                <p class="expand" style="display:none"><?= $desc ?></p>
+                            <?php } ?>
+                            <p class="<?= $desc_preview ? 'expand' : ''; ?>" style="display: <?= $desc_preview ? 'none' : 'block'; ?>"><?= $desc ?></p>
                         </div>
                     </div>
                     <?php

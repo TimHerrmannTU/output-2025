@@ -89,7 +89,7 @@
                     <input name="job" type="text">
                 </div>
                 <div class="row gap-3">
-                    <div class="col gap-3 fg-1">
+                    <div class="col gap-3 w-100 fg-1">
                         <div class="labeled-input">
                             <label for="title">Title</label>
                             <input name="title" type="text">

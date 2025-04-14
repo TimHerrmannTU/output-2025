@@ -576,6 +576,9 @@ textarea {
 #upload-trigger img.preview {
   display: none;
 }
+#upload-trigger.uploaded {
+  padding: 0px;
+}
 #upload-trigger.uploaded > *:not(img.preview) {
   display: none;
 }
@@ -587,6 +590,13 @@ textarea {
 
 #upload-input {
   display: none;
+}
+
+[dd-function=expandable] [dd-function=trigger] {
+  cursor: pointer;
+}
+[dd-function=expandable] [dd-function=trigger] img.flip {
+  transform: rotate(180deg);
 }
 
 table {
