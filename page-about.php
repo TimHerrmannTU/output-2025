@@ -1,4 +1,4 @@
-<?php /* Template Name: projekte */ ?>
+<?php /* Template Name: about */ ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

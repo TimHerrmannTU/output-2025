@@ -57,7 +57,6 @@
                             </h3>
                             <?php if ($desc_preview) { ?>
                                 <p><?= $desc_preview ?></p>
-                                <p class="expand" style="display:none"><?= $desc ?></p>
                             <?php } ?>
                             <p class="<?= $desc_preview ? 'expand' : ''; ?>" style="display: <?= $desc_preview ? 'none' : 'block'; ?>"><?= $desc ?></p>
                         </div>

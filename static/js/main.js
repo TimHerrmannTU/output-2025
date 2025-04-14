@@ -31,6 +31,7 @@ jQuery(document).ready(function($) {
         $('#upload-input').click()
     })
     $("#upload-input").on("change", function(e) {
+        const img = e.target.files[0]; 
         if (img && img.type.startsWith('image/')) {
             const reader = new FileReader();
             reader.onload = function (e) {

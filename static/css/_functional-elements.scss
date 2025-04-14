@@ -74,6 +74,15 @@ select, .labeled-checkbox {
             background-color: transparent;
         }
     }
+    &.transparent {
+        background-color: transparent;
+        border: 0.1rem solid colors.$grey;
+        color: colors.$grey;
+        select {
+            background-color: transparent;
+            color: colors.$grey;
+        }
+    }
     &::after {
         content: "";
         background: url('/wp-content/themes/2025/static/svg/arrow-full.svg') no-repeat center;
