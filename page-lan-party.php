@@ -78,36 +78,40 @@
                                 </div>
                             <?php endif; ?>
 
-                            <div class="form-group col gap-1">
+                            <div class="form-group col gap-1 labeled-input">
                                 <label for="vorname">Vorname*</label>
                                 <input type="text" id="vorname" name="vorname" required
                                     value="<?php echo isset($_POST['vorname']) ? htmlspecialchars($_POST['vorname']) : ''; ?>">
                             </div>
 
-                            <div class="form-group col gap-1">
+                            <div class="form-group col gap-1 labeled-input">
                                 <label for="nachname">Nachname*</label>
                                 <input type="text" id="nachname" name="nachname" required
                                     value="<?php echo isset($_POST['nachname']) ? htmlspecialchars($_POST['nachname']) : ''; ?>">
                             </div>
 
-                            <div class="form-group col gap-1">
+                            <div class="form-group col gap-1 labeled-input">
                                 <label for="ingame_name">Ingame-Name*</label>
                                 <input type="text" id="ingame_name" name="ingame_name" required
                                 value="<?php echo isset($_POST['ingame_name']) ? htmlspecialchars($_POST['ingame_name']) : ''; ?>">
                             </div>
 
-                            <div class="form-group col gap-1">
+                            <div class="form-group col gap-1 labeled-input">
                                 <label for="birthdate">Geburtsdatum*</label>
-                                <input type="date" id="birthdate" name="birthdate" required>
+                                <input
+                                    type="date"
+                                    id="birthdate"
+                                    name="birthdate"
+                                    required>
                             </div>
 
-                            <div class="form-group col gap-1">
+                            <div class="form-group col gap-1 labeled-input">
                                 <label for="email">E-Mail-Adresse*</label>
                                 <input type="email" id="email" name="email" required
                                 value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                             </div>
 
-                            <div class="form-group col gap-1">
+                            <div class="form-group col gap-1 labeled-input">
                                 <label for="wishes">Weitere Wünsche (z.B. Sitzplätze) (optional)</label>
                                 <textarea id="wishes" name="wishes" rows="3"></textarea>
                             </div>
