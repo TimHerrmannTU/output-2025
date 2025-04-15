@@ -1,4 +1,12 @@
 <?php /* Template Name: about */ ?>
+<?php
+// Überprüfen, ob der Benutzer angemeldet ist
+if (!is_user_logged_in()) {
+    // Umleitung zur Login-Seite
+    wp_redirect(home_url('/login'));
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -8,17 +16,17 @@
     <?php wp_head(); ?>
 </head>
 <body class="no-big-cube" style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
-    <?php 
+    <?php
     include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php"; 
+    include get_template_directory() . "/includes/navbar.php";
     $main_headline = "MEIN BEREICH";
     $sub_headline = "PROJEKTE EINREICHEN UND VERWALTEN";
-    include get_template_directory() . "/includes/banner-slim.php"; 
+    include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
     <div id="projekte" class="light-bg mb-6">
         <div class="wrapper col gap-2">
-            
+
             <form id="project-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_project_post">
 
@@ -136,7 +144,7 @@
         </div>
     </div>
 
-    <?php 
+    <?php
     include get_template_directory() ."/includes/footer.php";
     wp_footer();
     ?>
