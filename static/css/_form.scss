@@ -12,4 +12,8 @@ form {
             padding: 0 !important;
         }
     }
+    input[type=submit] {
+        width: fit-content;
+        align-self: flex-end;
+    }
 }
