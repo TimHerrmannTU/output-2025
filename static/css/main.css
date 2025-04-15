@@ -955,9 +955,6 @@ nav#tud-navbar a {
 #timeline .text-content h3 .icon {
   margin-left: 1rem;
 }
-#timeline .text-content h3 .icon svg {
-  scale: 1.5;
-}
 #timeline .text-content p {
   margin-top: 1.2rem;
 }
@@ -1073,6 +1070,9 @@ body {
 
 .icon {
   font-size: inherit;
+}
+.icon svg {
+  scale: 1.5;
 }
 
 .flip {

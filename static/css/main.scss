@@ -58,6 +58,9 @@ body {
 
 .icon {
     font-size: inherit;
+    svg {
+        scale: 1.5;
+    }
 }
 .flip {
     transform:rotate(180deg);

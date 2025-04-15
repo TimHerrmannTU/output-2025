@@ -17,8 +17,8 @@
                 <a href="/barrierefreiheit">Erklärung zur Barrierefreiheit</a>
             </div>
             <div class="links row gap-1">
-                <a href="https://www.instagram.com/outputdd/"><img src="<?= get_template_directory_uri(); ?>/static/svg/instagram.svg"/></a>
-                <a href="https://de.linkedin.com/company/output-dd"><img src="<?= get_template_directory_uri(); ?>/static/svg/linked-in.svg"/></a>
+                <a class="icon" href="https://www.instagram.com/outputdd/"><span class="iconify" data-icon="mdi-instagram"></a>
+                <a class="icon" href="https://de.linkedin.com/company/output-dd"><span class="iconify" data-icon="mdi-linkedin"></a>
             </div>
         </div>
     </div>
