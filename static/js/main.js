@@ -16,6 +16,12 @@ jQuery(document).ready(function($) {
     }
     catch(e) {}
     // labeled input event (keeps the label above if there is content inside the input)
+    $(".labeled-input input, .labeled-input textarea").each(function() {
+        var parent = $(this).closest(".labeled-input")
+        if ($(this).val() != "") {
+            $(parent).addClass("has-content")
+        }
+    })
     $(".labeled-input input, .labeled-input textarea").on("keyup", function() {
         var parent = $(this).closest(".labeled-input")
         if ($(this).val() != "") {

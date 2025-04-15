@@ -7,7 +7,7 @@ button, input[type=submit] {
     border: none;
     border-radius: 0px;
     font-size: 2.75rem;
-    padding: 0rem 0.5rem;
+    padding: 0rem 2rem;
     &:hover {
         cursor: pointer;
         filter: brightness(1.2);
@@ -82,6 +82,9 @@ select, .labeled-checkbox {
             background-color: transparent;
             color: colors.$grey;
         }
+        &::after {
+            color: colors.$grey;
+        }
     }
     &::after {
         content: "";
@@ -153,7 +156,7 @@ select, .labeled-checkbox {
     }
 }
 
-input:not([type=checkbox], [type=submit]), textarea {
+input:not([type=checkbox], [type=submit], [type=file]), textarea {
     width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0px;
@@ -195,9 +198,9 @@ textarea {
 }
 
 [dd-function="file-upload-trigger"] {
+    box-sizing: border-box;
     border: 0.1rem solid colors.$grey;
     color: colors.$grey;
-    width: fit-content;
     justify-content: center;
     align-items: center;
     text-align: center;

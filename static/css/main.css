@@ -403,7 +403,7 @@ button, input[type=submit] {
   border: none;
   border-radius: 0px;
   font-size: 2.75rem;
-  padding: 0rem 0.5rem;
+  padding: 0rem 2rem;
 }
 button:hover, input[type=submit]:hover {
   cursor: pointer;
@@ -481,6 +481,9 @@ select, .labeled-checkbox {
   background-color: transparent;
   color: #6F6F6F;
 }
+.dropdown.transparent::after {
+  color: #6F6F6F;
+}
 .dropdown::after {
   content: "";
   background: url("/wp-content/themes/2025/static/svg/arrow-full.svg") no-repeat center;
@@ -549,14 +552,14 @@ select, .labeled-checkbox {
   transform: rotate(45deg);
 }
 
-input:not([type=checkbox], [type=submit]), textarea {
+input:not([type=checkbox], [type=submit], [type=file]), textarea {
   width: 100%;
   padding: 0.5rem 1rem;
   border-radius: 0px;
   border: 0.1rem solid #6F6F6F;
   box-sizing: border-box;
 }
-input:not([type=checkbox], [type=submit]):focus, textarea:focus {
+input:not([type=checkbox], [type=submit], [type=file]):focus, textarea:focus {
   outline: 0.2rem solid #E2007A;
   border-color: transparent;
 }
@@ -590,10 +593,9 @@ textarea {
 }
 
 [dd-function=file-upload-trigger] {
+  box-sizing: border-box;
   border: 0.1rem solid #6F6F6F;
   color: #6F6F6F;
-  width: -moz-fit-content;
-  width: fit-content;
   justify-content: center;
   align-items: center;
   text-align: center;
