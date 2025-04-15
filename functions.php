@@ -39,6 +39,7 @@ function handle_project_post_submission() {
         }
     }
 
+    handle_file_upload("details-thumbnail","project-details-thumbnail", $post_id);
     
     wp_redirect(home_url()); // Redirect after successful submission
 }
@@ -140,5 +141,39 @@ function create_lan_party_participant($form_data) {
     }
 
     return $post_id;
+}
+
+
+// HELPER FUNCTIONS
+function handle_file_upload($field_name, $acf_field_key, $post_id) {
+    if (isset($_FILES[$field_name]) && !empty($_FILES[$field_name]['tmp_name'])) {
+        $file = $_FILES[$field_name];
+        $upload = wp_handle_upload($file, ['test_form' => false]);
+
+        if (!isset($upload['error'])) {
+            $attachment = [
+                'post_mime_type' => $upload['type'],
+                'post_title'     => sanitize_file_name($file['name']),
+                'post_content'   => '',
+                'post_status'    => 'inherit',
+            ];
+
+            $attach_id = wp_insert_attachment($attachment, $upload['file']);
+
+            require_once ABSPATH . 'wp-admin/includes/image.php';
+
+            $attach_data = wp_generate_attachment_metadata($attach_id, $upload['file']);
+            wp_update_attachment_metadata($attach_id, $attach_data);
+
+            // Assign the uploaded file to the ACF field
+            update_field($acf_field_key, $attach_id, $post_id);
+
+            return $attach_id;
+        } else {
+            error_log("File upload failed: " . $upload['error']);
+        }
+    }
+
+    return false;
 }
 ?>

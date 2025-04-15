@@ -62,7 +62,7 @@ if (!is_user_logged_in()) {
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="details-thumbnail" type="file" dd-function="file-upload-input" key="1">
+                <input name="details-thumbnail" type="file" dd-function="file-upload-input" key="1" required>
 
                 <div class="labeled-input full">
                     <label for="details-participants">Weitere Beteiligte</label>
