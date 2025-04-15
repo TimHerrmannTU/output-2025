@@ -681,16 +681,16 @@ nav#navbar {
   color: white;
 }
 nav#navbar a.logo {
-  height: 3.75rem;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 nav#navbar a {
   font-family: Open-Sans-Condensed;
-  margin-top: 10px;
   font-size: 1.875rem;
   font-weight: 700;
 }
 nav#navbar .login-button {
-  margin-top: 3px;
+  font-size: 3rem;
 }
 nav#tud-navbar {
   height: 5rem;

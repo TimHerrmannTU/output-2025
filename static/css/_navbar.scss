@@ -15,16 +15,15 @@ nav {
         height: 9.5rem;
         color: white;
         a.logo {
-            height: 3.75rem;
+            height: fit-content;
         }
         a {
             font-family: Open-Sans-Condensed;
-            margin-top: 10px;
             font-size: 1.875rem;
             font-weight: 700;
         }
         .login-button {
-            margin-top: 3px;
+            font-size: 3rem;
         }
     }
     &#tud-navbar {
