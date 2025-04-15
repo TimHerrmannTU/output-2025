@@ -43,6 +43,7 @@
                     $starting_time = explode(":", get_field("programm-details-startzeit"));
                     $desc_preview = get_field("programm-details-beschreibung-vorschau");
                     $desc = get_field("programm-details-beschreibung");
+                    $img = get_field("programm-details-bild")["sizes"]["large"];
                     ?>
                     <div class="item row">
                         <div class="time row">
@@ -60,7 +61,15 @@
                             <?php if ($desc_preview) { ?>
                                 <p><?= $desc_preview ?></p>
                             <?php } ?>
-                            <p class="<?= $desc_preview ? 'expand' : ''; ?>" style="display: <?= $desc_preview ? 'none' : 'block'; ?>"><?= $desc ?></p>
+                            <div  class="<?= $desc_preview ? 'expand' : ''; ?>" style="display: <?= $desc_preview ? 'none' : 'block'; ?>">
+                                
+                                <?php 
+                                if (!empty($img)) {
+                                    ?><img src="<?= $img ?>" style="float: right; margin: 0 0 1rem 1rem; width: 300px;"/><?php 
+                                } 
+                                ?>
+                                <p><?= $desc ?></p>
+                            </div>
                         </div>
                     </div>
                     <?php

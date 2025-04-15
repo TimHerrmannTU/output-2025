@@ -26,8 +26,11 @@
         }
         h3 {
             margin-top: 0.4rem;
-            img {
+            .icon {
                 margin-left: 1rem;
+                svg {
+                    scale: 1.5;
+                }
             }
         }
         p {

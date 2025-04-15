@@ -7,6 +7,13 @@
             <a href="/teilnahme">TEILNAHME</a>
             <a href="/projekte">PROJEKTE</a>
         </div>
-        <a class="login-button" href="/login"><span class="iconify" data-icon="mdi-login"></a>
+        <?php
+        if (is_user_logged_in()) {
+            ?><a class="login-button" href="/login"><span class="iconify" data-icon="mdi-account-cog"></span></a><?php
+        }
+        else {
+            ?><a class="login-button" href="/login"><span class="iconify" data-icon="mdi-login"></span></a><?php
+        }
+        ?>
     </div>
 </nav>

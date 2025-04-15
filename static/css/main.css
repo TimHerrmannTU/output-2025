@@ -952,8 +952,11 @@ nav#tud-navbar a {
 #timeline .text-content h3 {
   margin-top: 0.4rem;
 }
-#timeline .text-content h3 img {
+#timeline .text-content h3 .icon {
   margin-left: 1rem;
+}
+#timeline .text-content h3 .icon svg {
+  scale: 1.5;
 }
 #timeline .text-content p {
   margin-top: 1.2rem;
