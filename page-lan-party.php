@@ -132,7 +132,7 @@
                             </div>
 
                             <div class="form-group mt-2">
-                                <button type="submit" name="submit_lan_party" class="bg-cyan color-white">ANMELDEN</button>
+                                <button type="submit" name="submit_lan_party" class="bg-magenta color-white">ANMELDEN</button>
                             </div>
 
                             <p class="small">* Pflichtfelder</p>
