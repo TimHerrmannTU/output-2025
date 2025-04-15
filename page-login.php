@@ -26,8 +26,6 @@
                 <div class="col gap-2 mt-3">
                     <h3>Hallo, <?php echo esc_html(wp_get_current_user()->display_name); ?>!</h3>
                     <p>Du bist jetzt angemeldet und kannst ein Projekt einreichen.</p>
-                    <!-- TODO: add link zu projekt einreichung???? -->
-
                     <div class="mt-3">
                         <a href="<?php echo esc_url(wp_logout_url(home_url('/login'))); ?>">
                             <button class="bg-magenta color-white">ABMELDEN</button>
