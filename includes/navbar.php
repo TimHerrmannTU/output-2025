@@ -7,6 +7,6 @@
             <a href="/teilnahme">TEILNAHME</a>
             <a href="/projekte">PROJEKTE</a>
         </div>
-        <a class="login-button"><img src="<?= get_template_directory_uri(); ?>/static/svg/login.svg"/></a>
+        <a class="login-button"><span class="iconify" data-icon="mdi-login"></a>
     </div>
 </nav>

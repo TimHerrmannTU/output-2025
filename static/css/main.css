@@ -40,7 +40,7 @@ h4 {
   text-transform: uppercase;
 }
 
-p, td, th, li, ul, select, input, textarea, label {
+a, p, td, th, li, ul, select, input, textarea, label {
   font-size: 1.5625rem;
   font-style: normal;
   font-weight: 400;
@@ -662,7 +662,6 @@ form.grid .file-upload {
 form input[type=submit] {
   width: -moz-fit-content;
   width: fit-content;
-  align-self: flex-end;
 }
 
 nav {
