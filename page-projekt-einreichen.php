@@ -31,12 +31,12 @@ if (!is_user_logged_in()) {
                 <input type="hidden" name="action" value="submit_project_post">
 
                 <div class="labeled-input full">
-                    <label for="title">Title *</label>
-                    <input name="title" type="text" required>
+                    <label for="details-name">Title *</label>
+                    <input name="details-name" type="text" required>
                 </div>
 
                 <div class="dropdown transparent grid-c1">
-                    <select id="mode" required>
+                    <select id="mode" name="category" required>
                         <option class="template" value="default">Projektkategorie auswählen *</option>
                         <option class="template" value="demo">Projektdemo</option>
                         <option class="template" value="poster">Projektposter</option>
@@ -44,47 +44,47 @@ if (!is_user_logged_in()) {
                     </select>
                 </div>
                 <div class="labeled-input grid-c1">
-                    <label for="presentor">Präsentator *</label>
-                    <input name="presentor" type="text" required>
+                    <label for="details-presenter">Präsentator *</label>
+                    <input name="details-presenter" type="text" required>
                 </div>
                 <div class="labeled-input grid-c1">
-                    <label for="desc">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
-                    <textarea name="desc" required></textarea>
+                    <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
+                    <textarea name="details-description" required></textarea>
                 </div>
 
                 <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
-                    <label for="file">
+                    <label for="details-thumbnail">
                         Lade hier ein Vorschaubild für dein Projekt hoch<br>
                         (Drag and Drop oder klicke hier)
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="file" type="file" dd-function="file-upload-input" key="1">
+                <input name="details-thumbnail" type="file" dd-function="file-upload-input" key="1">
 
                 <div class="labeled-input full">
-                    <label for="others">Weitere Beteiligte</label>
-                    <input name="others" type="text">
+                    <label for="details-participants">Weitere Beteiligte</label>
+                    <input name="details-participants" type="text">
                 </div>
 
                 <div class="labeled-input grid-c1">
-                    <label for="website">Website</label>
-                    <input name="website" type="text">
+                    <label for="details-website">Website</label>
+                    <input name="details-website" type="text">
                 </div>
                 <div class="labeled-input grid-c2">
-                    <label for="institute">Studiengang / Lehrstuhl / Firma</label>
-                    <input name="institute" type="text">
+                    <label for="details-institution">Studiengang / Lehrstuhl / Firma</label>
+                    <input name="details-institution" type="text">
                 </div>
 
                 <div class="labeled-input grid-c1">
-                    <label for="contact">Ansprechpartner *</label>
-                    <input name="contact" type="text" required>
+                    <label for="intern-contact-person">Ansprechpartner *</label>
+                    <input name="intern-contact-person" type="text" required>
                 </div>
                 <div class="labeled-input grid-c2">
-                    <label for="email">E-Mail *</label>
-                    <input name="email" type="text" required>
+                    <label for="intern-contact-person-email">E-Mail *</label>
+                    <input name="intern-contact-person-email" type="text" required>
                 </div>
                 <div class="pt-1 full"></div>
                 <!-- START: CONDITIONAL SECTION -->

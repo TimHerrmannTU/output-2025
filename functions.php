@@ -13,6 +13,35 @@ add_action('wp_enqueue_scripts', 'load_static_folder');
 @ini_set( "post_max_size", "256M");
 @ini_set( "max_execution_time", "300" );
 
+// creates project post from form fields
+add_action('admin_post_nopriv_submit_project_post', 'handle_project_post_submission');
+add_action('admin_post_submit_project_post', 'handle_project_post_submission');
+function handle_project_post_submission() {
+    // Ensure the form was submitted via POST
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        wp_die('Invalid request method.');
+    }
+
+    // Sanitize and create post data
+    $post_data = [
+        'post_title'   => sanitize_text_field($_POST['details-name']),
+        'post_content' => sanitize_textarea_field($_POST['details-description']),
+        'post_status'  => 'pending',
+        'post_type'    => 'projekte',
+    ];
+    
+    $post_id = wp_insert_post($post_data);
+    wp_set_object_terms( $post_id, "project-".$_POST["category"], "project-type" );
+    
+    if ($post_id && !is_wp_error($post_id)) {
+        foreach ($_POST as $post_key => $input_name) {
+            update_field("project-".$post_key, sanitize_text_field($_POST[$post_key]), $post_id);
+        }
+    }
+
+    
+    wp_redirect(home_url()); // Redirect after successful submission
+}
 
 // creates posts of the type creative-challenge based on form fields
 add_action('admin_post_nopriv_submit_art_post', 'handle_art_post_submission');
@@ -27,7 +56,7 @@ function handle_art_post_submission() {
     $post_data = [
         'post_title'   => sanitize_text_field($_POST['first-name']) . " " . sanitize_text_field($_POST['last-name']),
         'post_content' => sanitize_textarea_field($_POST['desc']),
-        'post_status'  => 'publish',
+        'post_status'  => 'pending',
         'post_type'    => 'creative-challenge',
     ];
 
