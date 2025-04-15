@@ -1,4 +1,4 @@
-<?php /* Template Name: login */ ?>
+<?php /* Template Name: register */ ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -16,26 +16,34 @@
     include get_template_directory() . "/includes/banner-slim.php"; 
     ?>
 
-    <div id="login" class="light-bg">
+    <div id="register" class="light-bg">
         <div class="wrapper col gap-2 pt-5 pb-5">
             
-            <form id="custom_login_form" class="col gap-1" method="POST">
+            <form id="custom_register_form" class="col gap-1" method="POST">
                 <?php wp_nonce_field( 'custom_login_nonce', 'custom_login_nonce_field' ); ?>
                 <input type="hidden" name="action" value="submit_project_post">
                 <div class="labeled-input">
-                    <label for="username">Name</label>
+                    <label for="username">Benutzername</label>
                     <input name="username" type="text" required>
                 </div>
                 <div class="labeled-input">
-                    <label for="password">Passwort</label>
-                    <input name="password" type="password" required>
+                    <label for="email">E-Mail</label>
+                    <input name="email" type="email" required>
                 </div>
-                <input class="bg-magenta color-white" type="submit" value="Anmelden">
+                <div class="labeled-input">
+                    <label for="firstname">Vorname</label>
+                    <input name="firstname" type="text" required>
+                </div>
+                <div class="labeled-input">
+                    <label for="lastname">Nachname</label>
+                    <input name="lastname" type="text" required>
+                </div>
+                <input class="bg-magenta color-white" type="submit" value="Registrieren">
             </form>
             
             <div class="col gap-1">
                 <a class="color-magenta" href="<?= get_site_url(); ?>/lostpassword">Passwort vergessen?</a>
-                <a class="color-magenta" href="<?= get_site_url(); ?>/register">Registrierung</a>
+                <a class="color-magenta" href="<?= get_site_url(); ?>/login">Login</a>
             </div>
 
         </div>

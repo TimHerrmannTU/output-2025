@@ -4,7 +4,7 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
     margin-top: calc($navbar-height*(-1));
     padding-top: 0.1rem;
     color: white;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25%);
     .wrapper {
         margin-top: $navbar-height;
         .text-content {

@@ -680,10 +680,10 @@ nav#navbar {
   height: 9.5rem;
   color: white;
 }
-nav#navbar .logo {
+nav#navbar a.logo {
   height: 3.75rem;
 }
-nav#navbar .links {
+nav#navbar a {
   font-family: Open-Sans-Condensed;
   margin-top: 10px;
   font-size: 1.875rem;
@@ -694,7 +694,7 @@ nav#navbar .login-button {
 }
 nav#tud-navbar {
   height: 5rem;
-  background-color: white;
+  background-color: #FFFFFF;
   color: #232323;
 }
 nav#tud-navbar .logo img {
@@ -703,13 +703,16 @@ nav#tud-navbar .logo img {
 nav#tud-navbar .links img {
   height: 1.5rem;
 }
+nav#tud-navbar a {
+  color: #232323;
+}
 
 #banner {
   height: 100vh;
   margin-top: -14.5rem;
   padding-top: 0.1rem;
   color: white;
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25%);
 }
 #banner .wrapper {
   margin-top: 14.5rem;
@@ -805,8 +808,8 @@ nav#tud-navbar .links img {
 .carousel {
   overflow-x: hidden;
   position: relative;
-  min-width: 1200px;
-  max-width: 1200px;
+  min-width: 80vw;
+  max-width: 80vw;
   /* FROM _colors.scss
   $magenta: #E2007A;
   $yellow: #FFCC00;
@@ -818,12 +821,12 @@ nav#tud-navbar .links img {
   transition: margin-left 1s;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 3.3333333333vw;
 }
 .carousel .item {
   position: relative;
   justify-content: center;
-  flex: 0 0 200px;
+  flex: 0 0 13.3333333333vw;
 }
 .carousel .item:hover {
   filter: none;
@@ -1028,7 +1031,7 @@ body {
 }
 
 .wrapper {
-  width: 1200px;
+  width: 80vw;
   margin: 0 auto;
 }
 

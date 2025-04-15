@@ -1,4 +1,4 @@
-<footer id="footer" class="dark-bg mt-6">
+<footer id="footer" class="dark-bg">
     <div class="wrapper pt-3 pb-3">
         <h3 style="font-weight: 700;">Ansprechpartner: Silvia Kapplusch</h3>
         <p class="pt-1">Telefon: +49 351 463 38465 |

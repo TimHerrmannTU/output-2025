@@ -52,7 +52,9 @@
                             <h3 class="row centered" dd-function="trigger">
                                 <?= the_title() ?>
                                 <?php if ($desc_preview) { ?>
-                                    <img class="ml-1" src="<?= get_template_directory_uri(); ?>/static/svg/arrow.svg"/>
+                                    <div class="icon">
+                                            <span class="iconify" data-icon="mdi-chevron-up">
+                                    </div>
                                 <?php } ?>
                             </h3>
                             <?php if ($desc_preview) { ?>

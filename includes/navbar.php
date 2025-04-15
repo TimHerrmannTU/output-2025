@@ -7,6 +7,6 @@
             <a href="/teilnahme">TEILNAHME</a>
             <a href="/projekte">PROJEKTE</a>
         </div>
-        <a class="login-button"><span class="iconify" data-icon="mdi-login"></a>
+        <a class="login-button" href="/login"><span class="iconify" data-icon="mdi-login"></a>
     </div>
 </nav>
