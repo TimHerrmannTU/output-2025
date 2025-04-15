@@ -116,7 +116,7 @@ if (!is_user_logged_in()) {
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="file" type="file" dd-function="file-upload-input" key="2">
+                <input name="file" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag">
                 <!-- if poster -->
                 <div class="row gap-1 full" dd-function="file-upload-trigger" key="3" dd-mode="poster">
                     <div class="icon">
@@ -127,7 +127,7 @@ if (!is_user_logged_in()) {
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="file" type="file" dd-function="file-upload-input" key="3">
+                <input name="file" type="file" dd-function="file-upload-input" key="3" dd-mode="poster">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
                     <input type="checkbox" name="ausgruendung">
@@ -137,8 +137,7 @@ if (!is_user_logged_in()) {
                     <input type="checkbox" name="publish" required>
                     <span>Ich stimme einer Veröffentlichung des Projektes im Rahmen von Output zu.</span>
                 </label>
-                <a id="fake-submit" class="bg-magenta color-white inline-size-fit-content">PROJEKT EINREICHEN</a>
-                <input type="submit" style="display:none">
+                <a id="submit" class="bg-magenta color-white inline-size-fit-content pl-2 pr-2">PROJEKT EINREICHEN</a>
             </form>
 
         </div>
@@ -154,16 +153,18 @@ if (!is_user_logged_in()) {
             // init
             $("[dd-mode]").hide()
             mode = $("#mode").val()
-            $(`[dd-mode=${mode}]`).show()
+            $(`[dd-mode=${mode}]:not(input[type=file])`).show()
             // user events
             $("#mode").change(function() {
                 mode = $(this).val()
                 $("[dd-mode]").hide()
-                $(`[dd-mode=${mode}]`).show()
+                $(`[dd-mode=${mode}]:not(input[type=file])`).show()
             })
-            $("#fake-submit").click(function() {
+            $("#submit").click(function(e) {
+                e.preventDefault(); //  prevents the <a> from acting like a link
                 if (mode != "default") {
                     $(`[dd-mode]:not([dd-mode=${mode}])`).remove()
+                    $("#project-register-form")[0].reportValidity() && $("#project-register-form").trigger("submit")
                 }
             })
         })
