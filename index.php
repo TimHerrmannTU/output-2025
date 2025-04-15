@@ -18,14 +18,14 @@
                 <h2>DIE PROJEKTSCHAU DER INFORMATIK</h2>
                 <h2>19. JUNI 2025</h2>
                 <h3>WERDE TEIL VON OUTPUT UND<br> REICHE DEIN PROJEKT BIS 5. JUNI EIN!</h3>
-                <a href="<?= get_site_url(); ?>/projekt-einreichen"><button class="white transparent-text mt-3">PROJEKT EINREICHEN</button></a>
+                <button class="white transparent-text mt-3" onclick="location.href='/projekt-einreichen'">PROJEKT EINREICHEN</button>
             </div>
             <img class="cube-unfolded" src="<?= get_template_directory_uri(); ?>/static/svg/cube_unfolded.svg" />
         </div>
     </div>
 
     <div class="light-bg">
-        <div class="main wrapper pt-7 pb-7">
+        <div class="main wrapper">
             <img class="banner-img" src="https://output-dd.inf.tu-dresden.de/wp-content/uploads/2025/04/ballons.jpg">
             <div class="text-wrapper dark-bg col gap-2">
                 <h3 class="fat color-magenta">DIE PROJEKTSCHAU DER FAKULTÄT INFORMATIK AN DER TU DRESDEN</h3>

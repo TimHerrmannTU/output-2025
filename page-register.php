@@ -17,7 +17,7 @@
     ?>
 
     <div id="register" class="light-bg">
-        <div class="wrapper col gap-2 pt-5 pb-5">
+        <div class="wrapper col gap-2">
             
             <form id="custom_register_form" class="col gap-1" method="POST">
                 <?php wp_nonce_field( 'custom_login_nonce', 'custom_login_nonce_field' ); ?>

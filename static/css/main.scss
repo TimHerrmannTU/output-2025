@@ -59,9 +59,14 @@ body {
 .icon {
     font-size: inherit;
     svg {
-        scale: 1.5;
+        scale: 2;
     }
 }
 .flip {
     transform:rotate(180deg);
+}
+
+body > .light-bg,
+body > .dark-bg {
+    padding: 7rem 0rem;
 }

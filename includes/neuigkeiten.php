@@ -1,5 +1,5 @@
-<div id="projekte">
-    <div class="wrapper col gap-3 pt-5 pb-9">
+<div id="news" class="dark-bg">
+    <div class="wrapper col gap-3">
         <h1 class="pb-2">Neuigkeiten</h1>
         <div class="carousel col gap-3" items-per-slide="3">
             <div class="canvas">

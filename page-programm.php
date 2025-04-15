@@ -16,7 +16,7 @@
     include get_template_directory() . "/includes/banner-slim.php"; 
     ?>
     <div class="light-bg">
-        <div class="wrapper pt-7 pb-7">
+        <div class="wrapper">
             <div class="dark-bg w-50" style="padding: 4.62rem">
                 <h3 class="color-magenta mb-3">RAHMENPROGRAMM</h3>
                 <p>Am 19. Juni 2025 findet OUTPUT wieder in der Fakultät Informatik der TU  Dresden statt. Wir stellen die Vielfalt – von der Idee, über visuelle  Konzepte bis hin zu Demonstrationen – des Informatikstudiums und  aktuelle Forschungsschwerpunkte der Fakultät vor.</p>    
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div id="timeline" class="light-bg mb-6">
+    <div id="timeline" class="light-bg">
         <div class="wrapper col gap-2">
             <?php
             $args = array(

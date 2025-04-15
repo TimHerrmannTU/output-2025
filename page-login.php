@@ -17,7 +17,7 @@
     ?>
 
     <div id="login" class="light-bg">
-        <div class="wrapper col gap-2 pt-5 pb-5">
+        <div class="wrapper col gap-2">
 
             <?php include get_template_directory() . "/includes/login.php"; ?>
 

@@ -16,7 +16,7 @@
     include get_template_directory() . "/includes/banner-slim.php"; 
     ?>
 
-    <div id="projekte" class="light-bg mb-6">
+    <div id="projekte" class="light-bg">
         <div class="wrapper col gap-2">
             <div class="controls">
                 <?php include get_template_directory() . "/includes/year-dropdown.php";  ?>

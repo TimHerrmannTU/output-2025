@@ -16,8 +16,8 @@
     include get_template_directory() . "/includes/banner-slim.php"; 
     ?>
 
-    <div id="impressum" class="light-bg mb-6">
-        <div class="wrapper col gap-2 pt-5">
+    <div id="impressum" class="light-bg">
+        <div class="wrapper col gap-2">
             <p>
                 Die TU Dresden verarbeitet im Rahmen der Nutzung des öffentlich zugänglichen Webangebots 
                 (<a class="color-magenta" href="https://output-dd.de">https://output-dd.de</a>) personenbezogene 

@@ -16,8 +16,8 @@
     include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
-    <div class="light-bg mb-6">
-        <div class="wrapper col gap-3 pt-5 pb-5">
+    <div class="light-bg">
+        <div class="wrapper col gap-3">
             <div class="col gap-2 mt-3">
             <p>TODO: add stuff</p>
             </div>

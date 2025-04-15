@@ -728,17 +728,17 @@ nav#tud-navbar a {
 }
 
 #banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 100vh;
   margin-top: -14.5rem;
   padding-top: 0.1rem;
   color: white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25%);
 }
-#banner .wrapper {
-  margin-top: 14.5rem;
-}
 #banner .wrapper .text-content {
-  padding-top: 8rem;
+  margin-bottom: 12rem;
   gap: 2rem;
   width: 55%;
 }
@@ -748,14 +748,11 @@ nav#tud-navbar a {
   top: 60px;
 }
 #banner.slim {
-  height: auto;
-  padding-bottom: 6rem;
-}
-#banner.slim .wrapper {
-  margin-top: 20rem;
+  height: 50vh;
 }
 #banner.slim .wrapper .text-content {
-  margin-top: 6rem;
+  margin-bottom: 4rem;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -1072,9 +1069,14 @@ body {
   font-size: inherit;
 }
 .icon svg {
-  scale: 1.5;
+  scale: 2;
 }
 
 .flip {
   transform: rotate(180deg);
+}
+
+body > .light-bg,
+body > .dark-bg {
+  padding: 7rem 0rem;
 }/*# sourceMappingURL=main.css.map */

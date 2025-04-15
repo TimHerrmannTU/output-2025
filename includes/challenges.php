@@ -1,5 +1,5 @@
 <div id="challenges" class="dark-bg">
-    <div class="wrapper cards row gap-3 pt-2 pb-2">
+    <div class="wrapper cards row gap-3">
         <div class="card gc col gap-1">
             <h3>GEOCACHING</h3>
             <img src="<?= get_template_directory_uri(); ?>/static/img/geoCaching.png"/>

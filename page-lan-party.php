@@ -18,8 +18,8 @@
     include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
-    <div class="light-bg mb-6">
-        <div class="wrapper col gap-3 pt-5 pb-5">
+    <div class="light-bg">
+        <div class="wrapper col gap-3">
             <h2 class="mb-3">Anmeldung zur LAN-Party</h2>
 
             <div class="row gap-3">

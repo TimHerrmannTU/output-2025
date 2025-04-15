@@ -24,7 +24,7 @@ if (!is_user_logged_in()) {
     include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
-    <div id="projekte" class="light-bg mb-6">
+    <div id="projekte" class="light-bg">
         <div class="wrapper col gap-2">
 
             <form id="project-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
