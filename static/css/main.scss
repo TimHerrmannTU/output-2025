@@ -50,3 +50,10 @@ body {
     width: fit-content;
     border-radius: 5px;
 }
+
+.icon {
+    font-size: inherit;
+}
+.flip {
+    transform:rotate(180deg);
+}

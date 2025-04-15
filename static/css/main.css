@@ -630,9 +630,6 @@ textarea {
 [dd-function=expandable] [dd-function=trigger] {
   cursor: pointer;
 }
-[dd-function=expandable] [dd-function=trigger] img.flip {
-  transform: rotate(180deg);
-}
 
 table {
   border-collapse: collapse;
@@ -1062,4 +1059,12 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 5px;
+}
+
+.icon {
+  font-size: inherit;
+}
+
+.flip {
+  transform: rotate(180deg);
 }/*# sourceMappingURL=main.css.map */

@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
     })
     // expandable text segment
     $("[dd-function='expandable'] [dd-function='trigger']").click(function() {
-        $(this).find("img").toggleClass("flip")
+        $(this).find(".icon").toggleClass("flip")
         $(this).closest("[dd-function='expandable']").find(".expand").toggle()
     })
 })
