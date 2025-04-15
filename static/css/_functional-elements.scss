@@ -104,11 +104,26 @@ select, .labeled-checkbox {
     background-color: colors.$grey;
     display: flex;
     flex-direction: row;
+    height: fit-content;
+    font-size: 1.25rem;
     span {
         flex-grow: 1;
     }
-    &:has(input[type="checkbox"]:checked) {
-        background-color: colors.$magenta;
+    &.transparent {
+        background-color: transparent;
+        color: colors.$grey;
+        border-color: colors.$grey;
+        input[type="checkbox"] {
+            border-color: colors.$grey;
+            &:checked::after {
+                border-color: colors.$grey;
+            }
+        }
+    }
+    &:not(.transparent) {
+        &:has(input[type="checkbox"]:checked) {
+            background-color: colors.$magenta;
+        }
     }
     input[type="checkbox"] {
         position: relative;
@@ -123,6 +138,7 @@ select, .labeled-checkbox {
         aspect-ratio: 1/1;
         border: 0.2rem solid colors.$white;
         border-radius: 0.1rem;
+        margin: auto 1rem;
         &:checked::after {
             content: "";
             position: absolute;
@@ -178,7 +194,7 @@ textarea {
     }
 }
 
-#upload-trigger {
+[dd-function="file-upload-trigger"] {
     border: 0.1rem solid colors.$grey;
     color: colors.$grey;
     width: fit-content;
@@ -191,6 +207,9 @@ textarea {
     }
     label {
         pointer-events: none;
+    }
+    .icon {
+        font-size: 8rem;
     }
     img.preview {
         display: none;
@@ -207,7 +226,7 @@ textarea {
         }
     }
 }
-#upload-input {
+[dd-function="file-upload-input"] {
     display: none;
 }
 

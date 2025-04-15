@@ -2,14 +2,17 @@ form {
     &.grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto 1fr;
+        grid-template-rows: auto auto auto 1fr;
         gap: 1.4rem;
         .file-upload {
             grid-column: 2;
-            grid-row: 1 / span 3;
+            grid-row: 2 / span 3;
             min-height: 50vh;
             width: 100% !important;
             padding: 0 !important;
+        }
+        >.full {
+            grid-column: 1 / span 2;
         }
     }
     input[type=submit] {

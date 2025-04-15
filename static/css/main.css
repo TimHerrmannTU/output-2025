@@ -503,11 +503,25 @@ select, .labeled-checkbox {
   background-color: #6F6F6F;
   display: flex;
   flex-direction: row;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 1.25rem;
 }
 .labeled-checkbox span {
   flex-grow: 1;
 }
-.labeled-checkbox:has(input[type=checkbox]:checked) {
+.labeled-checkbox.transparent {
+  background-color: transparent;
+  color: #6F6F6F;
+  border-color: #6F6F6F;
+}
+.labeled-checkbox.transparent input[type=checkbox] {
+  border-color: #6F6F6F;
+}
+.labeled-checkbox.transparent input[type=checkbox]:checked::after {
+  border-color: #6F6F6F;
+}
+.labeled-checkbox:not(.transparent):has(input[type=checkbox]:checked) {
   background-color: #E2007A;
 }
 .labeled-checkbox input[type=checkbox] {
@@ -521,6 +535,7 @@ select, .labeled-checkbox {
   aspect-ratio: 1/1;
   border: 0.2rem solid #FFFFFF;
   border-radius: 0.1rem;
+  margin: auto 1rem;
 }
 .labeled-checkbox input[type=checkbox]:checked::after {
   content: "";
@@ -574,7 +589,7 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-#upload-trigger {
+[dd-function=file-upload-trigger] {
   border: 0.1rem solid #6F6F6F;
   color: #6F6F6F;
   width: -moz-fit-content;
@@ -584,28 +599,31 @@ textarea {
   text-align: center;
   padding: 2rem;
 }
-#upload-trigger:hover {
+[dd-function=file-upload-trigger]:hover {
   cursor: pointer;
 }
-#upload-trigger label {
+[dd-function=file-upload-trigger] label {
   pointer-events: none;
 }
-#upload-trigger img.preview {
+[dd-function=file-upload-trigger] .icon {
+  font-size: 8rem;
+}
+[dd-function=file-upload-trigger] img.preview {
   display: none;
 }
-#upload-trigger.uploaded {
+[dd-function=file-upload-trigger].uploaded {
   padding: 0px;
 }
-#upload-trigger.uploaded > *:not(img.preview) {
+[dd-function=file-upload-trigger].uploaded > *:not(img.preview) {
   display: none;
 }
-#upload-trigger.uploaded img.preview {
+[dd-function=file-upload-trigger].uploaded img.preview {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-#upload-input {
+[dd-function=file-upload-input] {
   display: none;
 }
 
@@ -649,15 +667,18 @@ table tr:nth-child(2n) td {
 form.grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto auto 1fr;
   gap: 1.4rem;
 }
 form.grid .file-upload {
   grid-column: 2;
-  grid-row: 1/span 3;
+  grid-row: 2/span 3;
   min-height: 50vh;
   width: 100% !important;
   padding: 0 !important;
+}
+form.grid > .full {
+  grid-column: 1/span 2;
 }
 form input[type=submit] {
   width: -moz-fit-content;

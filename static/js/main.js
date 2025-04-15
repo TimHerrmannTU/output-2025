@@ -26,19 +26,20 @@ jQuery(document).ready(function($) {
         }
     })
     // upload buttons
-    $('#upload-trigger').click(function() {
-        console.log("test")
-        $('#upload-input').click()
+    $("[dd-function='file-upload-trigger']").click(function() {
+        const the_key = $(this).attr("key")
+        $(`[dd-function='file-upload-input'][key='${the_key}']`).click()
     })
-    $("#upload-input").on("change", function(e) {
+    $("[dd-function='file-upload-input']").on("change", function(e) {
+        const the_key = $(this).attr("key")
         const img = e.target.files[0]; 
         if (img && img.type.startsWith('image/')) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                $("#upload-trigger img.preview").attr("src", e.target.result)
+                $(`[dd-function='file-upload-trigger'][key='${the_key}'] img.preview`).attr("src", e.target.result)
             };
             reader.readAsDataURL(img);
-            $("#upload-trigger").addClass("uploaded")
+            $(`[dd-function='file-upload-trigger'][key='${the_key}']`).addClass("uploaded")
         }
     })
     // expandable text segment

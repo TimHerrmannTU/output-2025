@@ -99,7 +99,7 @@
                             <textarea name="desc"> </textarea>
                         </div>
                     </div>
-                    <div id="upload-trigger" class="file-upload col gap-1">
+                    <div class="file-upload col gap-1" dd-function="file-upload-input" key="1">
                         <div class="icon">
                             <span class="iconify" data-icon="mdi-cloud-upload-outline">
                         </div>
@@ -109,7 +109,7 @@
                         </label>
                         <img class="preview" src="">
                     </div>
-                    <input id="upload-input" name="file" type="file">
+                    <input name="file" type="file" dd-function="file-upload-input" key="1">
                 </div>
                 <div class="row gap-3" style="justify-content: space-between">
                     <label class="labeled-checkbox">
