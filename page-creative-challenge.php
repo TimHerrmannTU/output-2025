@@ -25,36 +25,60 @@
                     <p>Alle Interessierten ab 18 Jahren dürfen je ein Kunstwerk einreichen.</p>
                 </div>
                 <div class="col">
-                    <h4>Welche Kunstwerke werden akzeptiert?</h4>
-                    <p>Sowohl digitale (2D und 3D) als auch traditionelle Kunstwerke, die sich um das Thema „Würfelwelten“ drehen.</p>
-                    <ul class="indented">
-                        <li>Handgefertigte Zeichnungen oder Gemälde müssen eingescannt oder hochwertig abfotografiert werden.</li>
-                        <li>3D-Kunst wird nur als gerendertes Bild akzeptiert.</li>
-                        <li><b>KI-generierte Bilder sind von der Teilnahme ausgeschlossen.</b></li>
-                    </ul>
+                    <h4>Bis wann ist die Einreichung möglich?</h4>
+                    <p>Kunstwerke können bis zum <b>6. Juni 2025</b> über das Formular auf dieser Seite eingereicht werden.</p>
                 </div>
-                <div class="col">
-                    <h4>Welche Formate dürfen eingereicht werden?</h4>
-                    <ul class="indented">
+                <div class="col" dd-function="expandable">
+                    <h4 dd-function="trigger">
+                        Welche Kunstwerke werden akzeptiert?
+                        <div class="icon ml-1">
+                            <span class="iconify" data-icon="mdi-chevron-up">
+                        </div>
+                    </h4>
+                    <div class="expand" style="display: none">
+                        <p>Sowohl digitale (2D und 3D) als auch traditionelle Kunstwerke, die sich um das Thema „Würfelwelten“ drehen.</p>
+                        <ul class="indented">
+                            <li>Handgefertigte Zeichnungen oder Gemälde müssen eingescannt oder hochwertig abfotografiert werden.</li>
+                            <li>3D-Kunst wird nur als gerendertes Bild akzeptiert.</li>
+                            <li><b>KI-generierte Bilder sind von der Teilnahme ausgeschlossen.</b></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col" dd-function="expandable">
+                    <h4 dd-function="trigger">
+                        Welche Formate dürfen eingereicht werden?
+                        <div class="icon ml-1">
+                            <span class="iconify" data-icon="mdi-chevron-up">
+                        </div>
+                    </h4>
+                    <ul class="indented expand" style="display: none">
                         <li>Erlaubte Formate: <b>JPEG</b> oder <b>PNG</b>.</li>
                         <li>Dateibenennung: <b>Vorname_Nachname_Titel.jpg/png.</b></li>
                         <li>Fügt eurem Werk in dem Formular noch einen Titel und eine kurze Beschreibung eurer Idee hinzu.</li>
                     </ul>
                 </div>
-                <div class="col">
-                    <h4>Bis wann ist die Einreichung möglich?</h4>
-                    <p>Kunstwerke können bis zum <b>6. Juni 2025</b> über das Formular auf dieser Seite eingereicht werden.</p>
+                <div class="col" dd-function="expandable">
+                    <h4 dd-function="trigger">
+                        Wann findet die Siegerehrung statt?
+                        <div class="icon ml-1">
+                            <span class="iconify" data-icon="mdi-chevron-up">
+                        </div>
+                    </h4>
+                    <div class="expand" style="display:none;">
+                        <p>Die Siegerehrung der Creative Challenge erfolgt im Rahmen von <b>OUTPUT.DD</b> am <b>19. Juni 2025</b> im APB.</p>
+                        <ul class="indented">
+                            <li><b>Hinweis:</b> Zur Entgegennahme der Preise ist die Anwesenheit bei der Präsenzveranstaltung in Dresden erforderlich. Eine digitale Übergabe ist nicht möglich.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col">
-                    <h4>Wann findet die Siegerehrung statt?</h4>
-                    <p>Die Siegerehrung der Creative Challenge erfolgt im Rahmen von <b>OUTPUT.DD</b> am <b>19. Juni 2025</b> im APB.</p>
-                    <ul class="indented">
-                        <li><b>Hinweis:</b> Zur Entgegennahme der Preise ist die Anwesenheit bei der Präsenzveranstaltung in Dresden erforderlich. Eine digitale Übergabe ist nicht möglich.</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h4>Was ist bei der Einreichung zu beachten?</h4>
-                    <ul class="indented">
+                <div class="col" dd-function="expandable">
+                    <h4 dd-function="trigger">
+                        Was ist bei der Einreichung zu beachten?
+                        <div class="icon ml-1">
+                            <span class="iconify" data-icon="mdi-chevron-up">
+                        </div>
+                    </h4>
+                    <ul class="indented expand" style="display:none;">
                         <li><b>Plagiate</b> und Verstöße gegen die Teilnahmebedingungen führen zum Ausschluss.</li>
                         <li>Mit der Teilnahme wird der Veranstalter berechtigt, das eingereichte Bild für Werbezwecke zu nutzen und am <b>19. Juni 2025</b> auszustellen.</li>
                         <li>Die <b>Urheberrechte</b> verbleiben vollständig bei den Künstler*innen.</li>

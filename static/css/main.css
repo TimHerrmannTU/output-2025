@@ -1066,6 +1066,7 @@ body {
 }
 
 .icon {
+  display: inline-block;
   font-size: inherit;
 }
 .icon svg {
