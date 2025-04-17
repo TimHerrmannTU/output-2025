@@ -2,11 +2,8 @@ form {
     &.grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto auto 1fr;
         gap: 1.4rem;
         .file-upload {
-            grid-column: 2;
-            grid-row: 2 / span 3;
             min-height: 50vh;
             width: 100% !important;
             padding: 0 !important;
@@ -17,5 +14,17 @@ form {
     }
     input[type=submit] {
         width: fit-content;
+    }
+}
+
+#projekt-einreichen {
+    .grid {
+        grid-template-rows: auto auto auto 1fr;
+    }
+}
+
+#creative-challenge {
+    .grid {
+        grid-template-rows: auto auto auto auto 1fr;
     }
 }

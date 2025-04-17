@@ -24,7 +24,7 @@ if (!is_user_logged_in()) {
     include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
-    <div id="projekte" class="light-bg">
+    <div id="projekt-einreichen" class="light-bg">
         <div class="wrapper col gap-2">
 
             <form id="project-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
@@ -43,16 +43,7 @@ if (!is_user_logged_in()) {
                         <option class="template" value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
-                <div class="labeled-input grid-c1">
-                    <label for="details-presenter">Präsentator *</label>
-                    <input name="details-presenter" type="text" required>
-                </div>
-                <div class="labeled-input grid-c1">
-                    <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
-                    <textarea name="details-description" required></textarea>
-                </div>
-
-                <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1">
+                <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3;">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
@@ -63,6 +54,14 @@ if (!is_user_logged_in()) {
                     <img class="preview" src="">
                 </div>
                 <input name="details-thumbnail" type="file" dd-function="file-upload-input" key="1" required>
+                <div class="labeled-input grid-c1">
+                    <label for="details-presenter">Präsentator *</label>
+                    <input name="details-presenter" type="text" required>
+                </div>
+                <div class="labeled-input grid-c1">
+                    <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
+                    <textarea name="details-description" required></textarea>
+                </div>
 
                 <div class="labeled-input full">
                     <label for="details-participants">Weitere Beteiligte</label>

@@ -16,7 +16,7 @@
     include get_template_directory() . "/includes/banner-slim.php";
     ?>
 
-    <div class="light-bg">
+    <div id="creative-challenge" class="light-bg">
         <div class="wrapper col gap-3">
             <h2>FAQ</h2>
             <div class="col gap-3">
@@ -87,54 +87,50 @@
                 <p>Wir freuen uns auf eure kreativen Einsendungen!</p>
             </div>
             <h2 class="mt-3">Anmeldung zur Creative-Challenge</h2>
-            <form id="cc-register-form" class="col gap-3" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
+            <form id="cc-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
                 
-                <div class="row gap-3">
-                    <div class="labeled-input">
-                        <label for="firstname">Vorname</label>
-                        <input name="firstname" type="text" required>
-                    </div>
-                    <div class="labeled-input">
-                        <label for="lastname">Nachname</label>
-                        <input name="lastname" type="text" required>
-                    </div>
+                <div class="labeled-input grid-c1">
+                    <label for="firstname">Vorname</label>
+                    <input name="firstname" type="text" required>
                 </div>
-                <div class="labeled-input">
+                <div class="labeled-input grid-c2">
+                    <label for="lastname">Nachname</label>
+                    <input name="lastname" type="text" required>
+                </div>
+                <div class="labeled-input grid-c1">
                     <label for="email">Email</label>
                     <input name="email" type="email">
                 </div>
-                <div class="labeled-input">
+                <div class="labeled-input grid-c2">
                     <label for="adress">Wohnort</label>
                     <input name="adress" type="text">
                 </div>
-                <div class="labeled-input">
+                <div class="labeled-input full">
                     <label for="job">Beschäftigung</label>
                     <input name="job" type="text">
                 </div>
-                <div class="row gap-3">
-                    <div class="col gap-3 w-100 fg-1">
-                        <div class="labeled-input">
-                            <label for="title">Title</label>
-                            <input name="title" type="text">
-                        </div>
-                        <div class="labeled-input" style="flex-grow: 1">
-                            <label for="description">Beschreibung</label>
-                            <textarea name="description"> </textarea>
-                        </div>
-                    </div>
-                    <div class="file-upload col gap-1" dd-function="file-upload-trigger" key="1">
-                        <div class="icon">
-                            <span class="iconify" data-icon="mdi-cloud-upload-outline">
-                        </div>
-                        <label for="upload">
-                            Lade hier dein Kunstwerk hoch<br>
-                            (Drag and Drop oder klicke hier)
-                        </label>
-                        <img class="preview" src="">
-                    </div>
-                    <input name="upload" type="file" dd-function="file-upload-input" key="1">
+
+                <div class="labeled-input grid-c1">
+                    <label for="title">Title</label>
+                    <input name="title" type="text">
                 </div>
+                <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1" style="grid-row:span 2;">
+                    <div class="icon">
+                        <span class="iconify" data-icon="mdi-cloud-upload-outline">
+                    </div>
+                    <label for="upload">
+                        Lade hier dein Kunstwerk hoch<br>
+                        (Drag and Drop oder klicke hier)
+                    </label>
+                    <img class="preview" src="">
+                </div>
+                <input name="upload" type="file" dd-function="file-upload-input" key="1">
+                <div class="labeled-input grid-c1">
+                    <label for="description">Beschreibung</label>
+                    <textarea name="description"> </textarea>
+                </div>
+
                 <div class="row gap-3" style="justify-content: space-between">
                     <label class="labeled-checkbox">
                         <span>Ich habe die AGBs gelesen</span>
