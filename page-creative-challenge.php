@@ -68,17 +68,17 @@
                 
                 <div class="row gap-3">
                     <div class="labeled-input">
-                        <label for="first-name">Vorname</label>
-                        <input name="first-name" type="text" required>
+                        <label for="firstname">Vorname</label>
+                        <input name="firstname" type="text" required>
                     </div>
                     <div class="labeled-input">
-                        <label for="last-name">Nachname</label>
-                        <input name="last-name" type="text" required>
+                        <label for="lastname">Nachname</label>
+                        <input name="lastname" type="text" required>
                     </div>
                 </div>
                 <div class="labeled-input">
-                    <label for="e-mnail">Email</label>
-                    <input name="e-mail" type="email">
+                    <label for="email">Email</label>
+                    <input name="email" type="email">
                 </div>
                 <div class="labeled-input">
                     <label for="adress">Wohnort</label>
@@ -95,21 +95,21 @@
                             <input name="title" type="text">
                         </div>
                         <div class="labeled-input" style="flex-grow: 1">
-                            <label for="desc">Beschreibung</label>
-                            <textarea name="desc"> </textarea>
+                            <label for="description">Beschreibung</label>
+                            <textarea name="description"> </textarea>
                         </div>
                     </div>
                     <div class="file-upload col gap-1" dd-function="file-upload-trigger" key="1">
                         <div class="icon">
                             <span class="iconify" data-icon="mdi-cloud-upload-outline">
                         </div>
-                        <label for="file">
+                        <label for="upload">
                             Lade hier dein Kunstwerk hoch<br>
                             (Drag and Drop oder klicke hier)
                         </label>
                         <img class="preview" src="">
                     </div>
-                    <input name="file" type="file" dd-function="file-upload-input" key="1">
+                    <input name="upload" type="file" dd-function="file-upload-input" key="1">
                 </div>
                 <div class="row gap-3" style="justify-content: space-between">
                     <label class="labeled-checkbox">

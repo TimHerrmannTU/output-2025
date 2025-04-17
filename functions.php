@@ -1,4 +1,5 @@
 <?php
+// scripts & css that will be loaded into every html page
 function load_static_folder() {
     // CSS
     wp_enqueue_style('main-style', get_template_directory_uri() . '/static/css/main.css');
@@ -9,9 +10,12 @@ function load_static_folder() {
     wp_enqueue_script('iconify', get_template_directory_uri() . '/static/js/iconify.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'load_static_folder');
+
+// adjust upload limits
 @ini_set( "upload_max_size", "256M" );
 @ini_set( "post_max_size", "256M");
 @ini_set( "max_execution_time", "300" );
+
 
 // creates project post from form fields
 add_action('admin_post_nopriv_submit_project_post', 'handle_project_post_submission');
@@ -31,17 +35,21 @@ function handle_project_post_submission() {
     ];
     
     $post_id = wp_insert_post($post_data);
+    // assign taxonomy to post
     wp_set_object_terms( $post_id, "project-".$_POST["category"], "project-type" );
     
-    if ($post_id && !is_wp_error($post_id)) {
+    // create ACF entries
+    if ($post_id && !is_wp_error($post_id)) { // was the post created succesfully?
         foreach ($_POST as $post_key => $input_name) {
             update_field("project-".$post_key, sanitize_text_field($_POST[$post_key]), $post_id);
         }
+        handle_file_upload("details-thumbnail","project-details-thumbnail", $post_id);
+        
+        wp_redirect(home_url()); // Redirect after successful submission
+    } else {
+        wp_die('Post creation failed');
     }
 
-    handle_file_upload("details-thumbnail","project-details-thumbnail", $post_id);
-    
-    wp_redirect(home_url()); // Redirect after successful submission
 }
 
 // creates posts of the type creative-challenge based on form fields
@@ -55,56 +63,28 @@ function handle_art_post_submission() {
 
     // Sanitize and create post data
     $post_data = [
-        'post_title'   => sanitize_text_field($_POST['first-name']) . " " . sanitize_text_field($_POST['last-name']),
+        'post_title'   => sanitize_text_field($_POST['firstname']) . " " . sanitize_text_field($_POST['lastname']),
         'post_content' => sanitize_textarea_field($_POST['desc']),
         'post_status'  => 'pending',
         'post_type'    => 'creative-challenge',
     ];
 
     $post_id = wp_insert_post($post_data);
-    if ($post_id && !is_wp_error($post_id)) {
-        // ACF fields
-        $acf_map = [
-            "creative-challenge-intern-vorname" => "first-name",
-            "creative-challenge-intern-nachname" => "last-name",
-            "creative-challenge-intern-email" => "e-mail",
-            "creative-challenge-intern-wohnort" => "adress",
-            "creative-challenge-intern-job" => "job",
-            "creative-challenge-intern-titel" => "title",
-            "creative-challenge-intern-beschreibung" => "desc"
-        ];
+    if ($post_id && !is_wp_error($post_id)) { // was the post created succesfully?
 
-        foreach ($acf_map as $acf_name => $input_name) {
-            update_field($acf_name, sanitize_text_field($_POST[$input_name]), $post_id);
+        // create ACF entries
+        foreach ($_POST as $post_key => $input_name) {
+            $irrelevant_keys = ["agb", "upload"]; // these keys need custom treatment
+            if (!in_array($post_key, $irrelevant_keys)) {
+                update_field("creative-challenge-intern-".$post_key, sanitize_text_field($_POST[$post_key]), $post_id);
+            }
         }
 
         // Checkbox field
         update_field("creative-challenge-intern-agb", isset($_POST["agb"]) ? true : false, $post_id);
 
         // File upload handling
-        if (isset($_FILES['file']) && !empty($_FILES['file']['tmp_name'])) {
-            $file = $_FILES['file'];
-            $upload = wp_handle_upload($file, ['test_form' => false]);
-
-            if (!isset($upload['error'])) {
-                $attachment = [
-                    'post_mime_type' => $upload['type'],
-                    'post_title'     => sanitize_file_name($file['name']),
-                    'post_content'   => '',
-                    'post_status'    => 'inherit',
-                ];
-
-                $attach_id = wp_insert_attachment($attachment, $upload['file']);
-                require_once(ABSPATH . 'wp-admin/includes/image.php');
-                $attach_data = wp_generate_attachment_metadata($attach_id, $upload['file']);
-                wp_update_attachment_metadata($attach_id, $attach_data);
-
-                // Assign the file to the ACF field
-                update_field('creative-challenge-intern-upload', $attach_id, $post_id);
-            } else {
-                error_log("File upload failed: " . $upload['error']);
-            }
-        }
+        handle_file_upload("upload", "creative-challenge-intern-upload", $post_id);
 
         wp_redirect(home_url()); // Redirect after successful submission
         exit;
@@ -136,6 +116,7 @@ function create_lan_party_participant($form_data) {
         update_field('lan-party-teilnehmer-intern-alter', sanitize_text_field($form_data['birthdate']), $post_id);
         update_field('lan-party-teilnehmer-intern-email', sanitize_email($form_data['email']), $post_id);
         update_field('lan-party-teilnehmer-intern-wunsche', sanitize_textarea_field($form_data['wishes']), $post_id);
+
         update_field('lan-party-teilnehmer-intern-fotos', isset($form_data['photo_consent']) ? 1 : 0, $post_id);
         update_field('lan-party-teilnehmer-intern-datenschutzerklaerung', isset($form_data['privacy_accepted']) ? 1 : 0, $post_id);
     }
