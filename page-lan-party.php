@@ -33,8 +33,8 @@
                     <li>WLAN ist vorhanden.</li>
                 </ul>
             </div>
-            
-            <p>Fülle das folgende Formular aus, um dich für unsere LAN-Party anzumelden.</p>
+
+            <p>Fülle das folgende Formular aus, um dich für unsere LAN-Party anzumelden:</p>
 
             <?php
             $submission_success = false;
@@ -76,25 +76,25 @@
                         </div>
                     <?php endif; ?>
 
-                    <div class="form-group labeled-input">
+                    <div class="labeled-input">
                         <label for="vorname">Vorname*</label>
                         <input type="text" id="vorname" name="vorname" required
                             value="<?php echo isset($_POST['vorname']) ? htmlspecialchars($_POST['vorname']) : ''; ?>">
                     </div>
 
-                    <div class="form-group labeled-input">
+                    <div class="labeled-input">
                         <label for="nachname">Nachname*</label>
                         <input type="text" id="nachname" name="nachname" required
                             value="<?php echo isset($_POST['nachname']) ? htmlspecialchars($_POST['nachname']) : ''; ?>">
                     </div>
 
-                    <div class="form-group labeled-input full">
+                    <div class="labeled-input full">
                         <label for="ingame_name">Ingame-Name*</label>
                         <input type="text" id="ingame_name" name="ingame_name" required
                         value="<?php echo isset($_POST['ingame_name']) ? htmlspecialchars($_POST['ingame_name']) : ''; ?>">
                     </div>
 
-                    <div class="form-group col gap-1 labeled-input has-content">
+                    <div class="col gap-1 labeled-input has-content">
                         <label for="birthdate">Geburtsdatum*</label>
                         <input
                             type="date"
@@ -103,18 +103,18 @@
                             required>
                     </div>
 
-                    <div class="form-group labeled-input">
+                    <div class="labeled-input">
                         <label for="email">E-Mail-Adresse*</label>
                         <input type="email" id="email" name="email" required
                         value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
                     </div>
 
-                    <div class="form-group labeled-input full">
+                    <div class="labeled-input full">
                         <label for="wishes">Weitere Wünsche (z.B. Sitzplätze)</label>
                         <textarea id="wishes" name="wishes" rows="3"></textarea>
                     </div>
 
-                    <div class="form-group full">
+                    <div class="full">
                         <label class="labeled-checkbox transparent">
                         <!-- TODO: Link zu den Datenschutzbestimmungen -->
                             <input type="checkbox" name="privacy_accepted" required>
@@ -122,14 +122,14 @@
                         </label>
                     </div>
 
-                    <div class="form-group full">
+                    <div class="full">
                         <label class="labeled-checkbox transparent">
                             <input type="checkbox" name="photo_consent" required>
                             <span>Ich bin damit einverstanden, dass Fotos von mir während der Veranstaltung gemacht und für Werbezwecke veröffentlicht werden können.</span>
                         </label>
                     </div>
 
-                    <div class="form-group mt-2">
+                    <div class="mt-2">
                         <button type="submit" name="submit_lan_party" class="bg-magenta color-white">ANMELDEN</button>
                     </div>
 
