@@ -90,21 +90,21 @@ if (!is_user_logged_in()) {
                 <!-- if demo -->
                 <p class="fat full" dd-mode="demo">Ich benötige für meinen Projektstand:</p>
                 <label class="labeled-checkbox transparent grid-c1" dd-mode="demo">
-                    <input type="checkbox" name="mobiliar">
+                    <input type="checkbox" name="furniture">
                     <span>Tisch (inkl. Husse) und Stühle</span>
                 </label>
                 <label class="labeled-checkbox transparent grid-c2" dd-mode="demo">
-                    <input type="checkbox" name="aufsteller">
-                    <span>Posterständer (für Poster bis max. DIN A1 Hochformat)</span>
+                    <input type="checkbox" name="poster-stand">
+                    <span>Posteraufsteller (für Poster bis max. DIN A1 Hochformat)</span>
                 </label>
                 <div class="labeled-input full" dd-mode="demo">
-                    <label for="misc">Sonstige Wünsche oder Kommentare für dein Projektstand</label>
-                    <textarea name="misc" style="min-height: 10rem"></textarea>
+                    <label for="comment">Sonstige Wünsche oder Kommentare für dein Projektstand</label>
+                    <textarea name="comment" style="min-height: 10rem"></textarea>
                 </div>
                 <!-- if vortrag -->
                 <div class="labeled-input grid-c1" dd-mode="vortrag">
-                    <label for="misc">Sonstige Kommentare zu deinem Fachvortrag</label>
-                    <textarea name="misc" style="min-height: 10rem"></textarea>
+                    <label for="comment">Sonstige Kommentare zu deinem Fachvortrag</label>
+                    <textarea name="comment" style="min-height: 10rem"></textarea>
                 </div>
                 <div class="row gap-1 grid-c2" dd-function="file-upload-trigger" key="2" dd-mode="vortrag">
                     <div class="icon">
