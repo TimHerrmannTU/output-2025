@@ -1,9 +1,4 @@
 #footer {
-    .separator {
-        width: 100%;
-        border: solid 1px white;
-        margin: 2rem 0;
-    }
     .last-line {
         justify-content: space-between;
         align-items: center;
@@ -14,6 +9,34 @@
                 height: 1.2rem;
                 filter: invert(100%);
             }
-        }   
+        }
     }
+    .divided {
+        position: relative;    
+        &:not(:last-of-type)::after {
+            content: '';
+            position: absolute;
+            border-left: 0.2rem solid white;
+            right: -1.1rem;
+            top: 22%; 
+            height: 60%; 
+        }
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+    .dot {
+        display: inline-block;
+        height: 0.8rem;
+        aspect-ratio: 1/1;
+        background-color: white;
+        border-radius: 100%;
+        margin: 0.1rem 0.5rem;
+    }
+}
+
+.h-line {
+    width: 100%;
+    border: solid 1px white;
+    margin: 2rem 0;
 }

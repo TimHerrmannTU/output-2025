@@ -1,44 +1,41 @@
 @use "colors";
 @use "meta";
 
-$item-count: 6; // the displayed item count is 1 less; the final item will be used as gap instead; README this value can be adjusted as needed
-$item-width: calc(meta.$master-width / $item-count);
-$item-gap: calc($item-width / ($item-count - 2)); // trust me on the math
-
-.carousel {
-    overflow-x: hidden;
-    position: relative;
-    min-width: meta.$master-width;
-    max-width: meta.$master-width;
-    .canvas {
-        transition: margin-left 1s;
+.carousel-wrapper {
+    .carousel {
         display: flex;
         flex-direction: row;
-        gap: $item-gap;
-    }
-    .item {
-        position: relative;
-        justify-content: center;
-        flex: 0 0 $item-width;
-        &:hover {
-            filter: none;
-        }
-        img {
-            width: 100%;
-            height: auto;
-        }
-        &.labeled {
-            background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-            img {
-                z-index: -1;
-            }
-            .item-label {
-                position: absolute;
-                overflow: hidden;
-                bottom: 1.5rem;
-                left: 0;
-                padding: 0rem 1rem;
-                max-height: 50%;
+        overflow: hidden;
+        .slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            transition: all 1s ease-in-out;
+            .item {
+                position: relative;
+                justify-content: center;
+                &:hover {
+                    filter: none;
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                &.labeled {
+                    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+                    img {
+                        z-index: -1;
+                    }
+                    .item-label {
+                        position: absolute;
+                        overflow: hidden;
+                        bottom: 1.5rem;
+                        left: 0;
+                        padding: 0rem 1rem;
+                        max-height: 50%;
+                    }
+                }
             }
         }
     }
@@ -67,9 +64,7 @@ $item-gap: calc($item-width / ($item-count - 2)); // trust me on the math
     }
     button.more {
         color: white;
-        position: absolute;
-        bottom: 0;
-        right: 0;
+        align-self: flex-end;
         width: fit-content;
     }
     /* FROM _colors.scss
