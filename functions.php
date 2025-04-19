@@ -21,6 +21,13 @@ add_action('wp_enqueue_scripts', 'load_static_folder');
 add_action('admin_post_nopriv_submit_project_post', 'handle_project_post_submission');
 add_action('admin_post_submit_project_post', 'handle_project_post_submission');
 function handle_project_post_submission() {
+    /*
+    // DEBUGGING
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
+    exit;
+    */
     // Ensure the form was submitted via POST
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         wp_die('Invalid request method.');
@@ -39,9 +46,15 @@ function handle_project_post_submission() {
     wp_set_object_terms( $post_id, "project-".$_POST["category"], "project-type" );
     
     // create ACF entries
+    // $_POST does not contain the image, it is in $_FILE => no exclusion needed
     if ($post_id && !is_wp_error($post_id)) { // was the post created succesfully?
-        foreach ($_POST as $post_key => $input_name) {
-            update_field("project-".$post_key, sanitize_text_field($_POST[$post_key]), $post_id);
+        foreach ($_POST as $field => $value) {
+            $acf_field_name = "project-" . $field;
+            if ($value === "on") { // Handle checkbox
+                update_field($acf_field_name, 1, $post_id);
+            } else { // Normal text input
+                update_field($acf_field_name, sanitize_text_field($value), $post_id);
+            }
         }
         handle_file_upload("details-thumbnail","project-details-thumbnail", $post_id);
         
@@ -49,7 +62,6 @@ function handle_project_post_submission() {
     } else {
         wp_die('Post creation failed');
     }
-
 }
 
 // creates posts of the type creative-challenge based on form fields
@@ -124,8 +136,9 @@ function create_lan_party_participant($form_data) {
     return $post_id;
 }
 
-
-// HELPER FUNCTIONS
+//////////////////////
+// HELPER FUNCTIONS //
+//////////////////////
 function handle_file_upload($field_name, $acf_field_key, $post_id) {
     if (isset($_FILES[$field_name]) && !empty($_FILES[$field_name]['tmp_name'])) {
         $file = $_FILES[$field_name];
