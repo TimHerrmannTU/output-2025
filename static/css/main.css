@@ -1180,8 +1180,13 @@ body {
   background-color: #FFFFFF;
   background-image: url("/wp-content/uploads/2025/04/Banner.jpg");
   background-repeat: no-repeat;
-  background-position-x: 50%;
-  background-size: fill;
+  background-position: top center;
+  background-size: 100vw auto;
+}
+@media (max-width: 768px) {
+  body {
+    background-color: auto 100vh;
+  }
 }
 
 .wrapper {
@@ -1191,6 +1196,11 @@ body {
 @media (max-width: 768px) {
   .wrapper {
     width: 95vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wrapper {
+    width: 50vw;
   }
 }
 

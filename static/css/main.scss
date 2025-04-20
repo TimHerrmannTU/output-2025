@@ -36,8 +36,11 @@ body {
     background-color: colors.$white;
     background-image: url("/wp-content/uploads/2025/04/Banner.jpg");
     background-repeat: no-repeat;
-    background-position-x: 50%;
-    background-size: fill;
+    background-position: top center;
+    background-size: 100vw auto;
+    @include mixins.mobile {
+        background-color: auto 100vh;
+    }
 }
 
 .wrapper {
@@ -45,6 +48,9 @@ body {
     margin: 0 auto;
     @include mixins.mobile {
         width: 95vw;
+    }
+    @include mixins.ultrawide {
+        width: 50vw;
     }
 }
 .mobile-only {
