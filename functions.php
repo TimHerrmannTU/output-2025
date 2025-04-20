@@ -57,6 +57,7 @@ function handle_project_post_submission() {
             }
         }
         handle_file_upload("details-thumbnail","project-details-thumbnail", $post_id);
+        handle_file_upload("details-upload","project-details-upload", $post_id);
         
         wp_redirect(home_url()); // Redirect after successful submission
     } else {

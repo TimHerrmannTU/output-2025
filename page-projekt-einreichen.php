@@ -53,7 +53,7 @@ if (!is_user_logged_in()) {
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="details-thumbnail" type="file" dd-function="file-upload-input" key="1" required>
+                <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
                 <div class="labeled-input grid-c1">
                     <label for="details-presenter">Präsentator *</label>
                     <input name="details-presenter" type="text" required>
@@ -110,23 +110,21 @@ if (!is_user_logged_in()) {
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
-                    <label for="file">
+                    <label for="details-upload">
                         Lade hier dein Vortrag als PDF oder PPTX hoch (Drag and Drop oder klicke hier)
                     </label>
-                    <img class="preview" src="">
                 </div>
-                <input name="file" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag">
+                <input name="details-upload" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag">
                 <!-- if poster -->
                 <div class="row gap-1 full" dd-function="file-upload-trigger" key="3" dd-mode="poster">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
-                    <label for="file">
+                    <label for="details-upload">
                         Lade hier dein Poster als PDF hoch (Drag and Drop oder klicke hier)
                     </label>
-                    <img class="preview" src="">
                 </div>
-                <input name="file" type="file" dd-function="file-upload-input" key="3" dd-mode="poster">
+                <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3" dd-mode="poster">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
                     <input type="checkbox" name="ausgruendung">

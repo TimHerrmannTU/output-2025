@@ -125,7 +125,7 @@
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="upload" type="file" dd-function="file-upload-input" key="1">
+                <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1">
                 <div class="labeled-input grid-c1">
                     <label for="description">Beschreibung</label>
                     <textarea name="description"> </textarea>
