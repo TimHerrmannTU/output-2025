@@ -1,4 +1,5 @@
 @use "colors";
+@use "mixins";
 
 nav {
     position: relative;
@@ -24,6 +25,11 @@ nav {
         }
         .login-button {
             font-size: 3rem;
+        }
+        @include mixins.mobile {
+            .login-button, .links {
+                display: none;
+            }
         }
     }
     &#tud-navbar {

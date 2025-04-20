@@ -1,3 +1,5 @@
+@use "mixins";
+
 .main {
     height: 850px;
     position: relative;
@@ -14,6 +16,16 @@
         right: 0;
         width: 55%;
         box-sizing: border-box;
+    }
+    @include mixins.mobile {
+        height: fit-content;
+        .banner-img {
+            display: none;
+        }
+        .text-wrapper {
+            width: 100%;
+            position: relative;
+        }
     }
     
 }

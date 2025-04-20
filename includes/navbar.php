@@ -15,5 +15,6 @@
             ?><a class="login-button" href="/login"><span class="iconify" data-icon="mdi-login"></span></a><?php
         }
         ?>
+        <a class="mobile-only login-button" href="/login"><span class="iconify" data-icon="mdi-menu"></span></a>
     </div>
 </nav>

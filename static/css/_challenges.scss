@@ -2,12 +2,12 @@
     .cards {
         justify-content: space-between;
         .card {
+            overflow: hidden;
             h3 {
                 font-weight: 600;
             }
             img {
-                height: 350px;
-                width: 350px;
+                aspect-ratio: 1/1;
             }
         }
     }

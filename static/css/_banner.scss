@@ -1,3 +1,5 @@
+@use "mixins";
+
 $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
 #banner {
     display: flex;
@@ -13,12 +15,19 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
             margin-bottom: 12rem;
             gap: 2rem;
             width: 55%;
+            @include mixins.mobile {
+                width: 100%;
+            }
         }
     }
     .cube-unfolded {
         position: absolute;
-        right: -12rem;
-        top: 60px;
+        height: 42rem;
+        left: 70%;
+        top: -65px;
+        @include mixins.mobile {
+            display:none;
+        }
     }
     &.slim {
         height: 50vh;
@@ -26,15 +35,10 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
             .text-content {
                 margin-bottom: 4rem;
                 gap: 1rem;
-                width: 100%;
             }
         }
     }
 }
-.no-big-cube {
-    #banner {
-        .cube-unfolded {
-            display: none;
-        }
-    }
+.no-big-cube #banner .cube-unfolded {
+    display: none;
 }

@@ -1,6 +1,6 @@
 @use "font";
 @use "colors";
-@use "meta";
+@use "mixins";
 
 @use "layout";
 @use "alignment";
@@ -19,6 +19,7 @@
 @use "carousel";
 @use "timeline";
 @use "projekte";
+@use "misc";
 
 html {
     font-size: 75%;
@@ -40,31 +41,17 @@ body {
 }
 
 .wrapper {
-    width: meta.$master-width;
+    width: 66vw;
     margin: 0 auto;
-}
-
-.elevated-box {
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    padding: 1rem 2rem;
-    width: fit-content;
-    border-radius: 5px;
-}
-
-.inline-size-fit-content {
-    width: fit-content;
-}
-
-
-.icon {
-    display: inline-block;
-    font-size: inherit;
-    svg {
-        scale: 2;
+    @include mixins.mobile {
+        width: 95vw;
     }
 }
-.flip {
-    transform:rotate(180deg);
+.mobile-only {
+    display:none;
+    @include mixins.mobile {
+        display:initial;
+    }
 }
 
 body > .light-bg,

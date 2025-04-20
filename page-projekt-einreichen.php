@@ -134,7 +134,7 @@ if (!is_user_logged_in()) {
                     <input type="checkbox" name="publish" required>
                     <span>Ich stimme einer Veröffentlichung des Projektes im Rahmen von Output zu.</span>
                 </label>
-                <a id="submit" class="bg-magenta color-white inline-size-fit-content pl-2 pr-2">PROJEKT EINREICHEN</a>
+                <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT EINREICHEN</a>
             </form>
 
         </div>

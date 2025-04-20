@@ -67,13 +67,13 @@
 
                     <input class="bg-magenta color-white" type="submit" name="wp-submit" id="wp-submit" value="Anmelden">
 
-                    <a href="<?php echo esc_url(wp_lostpassword_url()); ?>" class="color-magenta inline-size-fit-content">Passwort vergessen?</a>
+                    <a href="<?php echo esc_url(wp_lostpassword_url()); ?>" class="color-magenta">Passwort vergessen?</a>
                 </form>
 
                 <div class="mt-1">
                     <h3>Noch kein Konto?</h3>
                     <p>Du hast noch keinen Benutzeraccount? Registriere dich jetzt, um an unseren Veranstaltungen teilzunehmen.</p>
-                    <a href="<?php echo esc_url(wp_registration_url()); ?>" class="color-magenta inline-size-fit-content">Registrieren</a>
+                    <a href="<?php echo esc_url(wp_registration_url()); ?>" class="color-magenta">Registrieren</a>
                 </div>
             <?php endif; ?>
 

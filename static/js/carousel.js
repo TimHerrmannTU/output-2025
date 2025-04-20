@@ -19,7 +19,6 @@ jQuery(document).ready(function($) {
             var slide_count = parseInt($(this).find(".carousel").attr("slide_count"))
             var next_index = mod(slide_index, slide_count)
             $(this).find(`.controls .dot[index="${next_index}"]`).click()
-            console.log(next_index)
         })
     }, 10000)
 })
