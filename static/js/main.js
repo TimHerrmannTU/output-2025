@@ -38,14 +38,21 @@ jQuery(document).ready(function($) {
     })
     $("[dd-function='file-upload-input']").on("change", function(e) {
         const the_key = $(this).attr("key")
-        const img = e.target.files[0]; 
-        if (img && img.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                $(`[dd-function='file-upload-trigger'][key='${the_key}'] img.preview`).attr("src", e.target.result)
-            };
-            reader.readAsDataURL(img);
-            $(`[dd-function='file-upload-trigger'][key='${the_key}']`).addClass("uploaded")
+        const input_trigger = $(`[dd-function='file-upload-trigger'][key='${the_key}']`) 
+        const file = e.target.files[0];
+        if (file) {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    $(input_trigger).find("img.preview").attr("src", e.target.result)
+                };
+                reader.readAsDataURL(file);
+                $(input_trigger).addClass("uploaded")
+            }
+            else {
+                const fileName = file?.name || 'No file chosen';
+                $(input_trigger).find("label").text(fileName);
+            }
         }
     })
     // expandable text segment
