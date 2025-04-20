@@ -805,7 +805,6 @@ nav#tud-navbar a {
   margin-top: -14.5rem;
   padding-top: 0.1rem;
   color: white;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25%);
 }
 #banner .wrapper .text-content {
   margin-bottom: 12rem;
@@ -1178,7 +1177,7 @@ body {
   font-size: 1rem;
   color: #232323;
   background-color: #FFFFFF;
-  background-image: url("/wp-content/uploads/2025/04/Banner.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25rem), url("/wp-content/uploads/2025/04/Banner.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100vw auto;
