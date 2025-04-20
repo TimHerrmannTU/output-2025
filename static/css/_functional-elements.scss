@@ -208,12 +208,20 @@ textarea {
     &:hover {
         cursor: pointer;
     }
-    label {
+    * {
         pointer-events: none;
     }
-    .icon {
-        font-size: 8rem;
+
+    .icon svg {
+        scale: 1;
     }
+    &.col .icon svg {
+        font-size: 15rem;
+    }
+    &.row .icon svg {
+        font-size: 10rem;
+    }
+
     img.preview {
         display: none;
     }

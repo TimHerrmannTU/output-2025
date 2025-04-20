@@ -43,7 +43,7 @@ if (!is_user_logged_in()) {
                         <option class="template" value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
-                <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3;">
+                <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>

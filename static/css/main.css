@@ -604,11 +604,17 @@ textarea {
 [dd-function=file-upload-trigger]:hover {
   cursor: pointer;
 }
-[dd-function=file-upload-trigger] label {
+[dd-function=file-upload-trigger] * {
   pointer-events: none;
 }
-[dd-function=file-upload-trigger] .icon {
-  font-size: 8rem;
+[dd-function=file-upload-trigger] .icon svg {
+  scale: 1;
+}
+[dd-function=file-upload-trigger].col .icon svg {
+  font-size: 15rem;
+}
+[dd-function=file-upload-trigger].row .icon svg {
+  font-size: 10rem;
 }
 [dd-function=file-upload-trigger] img.preview {
   display: none;
