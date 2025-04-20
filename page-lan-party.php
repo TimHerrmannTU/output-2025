@@ -9,13 +9,11 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="no-big-cube">
+<body <?php body_class(); ?>>
     <?php
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php";
     $main_headline = "LAN-PARTY";
     $sub_headline = "MELDE DICH JETZT AN UND SEI DABEI!";
-    include get_template_directory() . "/includes/banner-slim.php";
+    include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div id="lan-party" class="light-bg">

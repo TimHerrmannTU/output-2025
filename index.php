@@ -7,20 +7,22 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <?php 
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php"; 
-    ?>
+    <div class="head">
+        <?php 
+        include get_template_directory() . "/includes/tud-navbar.php";
+        include get_template_directory() . "/includes/navbar.php"; 
+        ?>
 
-    <div id="banner" class="full">
-        <div class="wrapper" style="position: relative;">
-            <div class="text-content col">
-                <h2>DIE PROJEKTSCHAU DER INFORMATIK</h2>
-                <h2>19. JUNI 2025</h2>
-                <h3>WERDE TEIL VON OUTPUT UND<br> REICHE DEIN PROJEKT BIS 5. JUNI EIN!</h3>
-                <button class="white transparent-text mt-3" onclick="location.href='/projekt-einreichen'">PROJEKT EINREICHEN</button>
+        <div id="banner" class="full">
+            <div class="wrapper" style="position: relative;">
+                <div class="text-content col">
+                    <h2>DIE PROJEKTSCHAU DER INFORMATIK</h2>
+                    <h2>19. JUNI 2025</h2>
+                    <h3>WERDE TEIL VON OUTPUT UND<br> REICHE DEIN PROJEKT BIS 5. JUNI EIN!</h3>
+                    <button class="white transparent-text mt-3" onclick="location.href='/projekt-einreichen'">PROJEKT EINREICHEN</button>
+                </div>
+                <img class="cube-unfolded" src="<?= get_template_directory_uri(); ?>/static/svg/cube_unfolded.svg" />
             </div>
-            <img class="cube-unfolded" src="<?= get_template_directory_uri(); ?>/static/svg/cube_unfolded.svg" />
         </div>
     </div>
 

@@ -801,10 +801,10 @@ nav#tud-navbar a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 100vh;
-  margin-top: -14.5rem;
-  padding-top: 0.1rem;
-  color: white;
+  color: #FFFFFF;
+}
+#banner .wrapper {
+  position: relative;
 }
 #banner .wrapper .text-content {
   margin-bottom: 12rem;
@@ -816,14 +816,14 @@ nav#tud-navbar a {
     width: 100%;
   }
 }
-#banner .cube-unfolded {
+#banner .wrapper .cube-unfolded {
   position: absolute;
   height: 42rem;
   left: 70%;
   top: -65px;
 }
 @media (max-width: 768px) {
-  #banner .cube-unfolded {
+  #banner .wrapper .cube-unfolded {
     display: none;
   }
 }
@@ -833,10 +833,6 @@ nav#tud-navbar a {
 #banner.slim .wrapper .text-content {
   margin-bottom: 4rem;
   gap: 1rem;
-}
-
-.no-big-cube #banner .cube-unfolded {
-  display: none;
 }
 
 #footer .last-line {
@@ -1184,8 +1180,24 @@ body {
 }
 @media (max-width: 768px) {
   body {
-    background-color: auto 100vh;
+    background-size: auto 100vh;
   }
+}
+body:has(.head.slim) {
+  background-size: 100vw 66vh;
+}
+
+.head {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+}
+.head.slim {
+  height: 66vh;
+}
+.head.slim .big-unfolded {
+  display: none;
 }
 
 .wrapper {

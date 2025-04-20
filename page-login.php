@@ -7,13 +7,11 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body class="no-big-cube" style="background-image: url('/wp-content/uploads/2025/04/Banner.jpg')">
+<body <?php body_class(); ?>>
     <?php
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php";
     $main_headline = "ANMELDUNG";
     $sub_headline = "MELDE DICH AN UND WERDE TEIL VON OUTPUT.DD";
-    include get_template_directory() . "/includes/banner-slim.php";
+    include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div id="login" class="light-bg">

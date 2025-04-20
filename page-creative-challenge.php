@@ -7,13 +7,11 @@
     <title><?php bloginfo('name'); ?> - CC Anmeldung</title>
     <?php wp_head(); ?>
 </head>
-<body class="no-big-cube">
+<body <?php body_class(); ?>>
     <?php
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php";
     $main_headline = "Creative Challenge: \"Würfelwelten\"";
     $sub_headline = "Schickt uns bis zum <b>6. Juni 2025</b> eure Designs zum Motto „Würfelwelten“ - entfaltet eure Kreativität und werdet Teil unserer Ausstellung!";
-    include get_template_directory() . "/includes/banner-slim.php";
+    include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div id="creative-challenge" class="light-bg">

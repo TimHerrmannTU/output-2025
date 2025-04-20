@@ -7,13 +7,11 @@
     <title><?php bloginfo('name'); ?> - Teilnahme</title>
     <?php wp_head(); ?>
 </head>
-<body class="no-big-cube" <?php body_class(); ?>>
+<body <?php body_class(); ?>>
     <?php
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php";
     $main_headline = "TEILNAHME";
     $sub_headline = "WERDE TEIL VON OUTPUT.DD";
-    include get_template_directory() . "/includes/banner-slim.php";
+    include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div class="light-bg">

@@ -15,13 +15,11 @@ if (!is_user_logged_in()) {
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body class="no-big-cube" style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
+<body <?php body_class() ?> style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
     <?php
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php";
     $main_headline = "MEIN BEREICH";
     $sub_headline = "PROJEKTE EINREICHEN UND VERWALTEN";
-    include get_template_directory() . "/includes/banner-slim.php";
+    include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div id="projekt-einreichen" class="light-bg">

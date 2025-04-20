@@ -9,11 +9,9 @@
 </head>
 <body <?php body_class(); ?> style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
     <?php 
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php"; 
     $main_headline = "PROJEKTE";
     $sub_headline = "SCHAU REIN UND LASS DICH INSPIRIEREN!";
-    include get_template_directory() . "/includes/banner-slim.php"; 
+    include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div id="projekte" class="light-bg">

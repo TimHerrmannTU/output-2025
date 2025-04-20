@@ -30,6 +30,7 @@ html {
     padding: 0px;
 }
 
+$slim-height: 66vh;
 body {
     font-size: 1rem;
     color: colors.$black;
@@ -41,7 +42,22 @@ body {
     background-position: top center;
     background-size: 100vw auto;
     @include mixins.mobile {
-        background-color: auto 100vh;
+        background-size: auto 100vh;
+    }
+    &:has(.head.slim) {
+        background-size: 100vw $slim-height;
+    }
+}
+.head { // contains tud navbar + navbar + banner
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    &.slim {
+        height: $slim-height;
+        .big-unfolded {
+            display: none;
+        }
     }
 }
 

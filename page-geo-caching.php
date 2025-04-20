@@ -7,13 +7,11 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body class="no-big-cube" <?php body_class(); ?>>
+<body <?php body_class(); ?>>
     <?php 
-    include get_template_directory() . "/includes/tud-navbar.php";
-    include get_template_directory() . "/includes/navbar.php"; 
     $main_headline = "Geo Chaching challenge";
     $sub_headline = "Irgendwas mit Boxen finden oder so.";
-    include get_template_directory() . "/includes/banner-slim.php"; 
+    include get_template_directory() . "/includes/narrow-head.php";
     
     // CUSTOM CONTENT HERE
     $sub_page_name = $_GET["sub"];
