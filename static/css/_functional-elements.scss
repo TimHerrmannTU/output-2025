@@ -76,14 +76,24 @@ select, .labeled-checkbox {
     }
     &.transparent {
         background-color: transparent;
-        border: 0.1rem solid colors.$grey;
-        color: colors.$grey;
+        border: 0.1rem solid colors.$light-grey;
+        color: colors.$light-grey;
         select {
             background-color: transparent;
-            color: colors.$grey;
+            color: colors.$light-grey;
+            option {
+                background-color: colors.$white;
+                color: colors.$black;
+            } 
+        }
+        &:hover {
+            border-color: colors.$grey;
+            select {
+                color: colors.$grey;
+            }
         }
         &::after {
-            color: colors.$grey;
+            color: colors.$light-grey;
         }
     }
     &::after {
@@ -114,12 +124,19 @@ select, .labeled-checkbox {
     }
     &.transparent {
         background-color: transparent;
-        color: colors.$grey;
-        border-color: colors.$grey;
+        color: colors.$light-grey;
+        border-color: colors.$light-grey;
         input[type="checkbox"] {
+            border-color: colors.$light-grey;
+        }
+        &:has(input[type="checkbox"]:checked) { // make checkbox darker when checked
+            color: colors.$grey;
             border-color: colors.$grey;
-            &:checked::after {
+            input[type="checkbox"] {
                 border-color: colors.$grey;
+                &::after {
+                    border-color: colors.$grey;
+                }
             }
         }
     }
@@ -160,9 +177,10 @@ input:not([type=checkbox], [type=submit], [type=file]), textarea {
     width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0px;
-    border: 0.1rem solid colors.$grey;
+    border: 0.1rem solid colors.$light-grey;
     box-sizing: border-box;
     &:focus {
+        border-color: transparent !important;
         outline: 0.2rem solid colors.$magenta;
         border-color: transparent;
     }
@@ -179,18 +197,22 @@ textarea {
     width: 100%;
     label {
         line-height: 1;
-        color: colors.$grey;
+        color: colors.$light-grey;
         position: absolute;
         left: 1rem;
         top: 1.3rem;
         pointer-events: none;
         transition: all 0.3s ease-in-out;
     }
-    &:focus-within, &.has-content {
+    &:focus-within, &.has-content, &:hover {
+        input, textarea {
+            border-color: colors.$grey;
+        }
         label {
             font-size: 1rem;
             top: -0.6rem;
             padding: 0rem 1rem;
+            color: colors.$grey;
             background-color: colors.$white;
             transition: all 0.3s ease-in-out;
         }
@@ -199,14 +221,16 @@ textarea {
 
 [dd-function="file-upload-trigger"] {
     box-sizing: border-box;
-    border: 0.1rem solid colors.$grey;
-    color: colors.$grey;
+    border: 0.1rem solid colors.$light-grey;
+    color: colors.$light-grey;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2rem;
     &:hover {
         cursor: pointer;
+        border-color: colors.$grey;
+        color: colors.$grey;
     }
     * {
         pointer-events: none;
