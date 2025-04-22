@@ -7,28 +7,28 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
+<body id="projekte" <?php body_class(); ?> style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
     <?php 
     $main_headline = "PROJEKTE";
     $sub_headline = "SCHAU REIN UND LASS DICH INSPIRIEREN!";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
-    <div id="projekte" class="light-bg">
+    <div class="light-bg">
         <div class="wrapper col gap-2">
             <div class="controls">
                 <?php include get_template_directory() . "/includes/year-dropdown.php";  ?>
                 <label class="labeled-checkbox r2 c1">
                     <span>PROJEKTDEMO</span>
-                    <input type="checkbox">
+                    <input type="checkbox" name="Demo">
                 </label>
                 <label class="labeled-checkbox r2 c2">
                     <span>PROJEKTPOSTER</span>
-                    <input type="checkbox">
+                    <input type="checkbox" name="Poster">
                 </label>
                 <label class="labeled-checkbox r2 c3">
                     <span>FACHVORTRAG</span>
-                    <input type="checkbox">
+                    <input type="checkbox" name="Vortrag">
                 </label>
                 <label class="labeled-checkbox r3 c1">
                     <span>WORKSHOP</span>
@@ -52,12 +52,24 @@
                 if ($query->have_posts()) {
                     while ($query->have_posts()) {
                         $query->the_post();
+                        // retrieve taxonomies of posts (needed for filtering)
+                        $pro_terms = get_the_terms(get_the_ID(), 'output-year');
+                        $pro_years = "";
+                        if (!is_wp_error($pro_terms) && !empty($pro_terms)) {
+                            $pro_years = implode(', ', array_map(fn($term) => $term->name, $pro_terms));
+                        }
+                        $pro_terms = get_the_terms(get_the_ID(), 'project-type');
+                        $pro_types = "";
+                        if (!is_wp_error($pro_terms) && !empty($pro_terms)) {
+                            $pro_types = implode(', ', array_map(fn($term) => $term->name, $pro_terms));
+                        }
+                        // get project image
                         $img = get_field("project-details-thumbnail")["sizes"]["large"];
                         if (empty($img)) {
                             $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
                         }
                         ?>
-                        <a class="pro-item labeled col" href="<?= the_permalink() ?>">
+                        <a class="pro-item labeled col" href="<?= the_permalink() ?>" dd-year="<?= $pro_years ?>" dd-type="<?= $pro_types ?>">
                             <img src="<?= $img ?>"/>
                             <div class="item-label">
                                 <div class="text-wrapper">
@@ -75,6 +87,7 @@
 
     <?php 
     include get_template_directory() ."/includes/footer.php";
+    wp_enqueue_script('project_filters.js', get_template_directory_uri().'/static/js/project_filter.js', false ,'1.0', 'all' );
     wp_footer();
     ?>
 </body>
