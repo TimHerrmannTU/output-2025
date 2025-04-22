@@ -16,25 +16,26 @@
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
-            <div class="controls">
+            <div class="controls mb-6">
                 <?php include get_template_directory() . "/includes/year-dropdown.php";  ?>
-                <label class="labeled-checkbox r2 c1">
+                <p id="project-count" class="r1" style="grid-column:2/span 3"></p>
+                <label class="labeled-checkbox r3 c1">
                     <span>PROJEKTDEMO</span>
                     <input type="checkbox" name="Demo">
                 </label>
-                <label class="labeled-checkbox r2 c2">
+                <label class="labeled-checkbox r3 c2">
                     <span>PROJEKTPOSTER</span>
                     <input type="checkbox" name="Poster">
                 </label>
-                <label class="labeled-checkbox r2 c3">
+                <label class="labeled-checkbox r3 c3">
                     <span>FACHVORTRAG</span>
                     <input type="checkbox" name="Vortrag">
                 </label>
-                <label class="labeled-checkbox r3 c1">
+                <label class="labeled-checkbox r4 c1">
                     <span>WORKSHOP</span>
                     <input type="checkbox">
                 </label>
-                <label class="labeled-checkbox r3 c2">
+                <label class="labeled-checkbox r4 c2">
                     <span>AUSSTELLUNG</span>
                     <input type="checkbox">
                 </label>

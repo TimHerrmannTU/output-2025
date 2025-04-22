@@ -1,4 +1,4 @@
-<div class="dropdown mb-2">
+<div class="dropdown">
     <select id="year">
         <option value="default">OUTPUT 20XX</option>
         <?php // get all options for taxonomy

@@ -88,19 +88,19 @@
             <form id="cc-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
                 
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="firstname">Vorname</label>
                     <input name="firstname" type="text" required>
                 </div>
-                <div class="labeled-input grid-c2">
+                <div class="labeled-input c2">
                     <label for="lastname">Nachname</label>
                     <input name="lastname" type="text" required>
                 </div>
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="email">Email</label>
                     <input name="email" type="email">
                 </div>
-                <div class="labeled-input grid-c2">
+                <div class="labeled-input c2">
                     <label for="adress">Wohnort</label>
                     <input name="adress" type="text">
                 </div>
@@ -109,11 +109,11 @@
                     <input name="job" type="text">
                 </div>
 
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="title">Title</label>
                     <input name="title" type="text">
                 </div>
-                <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1" style="grid-row:span 2;">
+                <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1" style="grid-row:span 2;">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
@@ -124,7 +124,7 @@
                     <img class="preview" src="">
                 </div>
                 <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1">
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="description">Beschreibung</label>
                     <textarea name="description"> </textarea>
                 </div>

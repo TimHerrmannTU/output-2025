@@ -46,11 +46,11 @@
                 <?php endif; ?>
 
                 <form method="post" action="<?php echo esc_url(site_url('wp-login.php', 'login_post')); ?>" class="col gap-1">
-                    <div class="labeled-input grid-c1">
+                    <div class="labeled-input c1">
                         <label for="user_login">Name</label>
                         <input type="text" name="log" id="user_login" required>
                     </div>
-                    <div class="labeled-input grid-c1">
+                    <div class="labeled-input c1">
                         <label for="user_pass">Passwort</label>
                         <input type="password" name="pwd" id="user_pass" required>
                     </div>

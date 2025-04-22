@@ -1,5 +1,6 @@
 // makes filtering for specific projects possible
 jQuery(document).ready(function($) {
+    count_filtered_projects()
     function filter_cascade() { // supports multi select for both taxonomies
         // init
         var all_pros = $("#projekte .pro-grid .pro-item")
@@ -33,8 +34,12 @@ jQuery(document).ready(function($) {
                 $(this).toggle(show) // shows/hides the element depending on bool
             })
         }
+        count_filtered_projects()
         console.log(`Filters:\nyear=${YEAR}\ntype=${checked_values}`)
-        
+    }
+    function count_filtered_projects() {
+        const PRO_COUNT = $("#projekte .pro-grid .pro-item:visible").length
+        $("#projekte #project-count").text(`${PRO_COUNT} Projekte gefunden!`)
     }
     $("#projekte #year").change(function() {
         filter_cascade()

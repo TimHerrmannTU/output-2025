@@ -33,7 +33,7 @@ if (!is_user_logged_in()) {
                     <input name="details-name" type="text" required>
                 </div>
 
-                <div class="dropdown transparent grid-c1">
+                <div class="dropdown transparent c1">
                     <select id="mode" name="category" required>
                         <option class="template" value="default">Projektkategorie auswählen *</option>
                         <option class="template" value="demo">Projektdemo</option>
@@ -41,7 +41,7 @@ if (!is_user_logged_in()) {
                         <option class="template" value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
-                <div class="file-upload col gap-1 grid-c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
+                <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
@@ -52,11 +52,11 @@ if (!is_user_logged_in()) {
                     <img class="preview" src="">
                 </div>
                 <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="details-presenter">Präsentator *</label>
                     <input name="details-presenter" type="text" required>
                 </div>
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
                     <textarea name="details-description" required></textarea>
                 </div>
@@ -66,20 +66,20 @@ if (!is_user_logged_in()) {
                     <input name="details-participants" type="text">
                 </div>
 
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="details-website">Website</label>
                     <input name="details-website" type="text">
                 </div>
-                <div class="labeled-input grid-c2">
+                <div class="labeled-input c2">
                     <label for="details-institution">Studiengang / Lehrstuhl / Firma</label>
                     <input name="details-institution" type="text">
                 </div>
 
-                <div class="labeled-input grid-c1">
+                <div class="labeled-input c1">
                     <label for="intern-contact-person">Ansprechpartner *</label>
                     <input name="intern-contact-person" type="text" required>
                 </div>
-                <div class="labeled-input grid-c2">
+                <div class="labeled-input c2">
                     <label for="intern-contact-person-email">E-Mail *</label>
                     <input name="intern-contact-person-email" type="text" required>
                 </div>
@@ -87,11 +87,11 @@ if (!is_user_logged_in()) {
                 <!-- START: CONDITIONAL SECTION -->
                 <!-- if demo -->
                 <p class="fat full" dd-mode="demo">Ich benötige für meinen Projektstand:</p>
-                <label class="labeled-checkbox transparent grid-c1" dd-mode="demo">
+                <label class="labeled-checkbox transparent c1" dd-mode="demo">
                     <input type="checkbox" name="intern-furniture">
                     <span>Tisch (inkl. Husse) und Stühle</span>
                 </label>
-                <label class="labeled-checkbox transparent grid-c2" dd-mode="demo">
+                <label class="labeled-checkbox transparent c2" dd-mode="demo">
                     <input type="checkbox" name="intern-poster-stand">
                     <span>Posteraufsteller (für Poster bis max. DIN A1 Hochformat)</span>
                 </label>
@@ -100,11 +100,11 @@ if (!is_user_logged_in()) {
                     <textarea name="intern-comment" style="min-height: 10rem"></textarea>
                 </div>
                 <!-- if vortrag -->
-                <div class="labeled-input grid-c1" dd-mode="vortrag">
+                <div class="labeled-input c1" dd-mode="vortrag">
                     <label for="intern-comment">Sonstige Kommentare zu deinem Fachvortrag</label>
                     <textarea name="intern-comment" style="min-height: 10rem"></textarea>
                 </div>
-                <div class="row gap-1 grid-c2" dd-function="file-upload-trigger" key="2" dd-mode="vortrag">
+                <div class="row gap-1 c2" dd-function="file-upload-trigger" key="2" dd-mode="vortrag">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
