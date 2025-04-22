@@ -1,7 +1,7 @@
 <?php
 $car_settings = array(
     "title" => "Projekte",
-    "button_text" => "Alle Projekte entdecken ...",
+    "button_text" => "Alle Projekte",
     "color" => "cyan",
     "post_type" => "projekte",
     "max_posts_loaded" => 20,

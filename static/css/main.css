@@ -1017,15 +1017,74 @@ nav#tud-navbar a {
   grid-template-columns: 1fr auto;
   gap: 2rem;
 }
+.carousel-wrapper .carousel-controls a.more {
+  height: 3rem;
+  line-height: 3rem;
+  align-self: flex-end;
+  color: #232323;
+  border: 0.2rem solid #232323;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+.carousel-wrapper .carousel-controls a.more:hover {
+  filter: none;
+  background-color: #232323;
+  color: #FFFFFF;
+}
+.carousel-wrapper .carousel-controls a.more.magenta {
+  color: #E2007A;
+  border: 0.2rem solid #E2007A;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+.carousel-wrapper .carousel-controls a.more.magenta:hover {
+  filter: none;
+  background-color: #E2007A;
+  color: #FFFFFF;
+}
+.carousel-wrapper .carousel-controls a.more.purple {
+  color: #6D1F80;
+  border: 0.2rem solid #6D1F80;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+.carousel-wrapper .carousel-controls a.more.purple:hover {
+  filter: none;
+  background-color: #6D1F80;
+  color: #FFFFFF;
+}
+.carousel-wrapper .carousel-controls a.more.yellow {
+  color: #FFCC00;
+  border: 0.2rem solid #FFCC00;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+.carousel-wrapper .carousel-controls a.more.yellow:hover {
+  filter: none;
+  background-color: #FFCC00;
+  color: #FFFFFF;
+}
+.carousel-wrapper .carousel-controls a.more.cyan {
+  color: #008BD0;
+  border: 0.2rem solid #008BD0;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+.carousel-wrapper .carousel-controls a.more.cyan:hover {
+  filter: none;
+  background-color: #008BD0;
+  color: #FFFFFF;
+}
 .carousel-wrapper .carousel-controls .slide-dots {
   display: flex;
   flex-direction: row;
   justify-self: center;
+  gap: 1rem;
 }
 .carousel-wrapper .carousel-controls .slide-dots a.dot {
   margin: auto 0;
   aspect-ratio: 1/1;
-  height: 4rem;
+  height: 3rem;
   border: none;
   display: flex;
   align-items: center;
@@ -1033,7 +1092,7 @@ nav#tud-navbar a {
 }
 .carousel-wrapper .carousel-controls .slide-dots a.dot div {
   aspect-ratio: 1/1;
-  height: 0.75rem;
+  height: 0.5rem;
   background-color: #C6C6C6;
   border-radius: 100%;
 }
@@ -1051,13 +1110,6 @@ nav#tud-navbar a {
 }
 .carousel-wrapper .carousel-controls .slide-dots a.dot:hover {
   cursor: pointer;
-}
-.carousel-wrapper a.more {
-  height: -moz-fit-content;
-  height: fit-content;
-  line-height: 1;
-  margin: auto 0;
-  align-self: flex-end;
 }
 
 #timeline .time {

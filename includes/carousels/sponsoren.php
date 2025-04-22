@@ -1,7 +1,7 @@
 <?php
 $car_settings = array(
     "title" => "Sponsoren",
-    "button_text" => "Alle Sponsoren erkunden ...",
+    "button_text" => "Alle Sponsoren",
     "color" => "purple",
     "post_type" => "sponsoren",
     "max_posts_loaded" => -1,

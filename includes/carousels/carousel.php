@@ -74,7 +74,7 @@ if ($query->have_posts()) { ?>
                     </div> <!-- SLIDE END -->
 
                 </div>
-                <div class="carousel-controls">
+                <div class="carousel-controls mt-2">
                     <div class="slide-dots c1">
                         <?php 
                         for ($i = 0; $i < $slide_count; $i++) {
@@ -82,7 +82,7 @@ if ($query->have_posts()) { ?>
                         }  
                         ?>
                     </div>
-                    <a class="more c2 color-<?= $car_settings["color"] ?>" href="/<?= $car_settings["post_type"] ?>">
+                    <a class="more c2 <?= $car_settings["color"] ?>" href="/<?= $car_settings["post_type"] ?>">
                         <?= $car_settings["button_text"] ?>
                     </a>
                 </div>

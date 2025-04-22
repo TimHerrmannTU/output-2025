@@ -1,4 +1,5 @@
 @use "colors";
+@use "functional-elements";
 
 .carousel-wrapper {
     .carousel {
@@ -39,24 +40,44 @@
         }
     }
     .carousel-controls {
+        $height: 3rem;
         display: grid;
         grid-template-columns:  1fr auto;
         gap: 2rem;
+        a.more {
+            height: $height;
+            line-height: $height;
+            align-self: flex-end;
+            @include functional-elements.outline-button(colors.$black, colors.$white);
+            &.magenta {
+                @include functional-elements.outline-button(colors.$magenta, colors.$white);
+            }
+            &.purple {
+                @include functional-elements.outline-button(colors.$purple, colors.$white);
+            }
+            &.yellow {
+                @include functional-elements.outline-button(colors.$yellow, colors.$white);
+            }
+            &.cyan {
+                @include functional-elements.outline-button(colors.$cyan, colors.$white);
+            }
+        }
         .slide-dots {
             display: flex;
             flex-direction: row;
             justify-self: center;
+            gap: 1rem;
             a.dot {
                 margin: auto 0;
                 aspect-ratio: 1/1;
-                height: 4rem;
+                height: $height;
                 border: none;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 div {
                     aspect-ratio: 1/1;
-                    height: 0.75rem;
+                    height: 0.5rem;
                     background-color: colors.$light-grey;
                     border-radius: 100%;
                 }
@@ -77,11 +98,5 @@
                 }
             }
         }
-    }
-    a.more {
-        height: fit-content;
-        line-height: 1;
-        margin: auto 0;
-        align-self: flex-end;
     }
 }
