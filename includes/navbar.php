@@ -9,12 +9,12 @@
         </div>
         <?php
         if (is_user_logged_in()) {
-            ?><a class="login-button" href="/login"><span class="iconify" data-icon="mdi-account-cog"></span></a><?php
+            ?><a class="login-button" href="/login"><div class="iconify" data-icon="mdi-account-cog"></div></a><?php
         }
         else {
-            ?><a class="login-button" href="/login"><span class="iconify" data-icon="mdi-login"></span></a><?php
+            ?><a class="login-button" href="/login"><div class="iconify" data-icon="mdi-login"></div></a><?php
         }
         ?>
-        <a class="mobile-only login-button" href="/login"><span class="iconify" data-icon="mdi-menu"></span></a>
+        <a class="mobile-only login-button" href="/login"><div class="iconify" data-icon="mdi-menu"></div></a>
     </div>
 </nav>

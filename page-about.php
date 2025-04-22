@@ -50,6 +50,7 @@
 
     <div class="light-bg">
         <div class="wrapper">
+            <h1 class="mb-3">Sponsoren</h1>
             <?php include get_template_directory() ."/includes/sponsoren.php"; ?>
         </div>
     </div>

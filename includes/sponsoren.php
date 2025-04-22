@@ -1,11 +1,14 @@
 <div id="sponsoren-tierlist" class="col gap-3">
-    <h1>Sponsoren</h1>
     <?php 
     $sponsor_types = array(
         "Gold Sponsor" => "sponsor-sponsorklasse-gold",
         "Preisponsor" => "sponsor-preissponsor",
         "Silber Sponsor" => "sponsor-sponsorklasse-silber",
         "Bronze Sponsor" => "sponsor-sponsorklasse-bronze",
+        // spender
+        "Gold Spender" => "sponsor-spendenklasse-gold",
+        "Silber Spender" => "sponsor-spendenklasse-silber",
+        "Bronze Spender" => "sponsor-spendenklasse-bronze",
     );
     foreach ($sponsor_types as $key => $value) {
         $args = array(
