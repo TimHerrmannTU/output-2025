@@ -38,71 +38,50 @@
             }
         }
     }
-    .controls {
-        width: fit-content;
-        margin: 0 auto;
-        height: 2rem;
-        .dot {
-            margin: auto 0;
-            width: 1rem;
-            height: 1rem;
-            border: none;
-            div {
-                width: 0.5rem;
-                height: 0.5rem;
-                background-color: grey;
-                border-radius: 100%;
-            }
-            &.active div {
-                background-color: purple;
-            }
-            &:hover {
-                cursor: pointer;
+    .carousel-controls {
+        display: grid;
+        grid-template-columns:  1fr auto;
+        gap: 2rem;
+        .slide-dots {
+            display: flex;
+            flex-direction: row;
+            justify-self: center;
+            a.dot {
+                margin: auto 0;
+                aspect-ratio: 1/1;
+                height: 4rem;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                div {
+                    aspect-ratio: 1/1;
+                    height: 0.75rem;
+                    background-color: colors.$light-grey;
+                    border-radius: 100%;
+                }
+                &.active div {
+                    background-color: colors.$magenta;
+                    &.purple {
+                        background-color: colors.$purple;
+                    }
+                    &.yellow {
+                        background-color: colors.$yellow;
+                    }
+                    &.cyan {
+                        background-color: colors.$cyan;
+                    }
+                }
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }
-    button.more {
-        color: white;
+    a.more {
+        height: fit-content;
+        line-height: 1;
+        margin: auto 0;
         align-self: flex-end;
-        width: fit-content;
-    }
-    /* FROM _colors.scss
-    $magenta: #E2007A;
-    $yellow: #FFCC00;
-    $cyan: #008BD0;
-    $purple: #6D1F80;
-    */
-    &.magenta {
-        button.more {
-            background-color: colors.$magenta;
-        }
-        .dot.active div {
-            background-color: colors.$magenta;
-        }
-    }
-    &.yellow {
-        button.more {
-            color: colors.$black;
-            background-color: colors.$yellow;
-        }
-        .dot.active div {
-            background-color: colors.$yellow;
-        }
-    }
-    &.cyan {
-        button.more {
-            background-color: colors.$cyan;
-        }
-        .dot.active div {
-            background-color: colors.$cyan;
-        }
-    }
-    &.purple {
-        button.more {
-            background-color: colors.$purple;
-        }
-        .dot.active div {
-            background-color: colors.$purple;
-        }
     }
 }

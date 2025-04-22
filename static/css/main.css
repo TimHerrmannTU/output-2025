@@ -191,6 +191,12 @@ code {
   width: 100%;
 }
 
+.all-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .v-center {
   align-items: center;
 }
@@ -495,14 +501,17 @@ a {
   width: -moz-fit-content;
   width: fit-content;
   text-decoration: none;
-  color: white;
+  color: #FFFFFF;
 }
 a:hover {
   filter: brightness(0.8);
   cursor: pointer;
 }
 a.active {
-  border-bottom: 0.2rem solid white;
+  border-bottom: 0.2rem solid #FFFFFF;
+}
+a.black {
+  color: #232323;
 }
 
 select, .labeled-checkbox {
@@ -946,32 +955,26 @@ nav#tud-navbar a {
   overflow: hidden;
 }
 #challenges .cards .card h3 {
+  text-align: center;
   font-weight: 600;
 }
 #challenges .cards .card img {
   aspect-ratio: 1/1;
 }
-#challenges .gc {
+#challenges .gc, #challenges .gc a {
   color: #E2007A;
 }
-#challenges .cc {
+#challenges .cc, #challenges .cc a {
   color: #FFCC00;
 }
-#challenges .lp {
+#challenges .lp, #challenges .lp a {
   color: #008BD0;
 }
-#challenges button {
-  align-self: flex-end;
+#challenges a {
+  align-self: center;
+  color: #232323;
 }
 
-.carousel-wrapper {
-  /* FROM _colors.scss
-  $magenta: #E2007A;
-  $yellow: #FFCC00;
-  $cyan: #008BD0;
-  $purple: #6D1F80;
-  */
-}
 .carousel-wrapper .carousel {
   display: flex;
   flex-direction: row;
@@ -1009,60 +1012,52 @@ nav#tud-navbar a {
   padding: 0rem 1rem;
   max-height: 50%;
 }
-.carousel-wrapper .controls {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  height: 2rem;
+.carousel-wrapper .carousel-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
 }
-.carousel-wrapper .controls .dot {
+.carousel-wrapper .carousel-controls .slide-dots {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+}
+.carousel-wrapper .carousel-controls .slide-dots a.dot {
   margin: auto 0;
-  width: 1rem;
-  height: 1rem;
+  aspect-ratio: 1/1;
+  height: 4rem;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.carousel-wrapper .controls .dot div {
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: grey;
+.carousel-wrapper .carousel-controls .slide-dots a.dot div {
+  aspect-ratio: 1/1;
+  height: 0.75rem;
+  background-color: #C6C6C6;
   border-radius: 100%;
 }
-.carousel-wrapper .controls .dot.active div {
-  background-color: purple;
+.carousel-wrapper .carousel-controls .slide-dots a.dot.active div {
+  background-color: #E2007A;
 }
-.carousel-wrapper .controls .dot:hover {
+.carousel-wrapper .carousel-controls .slide-dots a.dot.active div.purple {
+  background-color: #6D1F80;
+}
+.carousel-wrapper .carousel-controls .slide-dots a.dot.active div.yellow {
+  background-color: #FFCC00;
+}
+.carousel-wrapper .carousel-controls .slide-dots a.dot.active div.cyan {
+  background-color: #008BD0;
+}
+.carousel-wrapper .carousel-controls .slide-dots a.dot:hover {
   cursor: pointer;
 }
-.carousel-wrapper button.more {
-  color: white;
+.carousel-wrapper a.more {
+  height: -moz-fit-content;
+  height: fit-content;
+  line-height: 1;
+  margin: auto 0;
   align-self: flex-end;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.carousel-wrapper.magenta button.more {
-  background-color: #E2007A;
-}
-.carousel-wrapper.magenta .dot.active div {
-  background-color: #E2007A;
-}
-.carousel-wrapper.yellow button.more {
-  color: #232323;
-  background-color: #FFCC00;
-}
-.carousel-wrapper.yellow .dot.active div {
-  background-color: #FFCC00;
-}
-.carousel-wrapper.cyan button.more {
-  background-color: #008BD0;
-}
-.carousel-wrapper.cyan .dot.active div {
-  background-color: #008BD0;
-}
-.carousel-wrapper.purple button.more {
-  background-color: #6D1F80;
-}
-.carousel-wrapper.purple .dot.active div {
-  background-color: #6D1F80;
 }
 
 #timeline .time {
@@ -1189,7 +1184,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100vw auto;
-  /*
+  /* // TODO GIMME SOME PROPER IMAGES TO WORK WITH PLEASE!!!
   &#programm {
       background-image: 
           $bg-gradient,

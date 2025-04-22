@@ -30,7 +30,7 @@ $slide_count = ceil($slide_items / $items_per_slide);
 // Check if posts are available
 if ($query->have_posts()) { ?>
 
-    <div id="<?= $car_settings["post_type"] ?>-canvas">
+    <div id="<?= $car_settings["post_type"] ?>-canvas" class="light-bg">
         <div class="wrapper col gap-3 pt-5 pb-9">
             <h1 class="pb-2"><?= $car_settings["title"] ?></h1>
             <div class="carousel-wrapper col gap-2 <?= $car_settings["color"] ?>">
@@ -74,14 +74,18 @@ if ($query->have_posts()) { ?>
                     </div> <!-- SLIDE END -->
 
                 </div>
-                <div class="controls row gap-2">
-                    <?php 
-                    for ($i = 0; $i < $slide_count; $i++) {
-                        ?><a class="dot <?= ($i == 0) ? 'active': '' ?>" index="<?= $i ?>"><div></div></a><?php
-                    }  
-                    ?>
+                <div class="carousel-controls">
+                    <div class="slide-dots c1">
+                        <?php 
+                        for ($i = 0; $i < $slide_count; $i++) {
+                            ?><a class="dot <?= ($i == 0) ? 'active': '' ?>" index="<?= $i ?>"><div class="<?= $car_settings["color"] ?>"></div></a><?php
+                        }  
+                        ?>
+                    </div>
+                    <a class="more c2 color-<?= $car_settings["color"] ?>" href="/<?= $car_settings["post_type"] ?>">
+                        <?= $car_settings["button_text"] ?>
+                    </a>
                 </div>
-                <button class="more color-white" onclick="location.href='/<?= $car_settings["post_type"] ?>'"><?= $car_settings["button_text"] ?></button>
             </div>
         </div>
     </div>

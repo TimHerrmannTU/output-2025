@@ -1,9 +1,9 @@
 jQuery(document).ready(function($) {
     const transition_time = 500
-    $(".carousel-wrapper .controls .dot").click(function() {
+    $(".carousel-wrapper .carousel-controls .dot").click(function() {
         var carousel = $(this).closest(".carousel-wrapper").find(".carousel")
         // change style of controls
-        $(this).closest(".carousel-wrapper").find(".controls .dot").removeClass("active")
+        $(this).closest(".carousel-wrapper").find(".carousel-controls .dot").removeClass("active")
         $(this).addClass("active")
         // animate carousel
         var slide_index = $(this).attr("index")
@@ -18,9 +18,9 @@ jQuery(document).ready(function($) {
             var slide_index = parseInt($(this).find(".carousel").attr("slide_index")) + 1
             var slide_count = parseInt($(this).find(".carousel").attr("slide_count"))
             var next_index = mod(slide_index, slide_count)
-            $(this).find(`.controls .dot[index="${next_index}"]`).click()
+            $(this).find(`.carousel-controls .dot[index="${next_index}"]`).click()
         })
-    }, 10000)
+    }, 1000000)
 })
 
 function mod(n, m) { // js doesnt know how mod work smh

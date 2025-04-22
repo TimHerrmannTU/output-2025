@@ -44,13 +44,16 @@ input[type=submit] {
 a {
     width: fit-content;
     text-decoration: none;
-    color: white;
+    color: colors.$white;
     &:hover {
         filter: brightness(0.8);
         cursor: pointer;
     }
     &.active {
-        border-bottom: 0.2rem solid white;
+        border-bottom: 0.2rem solid colors.$white;
+    }
+    &.black {
+        color: colors.$black;
     }
 }
 
