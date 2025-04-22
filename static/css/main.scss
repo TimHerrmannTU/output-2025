@@ -32,14 +32,20 @@ html {
 }
 
 $slim-height: 66vh;
-$bg-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25rem);
+@mixin bg-gradient($offset, $img-url) {
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.75) #{$offset}px, 
+            rgba(0, 0, 0, 0.2) #{250+$offset}px),
+        url($img-url);
+    background-position: center -#{$offset}px;
+}
 body {
     font-size: 1rem;
     color: colors.$black;
     background-color: colors.$white;
-    background: 
-        $bg-gradient,
-        url("/wp-content/uploads/2025/04/Banner.jpg");
+    @include bg-gradient(0, "/wp-content/uploads/2025/04/Banner.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: auto 100vh;
@@ -48,25 +54,17 @@ body {
     }
     // overwriting background images
     &#about {
-        background-image: 
-            $bg-gradient,
-            url('/wp-content/uploads/2025/04/info-banner-scaled.jpg');
-        background-position: center -400px;
+        @include bg-gradient(0, '/wp-content/uploads/2025/04/about-banner-1.jpg');
     }
-    /* // TODO GIMME SOME PROPER IMAGES TO WORK WITH PLEASE!!!
     &#programm {
-        background-image: 
-            $bg-gradient,
-            url('/wp-content/uploads/2025/04/programm-banner.jpg');
+        @include bg-gradient(250, '/wp-content/uploads/2025/04/programm-banner-scaled.jpg');
+    }
+    &#impressionen {
+        @include bg-gradient(400, '/wp-content/uploads/2025/04/impressionen-banner-scaled.jpg');
     }
     &#projekte, &#projekte-einreichen {
-        background-image: 
-            $bg-gradient,
-            url('/wp-content/uploads/2025/04/projekte-banner.jpg');
+        @include bg-gradient(300, '/wp-content/uploads/2025/04/projekte-banner.jpg');
     }
-    */
-    
-    
 }
 .head { // contains tud navbar + navbar + banner
     height: 100vh;

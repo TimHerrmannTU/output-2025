@@ -1261,22 +1261,11 @@ body {
   font-size: 1rem;
   color: #232323;
   background-color: #FFFFFF;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25rem), url("/wp-content/uploads/2025/04/Banner.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0px, rgba(0, 0, 0, 0.2) 250px), url("/wp-content/uploads/2025/04/Banner.jpg");
+  background-position: center -0px;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: auto 100vh;
-  /* // TODO GIMME SOME PROPER IMAGES TO WORK WITH PLEASE!!!
-  &#programm {
-      background-image: 
-          $bg-gradient,
-          url('/wp-content/uploads/2025/04/programm-banner.jpg');
-  }
-  &#projekte, &#projekte-einreichen {
-      background-image: 
-          $bg-gradient,
-          url('/wp-content/uploads/2025/04/projekte-banner.jpg');
-  }
-  */
 }
 @media (min-width: 1600px) {
   body {
@@ -1284,8 +1273,20 @@ body {
   }
 }
 body#about {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 25rem), url("/wp-content/uploads/2025/04/info-banner-scaled.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0px, rgba(0, 0, 0, 0.2) 250px), url("/wp-content/uploads/2025/04/about-banner-1.jpg");
+  background-position: center -0px;
+}
+body#programm {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 250px, rgba(0, 0, 0, 0.2) 500px), url("/wp-content/uploads/2025/04/programm-banner-scaled.jpg");
+  background-position: center -250px;
+}
+body#impressionen {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 400px, rgba(0, 0, 0, 0.2) 650px), url("/wp-content/uploads/2025/04/impressionen-banner-scaled.jpg");
   background-position: center -400px;
+}
+body#projekte, body#projekte-einreichen {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 300px, rgba(0, 0, 0, 0.2) 550px), url("/wp-content/uploads/2025/04/projekte-banner.jpg");
+  background-position: center -300px;
 }
 
 .head {
