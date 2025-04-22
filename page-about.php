@@ -7,14 +7,14 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> style="background-image: url('/wp-content/uploads/2025/04/about-banner.jpg')">
+<body id="about" <?php body_class(); ?>>
     <?php 
     $main_headline = "IMPRESSIONEN";
     $sub_headline = "SCHAU REIN UND LASS DICH INSPIRIEREN!";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
-    <div id="projekte" class="light-bg">
+    <div class="light-bg">
         <div class="wrapper col gap-2">
             <div class="controls">
                 <?php include get_template_directory() . "/includes/year-dropdown.php";  ?>

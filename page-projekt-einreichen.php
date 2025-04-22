@@ -15,14 +15,14 @@ if (!is_user_logged_in()) {
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class() ?> style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
+<body id="projekt-einreichen" <?php body_class() ?>>
     <?php
     $main_headline = "MEIN BEREICH";
     $sub_headline = "PROJEKTE EINREICHEN UND VERWALTEN";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
-    <div id="projekt-einreichen" class="light-bg">
+    <div class="light-bg">
         <div class="wrapper col gap-2">
 
             <form id="project-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">

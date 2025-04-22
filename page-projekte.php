@@ -7,7 +7,7 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body id="projekte" <?php body_class(); ?> style="background-image: url('/wp-content/uploads/2025/04/projekte-banner.jpg')">
+<body id="projekte" <?php body_class(); ?>>
     <?php 
     $main_headline = "PROJEKTE";
     $sub_headline = "SCHAU REIN UND LASS DICH INSPIRIEREN!";

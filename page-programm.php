@@ -7,7 +7,7 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> style="background-image: url('/wp-content/uploads/2025/04/programm-banner.jpg')">
+<body id="programm" <?php body_class(); ?>>
     <?php 
     $main_headline = "DER VERANSTALTUNGSTAG";
     $sub_headline = "SCHAU NACH, WELCHE TOLLEN EVENTS GEPLANT SIND!";

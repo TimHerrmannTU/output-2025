@@ -7,7 +7,7 @@
     <title><?php bloginfo('name'); ?> - Teilnahme</title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body id="teilnahme" <?php body_class(); ?>>
     <?php
     $main_headline = "TEILNAHME";
     $sub_headline = "WERDE TEIL VON OUTPUT.DD";
