@@ -27,7 +27,7 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
             }
         }
     }
-    &.slim {
+    &.slim:not(.cube) {
         height: fit-content;
         .wrapper {
             .text-content {
@@ -38,6 +38,11 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
             .cube-unfolded {
                 display: none;
             }
+        }
+    }
+    &.slim.cube {
+        .cube-unfolded {
+            top: 289px;
         }
     }
 }

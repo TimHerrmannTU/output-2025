@@ -41,9 +41,9 @@ body {
         url("/wp-content/uploads/2025/04/Banner.jpg");
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: 100vw auto;
-    @include mixins.mobile {
-        background-size: auto 100vh;
+    background-size: auto 100vh;
+    @include mixins.ultrawide {
+        background-size: 100vw auto;
     }
     // overwriting background images
     &#about {

@@ -9,55 +9,48 @@
 </head>
 <body id="about" <?php body_class(); ?>>
     <?php 
-    $main_headline = "IMPRESSIONEN";
-    $sub_headline = "SCHAU REIN UND LASS DICH INSPIRIEREN!";
+    $main_headline = "WILLKOMEN BEI OUTPUT";
+    $sub_headline = "Am 19. Juni 2025 präsentiert OUTPUT zum 19. Mal die aktuellen Projekte der Fakultät Informatik";
+    $cube = true;
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div class="light-bg">
-        <div class="wrapper col gap-2">
-            <div class="controls">
-                <?php include get_template_directory() . "/includes/year-dropdown.php";  ?>
-                <label class="labeled-checkbox r2 c1">
-                    <span>PROGRAMM</span>
-                    <input type="checkbox">
-                </label>
-                <label class="labeled-checkbox r2 c2">
-                    <span>PROJEKTSCHAU</span>
-                    <input type="checkbox">
-                </label>
+        <div class="wrapper">
+            <div class="w-50 dark-bg col gap-2" style="padding:5rem">
+                <h3 class="fat color-magenta">DIE PROJEKTSCHAU DER FAKULTÄT INFORMATIK AN DER TU DRESDEN</h3>
+                <p>
+                    Einmal im Jahr präsentieren Studenten und Mitarbeiter ihre Ergebnisse aus Lehre und Forschung der Öffentlichkeit. 
+                    Dich erwarten spannende Installationen, Workshops, Vorträge und Ausstellungen. 
+                    Zudem bietet OUTPUT.DD die Gelegenheit, mit Unternehmen über aktuelle Forschungsfragen ins Gespräch zu kommen.
+                </p>
+                <p class="fat">
+                    Die Veranstaltung ist offen für alle.<br>Wir freuen uns auf dich!
+                </p>
             </div>
-            <!-- PROJEKT LOOP -->
-            <div class="pro-grid">
-                <?php
-                $args = array(
-                    'post_type'      => 'projekte',  // Slug of the category
-                    'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
-                );
-                // Create a custom query
-                $query = new WP_Query($args);
-                // Check if posts are available
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                        $img = get_field("project-details-thumbnail")["sizes"]["medium"];
-                        if (empty($img)) {
-                            $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
-                        }
-                        ?>
-                        <a class="pro-item labeled col" href="<?= the_permalink() ?>">
-                            <img src="<?= $img ?>"/>
-                            <div class="item-label">
-                                <div class="text-wrapper">
-                                    <p><?= get_field("project-details-name")  ?></p>
-                                </div>
-                            </div>
-                        </a>
-                        <?php
-                    }
-                }
-                ?>
-            </div>
+        </div>
+    </div>
+
+    
+    <div class="dark-bg">
+        <div class="wrapper">
+            <iframe class="youtube-video" src="https://www.youtube.com/embed/3JxKSIGQSjU?si=xJhftlXFxSvEQCG9" 
+                frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    
+    <div class="light-bg">
+        <div class="wrapper">
+            <h1 class="pb-2">Neuigkeiten</h1>
+        </div>
+    </div>
+
+    <?php include get_template_directory() ."/includes/carousels/projekte.php"; ?>
+
+    <div class="light-bg">
+        <div class="wrapper">
+            <h1 class="pb-2">Sponsoren</h1>
         </div>
     </div>
 
