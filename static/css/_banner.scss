@@ -34,6 +34,9 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
                 margin-bottom: 4rem;
                 gap: 1rem;
             }
+            .cube-unfolded {
+                display: none;
+            }
         }
     }
 }

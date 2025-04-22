@@ -834,6 +834,9 @@ nav#tud-navbar a {
   margin-bottom: 4rem;
   gap: 1rem;
 }
+#banner.slim .wrapper .cube-unfolded {
+  display: none;
+}
 
 #footer .last-line {
   justify-content: space-between;

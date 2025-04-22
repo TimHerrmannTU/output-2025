@@ -125,7 +125,7 @@ if (!is_user_logged_in()) {
                 <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3" dd-mode="poster">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
-                    <input type="checkbox" name="ausgruendung">
+                    <input type="checkbox" name="intern-ausgrundung">
                     <span>Ich habe interesse an einer Ausgründung.</span>
                 </label>
                 <label class="labeled-checkbox transparent full">

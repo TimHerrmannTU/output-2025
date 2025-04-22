@@ -34,12 +34,15 @@ function handle_project_post_submission() {
     }
 
     // Sanitize and create post data
+    $current_user = get_current_user_id();
     $post_data = [
         'post_title'   => sanitize_text_field($_POST['details-name']),
         'post_content' => sanitize_textarea_field($_POST['details-description']),
         'post_status'  => 'pending',
         'post_type'    => 'projekte',
+        'post_author'  => $current_user,
     ];
+    $_POST["intern-user"] = $current_user;
     
     $post_id = wp_insert_post($post_data);
     // assign taxonomy to post
