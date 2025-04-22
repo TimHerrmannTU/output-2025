@@ -957,6 +957,24 @@ nav#tud-navbar a {
   }
 }
 
+#sponsoren-tierlist *:not(h1) {
+  text-align: center;
+}
+#sponsoren-tierlist .row {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#sponsoren-tierlist .sponsor {
+  height: auto;
+  width: 10rem;
+}
+#sponsoren-tierlist .sponsor img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 #challenges .cards {
   justify-content: space-between;
 }
