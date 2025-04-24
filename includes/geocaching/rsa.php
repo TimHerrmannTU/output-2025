@@ -27,10 +27,14 @@
         <div class="col gap-1">
             <h4>RÄTSEL</h4>
             <p>
-                Sei p=4 und q=2.<br>
+                Sei p=3 und q=2.<br>
                 Um die Koordinaten des nächsten Ziels zu erhalten müssen in den untenstehenden Koordinaten n und z durch ihre jeweiligen Werte ersetzt werden
             </p>
-            <p><b>N51°01.465' E01<span style="color:red">z</span>°43.30<span style="color:red">n</span></b></p>
+            <p><b>
+                N51° 01.70<span style="color:red">z</span>'
+                <br>
+                E013° 44.1<span style="color:red">n</span>1'
+            </b></p>
         </div>
     </div>
 </div>
