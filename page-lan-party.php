@@ -37,6 +37,7 @@
                 <br>
                 <h3>Weitere Informationen</h3>
                 <p>Weitere Infos zur LAN-Party und zu den Tickets gibt es auf unserem Discord-Server.</p>
+                <a href="https://discord.com/invite/XuvpKwggVA">Zu unserem Discord-Kanal</a>
 
                 <!-- TODO: Button zu Discord einbauen -->
             </div>
