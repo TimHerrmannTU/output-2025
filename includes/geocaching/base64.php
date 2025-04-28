@@ -1,6 +1,6 @@
 <div class="light-bg">
     <div class="wrapper col gap-3">
-        <h3 class="pt-3 pb-1">BASE64</h3>
+        <h3 class="pb-1">BASE64</h3>
         <div class="col gap-3">
             <p>
                 <b>Base64</b> ist ein <b>Kodierungsverfahren</b>, das <b>Binärdaten in lesbaren Text umwandelt</b>.
@@ -24,23 +24,20 @@
             </div>
             <div class="col gap-1">
                 <h4>Kodierungsablauf</h4>
-                <ol>
+                <ol class="indented">
                     <li>Originaltext binär kodieren (das kennt ihr ja schon aus dem ersten Rätsel)</li>
                     <li>Binärdaten in 6-Bit-Blöcke aufteilen (26 = 64, daher auch der Name)</li>
                     <li>Jedem 6-Bit-Block wird ein bestimmter Groß-/Kleinbuchstabe oder eine Zahl zugeordnet</li>
                     <li>Padding in Form von "=" anhängen, wenn nötig (hier selbst googlen, wenn Interesse besteht)</li>
                 </ol>
             </div>
-            <div class="col gap-1">
-                <h4>Rätsel</h4>
+            <div class="col gap-1 elevated-box">
+                <h4 class="color-magenta">Rätsel</h4>
                 <p>
-                    Jetzt wo du die Theorie verstanden hast, schnapp dir einen BASE64-Decoder deiner Wahl & entschlüssel
+                    Jetzt wo du die Theorie verstanden hast, schnapp dir einen <a class="color-cyan" href="https://fusionauth.io/dev-tools/base64-encoder-decoder">BASE64-Decoder</a> deiner Wahl & entschlüssel
                     mit diesem die folgenden Koordinaten:
                 </p>
-                <code>
-                    TjUxwrAwMS41ODcn<br>
-                    RTAxM8KwNDMuMzg0Jw==
-                </code>
+                <code class="color-magenta">TjUxsDAxLjU4NycKRTAxM7A0My4zODQn</code>
             </div>
         </div>
     </div>

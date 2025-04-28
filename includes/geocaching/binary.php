@@ -1,6 +1,6 @@
 <div class="light-bg">
     <div class="wrapper col gap-3">
-        <h3 class="pt-3 pb-1">BINÄR KODIERUNG</h3>
+        <h3 class="pb-1">BINÄR KODIERUNG</h3>
         <div class="col gap-1">
             <h4>Was ist binär Kodierung?</h4>
             <p>
@@ -82,9 +82,9 @@
             </table>
             <p>0x8 + 1x4 + 0x2 + 1x1 = 4 + 1 = 5</p>
         </div>
-        <div class="col gap-1">
-            <h4>RÄTSEL</h4>
-            <p>So und nun kannst du das ganze anwenden & die Koordinaten unten entschlüsseln:</p>
+        <div class="col gap-1 elevated-box">
+            <h4 class="color-magenta">RÄTSEL</h4>
+            <p>So und nun kannst du das ganze anwenden & die folgenden Koordinaten entschlüsseln:</p>
             <code>
                 <b>N</b> 0101 0001 ° 0000 0001 . 0111 1000 0010 '
                 <br>

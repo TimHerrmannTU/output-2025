@@ -1,6 +1,6 @@
 <div class="light-bg">
     <div class="wrapper col gap-3">
-        <h3 class="pt-3 pb-1">RSA-VERSCHLÜSELUNG</h3>
+        <h3 class="pb-1">RSA-VERSCHLÜSELUNG</h3>
         <div class="col gap-1">
             <p>
                 Stell dir vor, du hast ein Vorhängeschloss, das jeder zusperren kann, aber nur du besitzt den Schlüssel zum Aufsperren. 
@@ -24,17 +24,20 @@
                 <li>Der zweite Teil des öffentlichen Schlüssels e und der zweite Teil des privaten Schlüssels d werden dann mit Hilfe von Z berechnet.</li>
             </ol>
         </div>
-        <div class="col gap-1">
-            <h4>RÄTSEL</h4>
+        <div class="col gap-1 elevated-box">
+            <h4 class="color-magenta">RÄTSEL</h4>
             <p>
-                Sei p=3 und q=2.<br>
+                Sei <b>p=3</b> und <b>q=2.</b>
+                <br>
                 Um die Koordinaten des nächsten Ziels zu erhalten müssen in den untenstehenden Koordinaten n und z durch ihre jeweiligen Werte ersetzt werden
             </p>
-            <p><b>
-                N51° 01.70<span style="color:red">z</span>'
-                <br>
-                E013° 44.1<span style="color:red">n</span>1'
-            </b></p>
+            <p>
+                <b>
+                    N51° 01.70<span class="color-magenta">z</span>'
+                    <br>
+                    E013° 44.1<span class="color-magenta">n</span>1'
+                </b>
+            </p>
         </div>
     </div>
 </div>

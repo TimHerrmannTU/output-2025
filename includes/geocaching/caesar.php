@@ -1,6 +1,6 @@
 <div class="light-bg">
     <div class="wrapper col gap-3">
-        <h3 class="pt-3 pb-1">Cäsar Chiffre</h3>
+        <h3 class="pb-1">Cäsar Chiffre</h3>
         <div class="col gap-1">
             <h4>Was ist ein Cäsar Chiffre?</h4>
             <p>
@@ -42,10 +42,15 @@
         </div>
         <div class="col gap-1">
             <h4>Anleitung zum Entschlüsseln:</h4>
-            <ol type="1">
+            <ol class="indented" type="1">
                 <li>
-                    <b>Betrachte jede Ziffer</b> im verschlüsselten String:<br>
-                    <b>N 95°45.809' E 457°87.872'</b>
+                    <b>Betrachte jede Ziffer</b> im verschlüsselten String:
+                    <br>
+                    <b class="color-magenta">
+                        N 95°45.809'
+                        <br>
+                        E 457°87.742'
+                    </b>
                 </li>
                 <li><b>Verschiebe sie „rückwärts“</b> um 4 (modulo 10).<br>Anders gesagt: (d-4) mod 10 (Oder, wem das lieber ist, (d+6) mod 10)</li>
                 <li><b>Ersetze jede verschlüsselte Ziffer</b> durch das Ergebnis dieser Rückverschiebung.</li>
@@ -55,7 +60,7 @@
         </div>
         <div class="col gap-1">
             <h4>Hinweis</h4>
-            <ul>
+            <ul class="indented">
                 <li><b>N</b> und <b>E</b> bleiben unverändert.</li>
                 <li><b>Nicht</b> an den Zeichen °, ' und . herumfummeln.</li>
                 <li><b>Nur die Ziffern</b> werden zurückverschoben.</li>

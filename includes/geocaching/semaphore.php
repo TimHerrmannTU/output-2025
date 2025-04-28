@@ -1,7 +1,7 @@
 
 <div class="light-bg">
     <div class="wrapper col gap-3">
-        <h3 class="pt-3 pb-1">SEMAPHORE</h3>
+        <h3 class="pb-1">SEMAPHORE</h3>
         <p class="pb-2">
             Ein Semaphore ist eine Synchronisationsmethode, die in Betriebssystemen verwendet wird, um den
             Zugriff mehrerer Prozesse oder Threads auf gemeinsame Ressourcen zu steuern.
@@ -148,7 +148,7 @@
             </tr>
             <tr>
                 <td><b>semaphore_2.up()</b></td>
-                <td><b>semaphore_3.up()</b></td>
+                <td><b>semaphore_1.up()</b></td>
                 <td><b>semaphore_1.up()</b></td>
             </tr>
             <tr>

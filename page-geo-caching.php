@@ -19,11 +19,11 @@
         <div class="light-bg">
             <div class="wrapper col gap-3">
                 <div class="col gap-1">
-                    <h3 class="pt-3 pb-1">Was ist geocachen?</h3>
+                    <h3 class="pb-1">Was ist geocachen?</h3>
                     <iframe width="1200" height="700" src="https://www.youtube.com/embed/1YTqitVK-Ts"></iframe> 
                 </div>
                 <div class="col gap-1">
-                    <h3 class="pt-3 pb-1">Was brauch ich zum teilnehmen?</h3>
+                    <h3 class="pb-1">Was brauch ich zum teilnehmen?</h3>
                     <p><strong>1.</strong> App zum Caches finden an den ermittelten Koordinaten.</p>
                     <table class="slim">
                         <thead>
@@ -68,7 +68,7 @@
                     <p><strong>4.</strong> Ca. 3 Stunden Zeit.</p>
                 </div>
                 <div class="col gap-1">
-                    <h3 class="pt-3 pb-1">Wie funktioniert die Challange?</h3>
+                    <h3 class="pb-1">Wie funktioniert die Challange?</h3>
                     <p>
                         Wir haben über den Campus Geocaches in Form eines Würfels versteckt. Unten findet ihr die Koordinaten für den ersten Cache!
                         Nutzt jetzt gleich die Möglichkeit heraus zu finden, wie ihr Koordinaten in die App eurer Wahl eintragt!
@@ -87,8 +87,7 @@
                 </div>
                 <div class="col gap-2">
                     <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Auf zum ersten Rätsel der Schnitzeljagd!</h2></a>
-                    <a class="color-yellow" href="/geo-caching/?sub=rsa"><h2>Bonusrätsel #1: RSA Verschlüsselung</h2></a>
-                    <a class="color-yellow" href="/geo-caching/?sub=hash"><h2>Bonusrätsel #2: Hashing</h2></a>
+                    <a class="color-yellow" href="/geo-caching/?sub=rsa"><h2>Bonusrätsel: RSA Verschlüsselung</h2></a>
                 </div>
             </div>
         </div>
