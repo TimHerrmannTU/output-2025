@@ -47,6 +47,14 @@ function handle_project_post_submission() {
     $post_id = wp_insert_post($post_data);
     // assign taxonomy to post
     wp_set_object_terms( $post_id, "project-".$_POST["category"], "project-type" );
+    // get all output-year taxonomies & get the latest year
+    $terms = get_terms( array(
+        'taxonomy'   => 'output-year',
+        'hide_empty' => false,
+        'order' => 'desc'
+    ) );
+    $next_output = $terms[0]->slug;
+    wp_set_object_terms( $post_id, $terms[0]->slug, "output-year" );
     
     // create ACF entries
     // $_POST does not contain the image, it is in $_FILE => no exclusion needed
