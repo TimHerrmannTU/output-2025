@@ -109,37 +109,6 @@ function handle_art_post_submission() {
     }
 }
 
-/**
- * Erstellt einen neuen LAN-Party-Teilnehmer und speichert die Formularfelder
- *
- * @param array $form_data Die Formulardaten aus $_POST
- * @return int|WP_Error Die Post ID des erstellten Teilnehmers oder WP_Error
- */
-function create_lan_party_participant($form_data) {
-    $new_post = [
-        "post_title" => sanitize_text_field($form_data['vorname']) . " " . sanitize_text_field($form_data['nachname']),
-        "post_content" => "",
-        "post_status" => "publish",
-        "post_type" => "lan-party-teilnehmer",
-    ];
-    $post_id = wp_insert_post($new_post);
-
-    if ($post_id && !is_wp_error($post_id)) {
-        // Insert ACF fields
-        update_field('lan-party-teilnehmer-intern-vorname', sanitize_text_field($form_data['vorname']), $post_id);
-        update_field('lan-party-teilnehmer-intern-nachname', sanitize_text_field($form_data['nachname']), $post_id);
-        update_field('lan-party-teilnehmer-intern-ign', sanitize_text_field($form_data['ingame_name']), $post_id);
-        update_field('lan-party-teilnehmer-intern-alter', sanitize_text_field($form_data['birthdate']), $post_id);
-        update_field('lan-party-teilnehmer-intern-email', sanitize_email($form_data['email']), $post_id);
-        update_field('lan-party-teilnehmer-intern-wunsche', sanitize_textarea_field($form_data['wishes']), $post_id);
-
-        update_field('lan-party-teilnehmer-intern-fotos', isset($form_data['photo_consent']) ? 1 : 0, $post_id);
-        update_field('lan-party-teilnehmer-intern-datenschutzerklaerung', isset($form_data['privacy_accepted']) ? 1 : 0, $post_id);
-    }
-
-    return $post_id;
-}
-
 //////////////////////
 // HELPER FUNCTIONS //
 //////////////////////
