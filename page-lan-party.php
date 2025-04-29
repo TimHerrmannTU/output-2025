@@ -20,22 +20,26 @@
         <div class="wrapper col gap-3">
             <h2>Anmeldung zur LAN-Party</h2>
             <div class="col">
-                <h3>Wann?</h3>
+                <h4>Wann?</h3>
                 <p>13.06.2025 - 15.06.2025</p>
                 <p> Freitag 16:00 Uhr bis Sonntag 18:00 Uhr</p>
                 <br>
-                <h3>Wo?</h3>
-                <p>Medienkulturzentrum Dresden e.V.</p>
-                <p>Kraftwerk Mitte 3, 01067 Dresden</p>
-                <p><a href="https://maps.app.goo.gl/ktrWXyjCNQ331oo47" target="_blank">Google Maps Link</a></p>
-                <!-- TODO: Map embedden -->
-                <h3>Wer?</h3>
-                <p>Frei für jeden zugänglich, begrenzt auf maximal 50 Teilnehmer</p>
                 <br>
-                <h3>Kosten</h3>
+                <h4>Wo?</h3>
+                <p>Medienkulturzentrum Dresden e.V.<br>Kraftwerk Mitte 3, 01067 Dresden</a></p>
+                <p>Link: <a style="color:blue; text-decoration:underline;" href="https://maps.app.goo.gl/ktrWXyjCNQ331oo47" target="_blank">Google Maps</a></p>
+                <!-- TODO: eigene Classe machen, statt CSS direkt an Tag schreiben -->
+                <br>
+                <br>
+                <h4>Wer?</h3>
+                <p>Frei für jeden zugänglich, begrenzt auf maximal 50 Teilnehmer.</p>
+                <br>
+                <br>
+                <h4>Kosten</h3>
                 <p>Teilnahmegebühr: 15€ pro Person</p>
                 <br>
-                <h3>Weitere Informationen</h3>
+                <br>
+                <h4>Weitere Informationen</h3>
                 <p>Weitere Infos zur LAN-Party und zu den Tickets gibt es auf unserem Discord-Server.</p>
                 <a href="https://discord.com/invite/XuvpKwggVA">Zu unserem Discord-Kanal</a>
 
