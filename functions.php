@@ -11,11 +11,6 @@ function load_static_folder() {
 }
 add_action('wp_enqueue_scripts', 'load_static_folder');
 
-// adjust upload limits
-@ini_set( "upload_max_size", "256M" );
-@ini_set( "post_max_size", "256M");
-@ini_set( "max_execution_time", "300" );
-
 
 // creates project post from form fields
 add_action('admin_post_nopriv_submit_project_post', 'handle_project_post_submission');
@@ -70,7 +65,7 @@ function handle_project_post_submission() {
         handle_file_upload("details-thumbnail","project-details-thumbnail", $post_id);
         handle_file_upload("details-upload","project-details-upload", $post_id);
         
-        wp_redirect(home_url()); // Redirect after successful submission
+        wp_redirect(get_permalink($post_id)); // Redirect after successful submission
     } else {
         wp_die('Post creation failed');
     }
