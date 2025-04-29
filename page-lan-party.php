@@ -9,14 +9,14 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body id="lan-party" <?php body_class(); ?>>
     <?php
     $main_headline = "LAN-PARTY";
     $sub_headline = "MELDE DICH JETZT AN UND SEI DABEI!";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
-    <div id="lan-party" class="light-bg">
+    <div class="light-bg">
         <div class="wrapper col gap-3">
             <h2>Anmeldung zur LAN-Party</h2>
             <div class="col">
@@ -26,15 +26,22 @@
                     <br>
                     <br>
                     <h4>Wo?</h4>
-                    <p>Medienkulturzentrum Dresden e.V.<br>Kraftwerk Mitte 3, 01067 Dresden</a></p>
-                    <p>Link:
-                        <a class="normal" href="https://maps.app.goo.gl/ktrWXyjCNQ331oo47" target="_blank">Google
-                            Maps</a>
+                    <p>Medienkulturzentrum Dresden e.V.<br>Kraftwerk Mitte 3, 01067 Dresden
                     </p>
+                    <br>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.016967394884!2d13.7232921!3d51.0527745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709c8996b0695df%3A0x21a7118fc834002c!2sMedienkulturzentrum%20Dresden%20e.V.!5e0!3m2!1sde!2sde!4v1745932360217!5m2!1sde!2sde"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                     <br>
                     <br>
                     <h4>Wer?</h4>
-                    <p>Jeder ist willkommen.<br>Die Teilnehmer-Anzahl ist auf 50 Personen begrenzt.</p>
+                    <p>Grundsätzlich ist jeder willkommen.
+                        <br>Mindestalter: 18 Jahre.
+                        <br>Die Teilnehmer-Anzahl ist auf 50 Personen
+                        begrenzt.
+                    </p>
                     <br>
                     <br>
                     <h4>Kosten</h4>
