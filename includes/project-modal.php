@@ -1,6 +1,6 @@
 <?php # needs pre-defined $post in order to work! ?>
 <div class="modal-wrapper">
-    <div class="modal wrapper">
+    <div class="modal single-project wrapper">
         <!-- 1st row -->
         <h3 class="headline"><?php the_title() ?></h3>
         <a class="icon close-modal color-magenta">

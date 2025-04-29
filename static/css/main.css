@@ -808,32 +808,38 @@ form input[type=submit] {
   align-items: center;
   justify-content: center;
 }
-.modal-wrapper .modal {
+.modal-wrapper .single-project.modal {
   position: sticky;
   background-color: #FFFFFF;
   padding: 1rem;
   border-radius: 5px;
-  display: grid;
-  gap: 1rem;
   grid-template-columns: 40% 1fr auto;
 }
-.modal-wrapper .modal .headline {
-  grid-column: span 2;
-}
-.modal-wrapper .modal .close-modal {
+.modal-wrapper .single-project.modal .close-modal {
   font-size: 2rem;
   margin-right: 1rem;
 }
-.modal-wrapper .modal img {
+.modal-wrapper .single-project.modal .desc {
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+
+.single-project {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 40% 60%;
+}
+.single-project .headline {
+  grid-column: 1/span 2;
+}
+.single-project img {
   max-width: 100%;
   aspect-ratio: 4/3;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.modal-wrapper .modal .desc {
-  grid-column: 2/span 2;
-  overflow-y: scroll;
-  max-height: 80vh;
+.single-project .desc {
+  grid-column: 2;
 }
 
 nav {
