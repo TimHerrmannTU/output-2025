@@ -426,6 +426,12 @@ code {
   padding-right: 2rem;
 }
 
+.default-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
 .r1 {
   grid-row: 1;
 }
@@ -466,6 +472,10 @@ button, input[type=submit] {
   border-radius: 0px;
   font-size: 2.75rem;
   padding: 0rem 2rem;
+  background-color: #6F6F6F;
+}
+button .active, input[type=submit] .active {
+  background-color: #E2007A;
 }
 button:hover, input[type=submit]:hover {
   cursor: pointer;
@@ -520,6 +530,10 @@ a.black {
 a.normal {
   color: blue;
   text-decoration: underline;
+}
+
+.light-bg a {
+  color: #232323;
 }
 
 select, .labeled-checkbox {
@@ -1228,20 +1242,12 @@ nav#tud-navbar a {
 }
 
 #projekte .controls, #about .controls {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 0 1fr 1fr;
-  gap: 1.5rem;
 }
 #projekte .controls #project-count, #about .controls #project-count {
   height: -moz-fit-content;
   height: fit-content;
   align-self: center;
-}
-#projekte .pro-grid, #about .pro-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
 }
 
 .pro-item {

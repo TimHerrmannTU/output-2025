@@ -8,6 +8,10 @@ button, input[type=submit] {
     border-radius: 0px;
     font-size: 2.75rem;
     padding: 0rem 2rem;
+    background-color: colors.$grey;
+    .active {
+        background-color: colors.$magenta;
+    }
     &:hover {
         cursor: pointer;
         filter: brightness(1.2);
@@ -59,6 +63,9 @@ a {
         color: blue;
         text-decoration: underline;
     }
+}
+.light-bg a {
+    color: colors.$black;
 }
 
 @mixin outline-button($main-color, $text-color) {

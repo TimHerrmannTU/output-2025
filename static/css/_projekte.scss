@@ -2,19 +2,11 @@
 
 #projekte, #about {
     .controls {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto 0 1fr 1fr;
-        gap: 1.5rem;
         #project-count {
             height: fit-content;
             align-self: center;
         }
-    }
-    .pro-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
     }
 }
 

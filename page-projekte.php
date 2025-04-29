@@ -16,7 +16,7 @@
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
-            <div class="controls mb-6">
+            <div class="controls default-grid mb-6">
                 <?php include get_template_directory() . "/includes/year-dropdown.php";  ?>
                 <p id="project-count" class="r1" style="grid-column:2/span 3"></p>
                 <label class="labeled-checkbox r3 c1">
@@ -41,7 +41,7 @@
                 </label>
             </div>
             <!-- PROJEKT LOOP -->
-            <div class="pro-grid">
+            <div class="pro-grid default-grid">
                 <?php
                 $args = array(
                     'post_type'      => 'projekte',  // Slug of the category

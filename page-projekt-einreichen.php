@@ -24,8 +24,14 @@ if (!is_user_logged_in()) {
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
-
-            <form id="project-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
+            
+            <div id="controls" class="default-grid">
+                <button class="r1 c1" dd-target="">MEIN PROFIL</button>
+                <button class="r2 c1 active" dd-target="project-register-form">NEUES PROJEKT</button>
+                <button class="r2 c2" dd-target="my-projects">MEINE PROJEKT</button>
+            </div>
+            
+            <form id="project-register-form" class="grid conditional" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_project_post">
 
                 <div class="labeled-input full">
@@ -135,6 +141,50 @@ if (!is_user_logged_in()) {
                 <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT EINREICHEN</a>
             </form>
 
+            <div id="my-projects" class="default-grid">
+                <?php
+                $args = array(
+                    'post_type'      => 'projekte',  // Slug of the category
+                    'author'         => get_current_user_id(),
+                    'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
+                );
+                // Create a custom query
+                $query = new WP_Query($args);
+                // Check if posts are available
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        // retrieve taxonomies of posts (needed for filtering)
+                        $pro_terms = get_the_terms(get_the_ID(), 'output-year');
+                        $pro_years = "";
+                        if (!is_wp_error($pro_terms) && !empty($pro_terms)) {
+                            $pro_years = implode(', ', array_map(fn($term) => $term->name, $pro_terms));
+                        }
+                        $pro_terms = get_the_terms(get_the_ID(), 'project-type');
+                        $pro_types = "";
+                        if (!is_wp_error($pro_terms) && !empty($pro_terms)) {
+                            $pro_types = implode(', ', array_map(fn($term) => $term->name, $pro_terms));
+                        }
+                        // get project image
+                        $img = get_field("project-details-thumbnail")["sizes"]["large"];
+                        if (empty($img)) {
+                            $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
+                        }
+                        ?>
+                        <a class="pro-item labeled col" href="<?= the_permalink() ?>" dd-year="<?= $pro_years ?>" dd-type="<?= $pro_types ?>">
+                            <img src="<?= $img ?>"/>
+                            <div class="item-label">
+                                <div class="text-wrapper">
+                                    <p><?= get_field("project-details-name")  ?></p>
+                                </div>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+
         </div>
     </div>
 
@@ -149,6 +199,16 @@ if (!is_user_logged_in()) {
             $("[dd-mode]").hide()
             mode = $("#mode").val()
             $(`[dd-mode=${mode}]:not(input[type=file])`).show()
+            // control events (switch between different html section)
+            $("#controls button").click(function() {
+                // toggle styling class
+                $("#controls").find("button").removeClass("active")
+                $(this).addClass("active")
+                // toggle relevant section
+                $(".conditional").hide()
+                const TARGET = $(this).attr("dd-target")
+                $(`#${TARGET}`).show()
+            })
             // user events
             $("#mode").change(function() {
                 mode = $(this).val()
