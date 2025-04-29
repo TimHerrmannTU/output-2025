@@ -517,6 +517,10 @@ a.active {
 a.black {
   color: #232323;
 }
+a.normal {
+  color: blue;
+  text-decoration: underline;
+}
 
 select, .labeled-checkbox {
   border-radius: 0px;
