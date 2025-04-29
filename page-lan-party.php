@@ -27,8 +27,7 @@
                 <br>
                 <h4>Wo?</h3>
                 <p>Medienkulturzentrum Dresden e.V.<br>Kraftwerk Mitte 3, 01067 Dresden</a></p>
-                <p>Link: <a style="color:blue; text-decoration:underline;" href="https://maps.app.goo.gl/ktrWXyjCNQ331oo47" target="_blank">Google Maps</a></p>
-                <!-- TODO: eigene Classe machen, statt CSS direkt an Tag schreiben -->
+                <p>Link: <a class="normal" href="https://maps.app.goo.gl/ktrWXyjCNQ331oo47" target="_blank">Google Maps</a></p>
                 <br>
                 <br>
                 <h4>Wer?</h3>
