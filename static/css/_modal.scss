@@ -1,0 +1,41 @@
+@use "colors";
+
+.modal-wrapper {
+    position: absolute;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal {
+        position: sticky;
+        background-color: colors.$white;
+        padding: 1rem;
+        border-radius: 5px;
+        
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 40% 1fr auto;
+        .headline {
+            grid-column: span 2;
+        }
+        .close-modal {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        img {
+            max-width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        .desc {
+            grid-column: 2/span 2;
+            overflow-y: scroll;
+            max-height: 80vh;
+        }
+    }
+}
