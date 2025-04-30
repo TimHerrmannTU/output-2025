@@ -7,6 +7,9 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
     flex-direction: column;
     align-self: end;
     color: colors.$white;
+    button {
+        font-size: 2.75rem;
+    }
     .wrapper {
         position: relative;
         .text-content {

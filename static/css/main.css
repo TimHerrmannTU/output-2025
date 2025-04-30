@@ -40,10 +40,13 @@ h4 {
   text-transform: uppercase;
 }
 
-a, p, td, th, li, ul, select, input, textarea, label, code {
+a, p, td, th, li, ul, select, input, textarea, label, code, button {
   font-size: 1.5625rem;
   font-style: normal;
   font-weight: 400;
+  line-height: 1;
+}
+a:not(button), p:not(button), td:not(button), th:not(button), li:not(button), ul:not(button), select:not(button), input:not(button), textarea:not(button), label:not(button), code:not(button), button:not(button) {
   line-height: 2;
 }
 
@@ -129,27 +132,27 @@ code {
   font-style: normal;
 }
 .color-white {
-  color: white;
+  color: #FFFFFF !important;
 }
 
 .color-black {
-  color: #232323;
+  color: #232323 !important;
 }
 
 .color-magenta {
-  color: #E2007A;
+  color: #E2007A !important;
 }
 
 .color-yellow {
-  color: #FFCC00;
+  color: #FFCC00 !important;
 }
 
 .color-cyan {
-  color: #008BD0;
+  color: #008BD0 !important;
 }
 
 .color-purple {
-  color: #6D1F80;
+  color: #6D1F80 !important;
 }
 
 .bg-magenta {
@@ -470,11 +473,11 @@ button, input[type=submit] {
   font-weight: 700;
   border: none;
   border-radius: 0px;
-  font-size: 2.75rem;
-  padding: 0rem 2rem;
+  padding: 0.75rem 1.25rem;
   background-color: #6F6F6F;
+  color: #FFFFFF;
 }
-button .active, input[type=submit] .active {
+button.active, input[type=submit].active {
   background-color: #E2007A;
 }
 button:hover, input[type=submit]:hover {
@@ -938,6 +941,9 @@ nav#tud-navbar a {
   align-self: end;
   color: #FFFFFF;
 }
+#banner button {
+  font-size: 2.75rem;
+}
 #banner .wrapper {
   position: relative;
 }
@@ -1292,6 +1298,7 @@ nav#tud-navbar a {
 }
 .pro-item.labeled .item-label {
   z-index: 1;
+  color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
   bottom: 0;

@@ -11,22 +11,22 @@ $light-grey: #C6C6C6;
 $white: #FFFFFF;
 
 .color-white {
-    color: white;
+    color: $white !important;
 }
 .color-black {
-    color: $black;
+    color: $black !important;
 }
 .color-magenta {
-    color: $magenta;
+    color: $magenta !important;
 }
 .color-yellow {
-    color: $yellow;
+    color: $yellow !important;
 }
 .color-cyan {
-    color: $cyan;
+    color: $cyan !important;
 }
 .color-purple {
-    color: $purple;
+    color: $purple !important;
 }
 
 

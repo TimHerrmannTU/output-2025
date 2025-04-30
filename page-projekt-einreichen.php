@@ -141,7 +141,7 @@ if (!is_user_logged_in()) {
                 <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT EINREICHEN</a>
             </form>
 
-            <div id="my-projects" class="default-grid">
+            <div id="my-projects" class="default-grid conditional" style="display:none">
                 <?php
                 $args = array(
                     'post_type'      => 'projekte',  // Slug of the category
