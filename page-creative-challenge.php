@@ -30,7 +30,7 @@
                     <h4 dd-function="trigger">
                         Welche Kunstwerke werden akzeptiert?
                         <div class="icon ml-1">
-                            <span class="iconify" data-icon="mdi-chevron-up">
+                            <span class="iconify" data-icon="mdi-chevron-down">
                         </div>
                     </h4>
                     <div class="expand" style="display: none">
@@ -46,7 +46,7 @@
                     <h4 dd-function="trigger">
                         Welche Formate dürfen eingereicht werden?
                         <div class="icon ml-1">
-                            <span class="iconify" data-icon="mdi-chevron-up">
+                            <span class="iconify" data-icon="mdi-chevron-down">
                         </div>
                     </h4>
                     <ul class="indented expand" style="display: none">
@@ -59,7 +59,7 @@
                     <h4 dd-function="trigger">
                         Wann findet die Siegerehrung statt?
                         <div class="icon ml-1">
-                            <span class="iconify" data-icon="mdi-chevron-up">
+                            <span class="iconify" data-icon="mdi-chevron-down">
                         </div>
                     </h4>
                     <div class="expand" style="display:none;">
@@ -73,7 +73,7 @@
                     <h4 dd-function="trigger">
                         Was ist bei der Einreichung zu beachten?
                         <div class="icon ml-1">
-                            <span class="iconify" data-icon="mdi-chevron-up">
+                            <span class="iconify" data-icon="mdi-chevron-down">
                         </div>
                     </h4>
                     <ul class="indented expand" style="display:none;">

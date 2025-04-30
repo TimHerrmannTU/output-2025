@@ -52,7 +52,7 @@
                                 <?= the_title() ?>
                                 <?php if ($desc_preview) { ?>
                                     <div class="icon">
-                                        <span class="iconify" data-icon="mdi-chevron-up">
+                                        <span class="iconify" data-icon="mdi-chevron-down">
                                     </div>
                                 <?php } ?>
                             </h3>
