@@ -308,3 +308,30 @@ iframe {
         aspect-ratio: 16/9;
     }
 }
+
+.discord-link {
+    $btn-height: 50px;
+    background-color: #5865F2;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    p {
+        font-size: 2rem;
+        display: inline-block;
+        color: colors.$white;
+        line-height: $btn-height;
+    }
+    svg {
+        height: $btn-height;
+        width: $btn-height;
+    }
+    &:hover {
+        filter:saturate(1.1);
+        svg {
+            transform: rotate(360deg);
+            transition: transform 0.5s ease-out;
+        }
+    }
+}

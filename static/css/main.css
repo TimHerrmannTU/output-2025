@@ -754,6 +754,32 @@ iframe.youtube-video {
   aspect-ratio: 16/9;
 }
 
+.discord-link {
+  background-color: #5865F2;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.discord-link p {
+  font-size: 2rem;
+  display: inline-block;
+  color: #FFFFFF;
+  line-height: 50px;
+}
+.discord-link svg {
+  height: 50px;
+  width: 50px;
+}
+.discord-link:hover {
+  filter: saturate(1.1);
+}
+.discord-link:hover svg {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease-out;
+}
+
 table {
   border-collapse: collapse;
   overflow: hidden;

@@ -28,7 +28,7 @@
 
     <div class="light-bg">
         <div class="main wrapper">
-            <img class="banner-img" src="https://output-dd.inf.tu-dresden.de/wp-content/uploads/2025/04/ballons.jpg">
+            <img class="banner-img" src="https://output-dd.de/wp-content/uploads/2025/04/ballons.jpg">
             <div class="text-wrapper dark-bg col gap-2">
                 <h3 class="fat color-magenta">DIE PROJEKTSCHAU DER FAKULTÄT INFORMATIK AN DER TU DRESDEN</h3>
                 <p>
