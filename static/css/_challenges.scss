@@ -1,4 +1,5 @@
 @use "colors";
+@use "functional-elements";
 
 #challenges {
     .cards {
@@ -6,7 +7,7 @@
         .card {
             overflow: hidden;
             h3 {
-                text-align: center;
+                text-align: left;
                 font-weight: 600;
             }
             img {
@@ -14,17 +15,18 @@
             }
         }
     }
-    .gc, .gc a {
+    .gc {
         color: colors.$magenta;
     }
-    .cc, .cc a {
+    .cc {
         color: colors.$yellow;
     }
-    .lp, .lp a {
+    .lp {
         color: colors.$cyan;
     }
     a {
-        align-self: center;
-        color: colors.$black;
+        align-self: end;
+        @include functional-elements.outline-button(colors.$white, colors.$black);
+        border-width: 0.1rem;
     }
 }

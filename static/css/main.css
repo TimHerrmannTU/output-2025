@@ -1084,24 +1084,34 @@ nav#tud-navbar a {
   overflow: hidden;
 }
 #challenges .cards .card h3 {
-  text-align: center;
+  text-align: left;
   font-weight: 600;
 }
 #challenges .cards .card img {
   aspect-ratio: 1/1;
 }
-#challenges .gc, #challenges .gc a {
+#challenges .gc {
   color: #E2007A;
 }
-#challenges .cc, #challenges .cc a {
+#challenges .cc {
   color: #FFCC00;
 }
-#challenges .lp, #challenges .lp a {
+#challenges .lp {
   color: #008BD0;
 }
 #challenges a {
-  align-self: center;
+  align-self: end;
+  color: #FFFFFF;
+  border: 0.2rem solid #FFFFFF;
+  font-weight: 600;
+  padding: 0 1rem;
+  border-width: 0.1rem;
+}
+#challenges a:hover {
+  filter: unset;
+  background-color: #FFFFFF;
   color: #232323;
+  transition: all 0.3s ease-in-out;
 }
 
 .carousel-wrapper .carousel {
@@ -1156,9 +1166,10 @@ nav#tud-navbar a {
   padding: 0 1rem;
 }
 .carousel-wrapper .carousel-controls a.more:hover {
-  filter: none;
+  filter: unset;
   background-color: #232323;
   color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
 }
 .carousel-wrapper .carousel-controls a.more.magenta {
   color: #E2007A;
@@ -1167,9 +1178,10 @@ nav#tud-navbar a {
   padding: 0 1rem;
 }
 .carousel-wrapper .carousel-controls a.more.magenta:hover {
-  filter: none;
+  filter: unset;
   background-color: #E2007A;
   color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
 }
 .carousel-wrapper .carousel-controls a.more.purple {
   color: #6D1F80;
@@ -1178,9 +1190,10 @@ nav#tud-navbar a {
   padding: 0 1rem;
 }
 .carousel-wrapper .carousel-controls a.more.purple:hover {
-  filter: none;
+  filter: unset;
   background-color: #6D1F80;
   color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
 }
 .carousel-wrapper .carousel-controls a.more.yellow {
   color: #FFCC00;
@@ -1189,9 +1202,10 @@ nav#tud-navbar a {
   padding: 0 1rem;
 }
 .carousel-wrapper .carousel-controls a.more.yellow:hover {
-  filter: none;
+  filter: unset;
   background-color: #FFCC00;
   color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
 }
 .carousel-wrapper .carousel-controls a.more.cyan {
   color: #008BD0;
@@ -1200,9 +1214,10 @@ nav#tud-navbar a {
   padding: 0 1rem;
 }
 .carousel-wrapper .carousel-controls a.more.cyan:hover {
-  filter: none;
+  filter: unset;
   background-color: #008BD0;
   color: #FFFFFF;
+  transition: all 0.3s ease-in-out;
 }
 .carousel-wrapper .carousel-controls .slide-dots {
   display: flex;
