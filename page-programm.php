@@ -17,7 +17,7 @@
         <div class="wrapper">
             <div class="dark-bg w-50" style="padding: 4.62rem">
                 <h3 class="color-magenta mb-3">RAHMENPROGRAMM</h3>
-                <p>Am 19. Juni 2025 findet OUTPUT wieder in der Fakultät Informatik der TU  Dresden statt. Wir stellen die Vielfalt – von der Idee, über visuelle  Konzepte bis hin zu Demonstrationen – des Informatikstudiums und  aktuelle Forschungsschwerpunkte der Fakultät vor.</p>    
+                <p>Am 19. Juni 2025 findet OUTPUT wieder in der Fakultät Informatik der TU  Dresden statt. Wir stellen die Vielfalt - von der Idee, über visuelle  Konzepte bis hin zu Demonstrationen – des Informatikstudiums und  aktuelle Forschungsschwerpunkte der Fakultät vor.</p>    
             </div>
         </div>
     </div>

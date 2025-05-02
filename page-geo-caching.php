@@ -35,8 +35,16 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td>Google Maps</td>
+                                <td><a class="color-magenta" href="https://www.google.com/maps/">WEB</a></td>
+                                <td>
+                                    + minimaler Aufwand<br>
+                                    - Koordinaten müssen in anderes Format konvertiert werden *
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>OSMAND</td>
-                                <td><a class="color-yellow" href="https://play.google.com/store/apps/details?id=net.osmand">Play-Store</a></td>
+                                <td><a class="color-magenta" href="https://play.google.com/store/apps/details?id=net.osmand">Play-Store</a></td>
                                 <td>
                                     + kein Setup nötig<br>
                                     + kein Account nötig<br>
@@ -46,7 +54,7 @@
                             </tr>
                             <tr>
                                 <td>c:geo</td>
-                                <td><a class="color-yellow" href="https://play.google.com/store/apps/details?id=cgeo.geocaching">Play-Store</a></td>
+                                <td><a class="color-magenta" href="https://play.google.com/store/apps/details?id=cgeo.geocaching">Play-Store</a></td>
                                 <td>
                                     + beste App fürs Cachen<br>
                                     - braucht GC-Account<br>
@@ -55,7 +63,7 @@
                             </tr>
                             <tr>
                                 <td>Offizielle App</td>
-                                <td><a class="color-yellow" href="https://play.google.com/store/apps/details?id=com.groundspeak.geocaching.intro">Play-Store</a></td>
+                                <td><a class="color-magenta" href="https://play.google.com/store/apps/details?id=com.groundspeak.geocaching.intro">Play-Store</a></td>
                                 <td>
                                     + einsteigerfreundlich<br>
                                     - braucht GC-Account
@@ -63,9 +71,21 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="col mb-1">
+                        <p><strong>*</strong> "N" & "E" müssen an das Ende des Längen-/Breitengrades verschoben werden!</p>
+                        <div class="row">
+                            <p>Zum Beispiel: <span class="color-magenta">N51°01.000 E15°43.000</span></p>
+                            <div class="icon ml-1 mr-1" style="margin-top:0.8rem;">
+                                <div class="iconify" data-icon="mdi-arrow-right-thin"></div>
+                            </div> 
+                            <a class="color-magenta" href="https://www.google.com/maps/place/51%C2%B001.000N+15%C2%B043.000E">51°01.000N 15°43.000E</a>
+                        </div>
+                    </div>
+                    
                     <p><strong>2.</strong> Ein Stift, um dich ins Logbuch einzutragen!</p>
                     <p><strong>3.</strong> Ein Notizblock, um die Rätsel zu lösen!</p>
-                    <p><strong>4.</strong> Ca. 3 Stunden Zeit.</p>
+                    <p><strong>4.</strong> Ca. 2 Stunden Zeit.</p>
                 </div>
                 <div class="col gap-1">
                     <h3 class="pb-1">Wie funktioniert die Challange?</h3>
@@ -73,7 +93,7 @@
                         Wir haben über den Campus Geocaches in Form eines Würfels versteckt. Unten findet ihr die Koordinaten für den ersten Cache!
                         Nutzt jetzt gleich die Möglichkeit heraus zu finden, wie ihr Koordinaten in die App eurer Wahl eintragt!
                         Habt ihr den Würfel gefunden, findet ihr im Deckel des Würfels einen QR-Code, welcher euch zu einem kleinen Rätsel führt.
-                        Löst es & findet die Koordinaten für den nächsten Würfel! Insgesamt haben wir 8 Würfel quer über den Campus versteckt.<br>
+                        Löst es & findet die Koordinaten für den nächsten Würfel! Insgesamt haben wir 7 Würfel quer über den Campus versteckt.<br>
                         Schaffst du es alle Rätsel zu lösen & den finalen Cache zu finden?
                     </p>
                 </div>

@@ -28,7 +28,7 @@ if (!is_user_logged_in()) {
             <div id="controls" class="default-grid">
                 <button class="r1 c1" dd-target="">MEIN PROFIL</button>
                 <button class="r2 c1 active" dd-target="project-register-form">NEUES PROJEKT</button>
-                <button class="r2 c2" dd-target="my-projects">MEINE PROJEKT</button>
+                <button class="r2 c2" dd-target="my-projects">MEINE PROJEKTE</button>
             </div>
             
             <form id="project-register-form" class="grid conditional" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
