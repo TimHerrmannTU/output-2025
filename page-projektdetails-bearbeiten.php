@@ -20,6 +20,7 @@ if (!is_user_logged_in()) {
     $main_headline = "PROJEKT BEARBEITEN";
     $sub_headline = " ";
     include get_template_directory() . "/includes/narrow-head.php";
+    $post = get_post($_GET["id"]);
     ?>
 
     <div class="light-bg">
@@ -30,7 +31,7 @@ if (!is_user_logged_in()) {
 
                 <div class="labeled-input full">
                     <label for="details-name">Title *</label>
-                    <input name="details-name" type="text" required>
+                    <input name="details-name" type="text" value="<?= the_title() ?>" required>
                 </div>
 
                 <div class="dropdown transparent c1">
@@ -54,34 +55,36 @@ if (!is_user_logged_in()) {
                 <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
                 <div class="labeled-input c1">
                     <label for="details-presenter">Präsentator *</label>
-                    <input name="details-presenter" type="text" required>
+                    <input name="details-presenter" type="text" value="<?= get_field("project-details-presenter") ?>" required>
                 </div>
                 <div class="labeled-input c1">
                     <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
-                    <textarea name="details-description" required></textarea>
+                    <textarea name="details-description" required>
+                        <?= get_field("project-details-description") ?>
+                    </textarea>
                 </div>
 
                 <div class="labeled-input full">
                     <label for="details-participants">Weitere Beteiligte</label>
-                    <input name="details-participants" type="text">
+                    <input name="details-participants" type="text" value="<?= get_field("project-details-participants") ?>">
                 </div>
 
                 <div class="labeled-input c1">
                     <label for="details-website">Website</label>
-                    <input name="details-website" type="text">
+                    <input name="details-website" type="text" value="<?= get_field("project-details-website") ?>">
                 </div>
                 <div class="labeled-input c2">
                     <label for="details-institution">Studiengang / Lehrstuhl / Firma</label>
-                    <input name="details-institution" type="text">
+                    <input name="details-institution" type="text" value="<?= get_field("project-details-institution") ?>">
                 </div>
 
                 <div class="labeled-input c1">
                     <label for="intern-contact-person">Ansprechpartner *</label>
-                    <input name="intern-contact-person" type="text" required>
+                    <input name="intern-contact-person" type="text" value="<?= get_field("project-intern-contact-person") ?>" required>
                 </div>
                 <div class="labeled-input c2">
                     <label for="intern-contact-person-email">E-Mail *</label>
-                    <input name="intern-contact-person-email" type="text" required>
+                    <input name="intern-contact-person-email" type="text" value="<?= get_field("intern-contact-person-email") ?>" required>
                 </div>
                 <div class="pt-1 full"></div>
                 <!-- START: CONDITIONAL SECTION -->
@@ -97,12 +100,16 @@ if (!is_user_logged_in()) {
                 </label>
                 <div class="labeled-input full" dd-mode="demo">
                     <label for="intern-comment">Sonstige Wünsche oder Kommentare für dein Projektstand</label>
-                    <textarea name="intern-comment" style="min-height: 10rem"></textarea>
+                    <textarea name="intern-comment" style="min-height: 10rem">
+                        <?= get_field("project-intern-comment") ?>
+                    </textarea>
                 </div>
                 <!-- if vortrag -->
                 <div class="labeled-input c1" dd-mode="vortrag">
                     <label for="intern-comment">Sonstige Kommentare zu deinem Fachvortrag</label>
-                    <textarea name="intern-comment" style="min-height: 10rem"></textarea>
+                    <textarea name="intern-comment" style="min-height: 10rem">
+                        <?= get_field("project-intern-comment") ?>
+                    </textarea>
                 </div>
                 <div class="row gap-1 c2" dd-function="file-upload-trigger" key="2" dd-mode="vortrag">
                     <div class="icon">
