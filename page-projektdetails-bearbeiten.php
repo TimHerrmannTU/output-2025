@@ -21,11 +21,13 @@ if (!is_user_logged_in()) {
     $sub_headline = " ";
     include get_template_directory() . "/includes/narrow-head.php";
     $post = get_post($_GET["id"]);
+    $pro_type = get_the_terms($_GET["id"], 'project-type')[0]->slug;
+    $pro_type = str_replace("project-", "", $pro_type);
     ?>
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
-                        
+            
             <form id="project-register-form" class="grid conditional" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_project_post">
 
@@ -36,10 +38,10 @@ if (!is_user_logged_in()) {
 
                 <div class="dropdown transparent c1">
                     <select id="mode" name="category" required>
-                        <option class="template" value="default">Projektkategorie auswählen *</option>
-                        <option class="template" value="demo">Projektdemo</option>
-                        <option class="template" value="poster">Projektposter</option>
-                        <option class="template" value="vortrag">Fachvortrag</option>
+                        <option class="template" <?= ($pro_type=="default") ? 'selected="selected"' : "" ?> value="default">Projektkategorie auswählen *</option>
+                        <option class="template" <?= ($pro_type=="demo"   ) ? 'selected="selected"' : "" ?> value="demo"   >Projektdemo</option>
+                        <option class="template" <?= ($pro_type=="poster" ) ? 'selected="selected"' : "" ?> value="poster" >Projektposter</option>
+                        <option class="template" <?= ($pro_type=="vortrag") ? 'selected="selected"' : "" ?> value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
                 <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
@@ -59,9 +61,7 @@ if (!is_user_logged_in()) {
                 </div>
                 <div class="labeled-input c1">
                     <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
-                    <textarea name="details-description" required>
-                        <?= get_field("project-details-description") ?>
-                    </textarea>
+                    <textarea name="details-description" required><?= get_field("project-details-description") ?></textarea>
                 </div>
 
                 <div class="labeled-input full">
@@ -91,25 +91,21 @@ if (!is_user_logged_in()) {
                 <!-- if demo -->
                 <p class="fat full" dd-mode="demo">Ich benötige für meinen Projektstand:</p>
                 <label class="labeled-checkbox transparent c1" dd-mode="demo">
-                    <input type="checkbox" name="intern-furniture">
+                    <input type="checkbox" name="intern-furniture" <?= (get_field("project-intern-furniture")==1) ? 'checked="checked"' : "" ?>>
                     <span>Tisch (inkl. Husse) und Stühle</span>
                 </label>
                 <label class="labeled-checkbox transparent c2" dd-mode="demo">
-                    <input type="checkbox" name="intern-poster-stand">
+                    <input type="checkbox" name="intern-poster-stand" <?= (get_field("project-intern-poster-stand")==1) ? 'checked="checked"' : "" ?>>
                     <span>Posteraufsteller (für Poster bis max. DIN A1 Hochformat)</span>
                 </label>
                 <div class="labeled-input full" dd-mode="demo">
                     <label for="intern-comment">Sonstige Wünsche oder Kommentare für dein Projektstand</label>
-                    <textarea name="intern-comment" style="min-height: 10rem">
-                        <?= get_field("project-intern-comment") ?>
-                    </textarea>
+                    <textarea name="intern-comment" style="min-height: 10rem"><?= get_field("project-intern-comment") ?></textarea>
                 </div>
                 <!-- if vortrag -->
                 <div class="labeled-input c1" dd-mode="vortrag">
                     <label for="intern-comment">Sonstige Kommentare zu deinem Fachvortrag</label>
-                    <textarea name="intern-comment" style="min-height: 10rem">
-                        <?= get_field("project-intern-comment") ?>
-                    </textarea>
+                    <textarea name="intern-comment" style="min-height: 10rem"><?= get_field("project-intern-comment") ?></textarea>
                 </div>
                 <div class="row gap-1 c2" dd-function="file-upload-trigger" key="2" dd-mode="vortrag">
                     <div class="icon">
@@ -132,12 +128,8 @@ if (!is_user_logged_in()) {
                 <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3" dd-mode="poster">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
-                    <input type="checkbox" name="intern-ausgrundung">
+                    <input type="checkbox" name="intern-ausgrundung" <?= (get_field("project-intern-ausgrundung")==1) ? 'checked="checked"' : "" ?>>
                     <span>Ich habe interesse an einer Ausgründung.</span>
-                </label>
-                <label class="labeled-checkbox transparent full">
-                    <input type="checkbox" name="publish" required>
-                    <span>Ich stimme einer Veröffentlichung des Projektes im Rahmen von Output zu.</span>
                 </label>
                 <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT BEARBEITEN</a>
             </form>
