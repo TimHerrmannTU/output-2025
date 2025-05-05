@@ -24,10 +24,6 @@
 @use "projekte";
 @use "misc";
 
-html {
-    font-size: 75%;
-}
-
 * {
     margin: 0px;
     padding: 0px;
@@ -44,13 +40,13 @@ $slim-height: 66vh;
     background-position: center -#{$offset}px;
 }
 body {
-    font-size: 1rem;
     color: colors.$black;
     background-color: colors.$white;
     @include bg-gradient(0, "/wp-content/uploads/2025/04/Banner.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: auto 100vh;
+    overflow-x: hidden;
     @include mixins.ultrawide {
         background-size: 100vw auto;
     }

@@ -1,7 +1,21 @@
+html {
+  font-size: 75%;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+* {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  word-break: normal;
+}
+
 body {
   font-family: Open-Sans;
   font-weight: 400;
-  font-size: 1rem;
 }
 
 .fs-s {
@@ -1326,6 +1340,12 @@ nav#tud-navbar a {
   padding-left: 1rem;
   border-left: 0.2rem solid #232323;
 }
+@media (max-width: 768px) {
+  #timeline .text-content {
+    border-left: none;
+    border-top: 0.2rem solid #232323;
+  }
+}
 #timeline .text-content.active h3 {
   color: #E2007A;
 }
@@ -1337,6 +1357,74 @@ nav#tud-navbar a {
 }
 #timeline .text-content p {
   margin-top: 1.2rem;
+}
+
+#test-timeline .item {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr;
+  grid-template-rows: repeat(4, auto);
+}
+#test-timeline .item h3, #test-timeline .item .time.minutes {
+  height: -moz-fit-content;
+  height: fit-content;
+  line-height: 1;
+}
+#test-timeline .item h3 {
+  grid-column: 4;
+  margin-top: auto;
+  margin-bottom: 0.2rem;
+}
+#test-timeline .item .desc {
+  grid-column: 4;
+  grid-row: 3;
+}
+@media (max-width: 768px) {
+  #test-timeline .item .desc {
+    margin-top: 2rem;
+    grid-column: 1/span 4;
+  }
+}
+#test-timeline .item .desc.expand {
+  grid-row: 4;
+}
+#test-timeline .item .desc.expand img {
+  float: right;
+  margin: 0 0 1rem 1rem;
+  width: 300px;
+}
+@media (max-width: 768px) {
+  #test-timeline .item .desc.expand img {
+    width: 50vw;
+  }
+}
+#test-timeline .item .v-seperator {
+  border: 0.1rem solid #232323;
+  margin: 0.5rem 2rem;
+  grid-column: 3;
+  grid-row: 1/span 4;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (max-width: 768px) {
+  #test-timeline .item .v-seperator {
+    border-color: transparent;
+    margin: 0 1rem;
+  }
+}
+#test-timeline .time {
+  font-family: Open-Sans-Condensed;
+  font-weight: 600;
+}
+#test-timeline .time.hours {
+  font-size: 10rem;
+  line-height: 10rem;
+  letter-spacing: -12px;
+  padding-right: 12px;
+  grid-row: 1/span 2;
+}
+#test-timeline .time.minutes {
+  font-size: 5rem;
+  margin-top: 0.9rem;
 }
 
 #projekte .controls, #about .controls {
@@ -1407,17 +1495,12 @@ nav#tud-navbar a {
   transform: rotate(180deg);
 }
 
-html {
-  font-size: 75%;
-}
-
 * {
   margin: 0px;
   padding: 0px;
 }
 
 body {
-  font-size: 1rem;
   color: #232323;
   background-color: #FFFFFF;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0px, rgba(0, 0, 0, 0.2) 250px), url("/wp-content/uploads/2025/04/Banner.jpg");
@@ -1425,6 +1508,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: auto 100vh;
+  overflow-x: hidden;
 }
 @media (min-width: 1600px) {
   body {

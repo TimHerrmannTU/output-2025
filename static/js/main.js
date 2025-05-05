@@ -1,27 +1,29 @@
 jQuery(document).ready(function($) {
     console.log("main.js loaded")
     // scroll event for the magenta cube inside the banner
-    var last_y = $(document).scrollTop();
-    try {
-        var current_offset_y = parseInt($(".cube-unfolded").css("top").replace("px", ""))
-        var target_offset_y = $(window).height()
-        target_offset_y = ($(".head.slim").length > 0) ? target_offset_y*0.605 : target_offset_y*0.757 
-        $(window).on( "scroll", function() {
-            if (current_offset_y < target_offset_y) {
-                var new_y = $(this).scrollTop();
-                if (last_y < new_y) {
-                    current_offset_y += (new_y - last_y)/1.5
-                    $(".cube-unfolded").css("top", (current_offset_y).toString()+"px")
+    if ($(".cube-unfolded").length > 0) {
+        var last_y = $(document).scrollTop();
+        try {
+            var current_offset_y = parseInt($(".cube-unfolded").css("top").replace("px", ""))
+            var target_offset_y = $(window).height()
+            target_offset_y = ($(".head.slim").length > 0) ? target_offset_y*0.605 : target_offset_y*0.757 
+            $(window).on( "scroll", function() {
+                if (current_offset_y < target_offset_y) {
+                    var new_y = $(this).scrollTop();
+                    if (last_y < new_y) {
+                        current_offset_y += (new_y - last_y)/1.5
+                        $(".cube-unfolded").css("top", (current_offset_y).toString()+"px")
+                    }
+                    last_y = $(this).scrollTop()
                 }
-                last_y = $(this).scrollTop()
-            }
-            else {
-                $(".cube-unfolded").css("top", (target_offset_y).toString()+"px")
-            }
-        })
-    }
-    catch(e) {
-        console.log(e)
+                else {
+                    $(".cube-unfolded").css("top", (target_offset_y).toString()+"px")
+                }
+            })
+        }
+        catch(e) {
+            console.log(e)
+        }
     }
     // labeled input event (keeps the label above if there is content inside the input)
     $(".labeled-input input, .labeled-input textarea").each(function() {

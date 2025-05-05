@@ -1,4 +1,5 @@
 @use "colors";
+@use "mixins";
 
 #timeline {
     .time {
@@ -19,6 +20,10 @@
         margin-left: 1rem;
         padding-left: 1rem;
         border-left: 0.2rem solid colors.$black;
+        @include mixins.mobile {
+            border-left: none;
+            border-top: 0.2rem solid colors.$black;
+        }
         &.active {
             h3 {
                 color: colors.$magenta;
@@ -32,6 +37,68 @@
         }
         p {
             margin-top: 1.2rem;
+        }
+    }
+}
+
+#test-timeline {
+    .item {
+        display: grid;
+        grid-template-columns: auto auto auto 1fr;
+        grid-template-rows: repeat(4, auto);
+        h3, .time.minutes {
+            height: fit-content;
+            line-height: 1;
+        }
+        h3 {
+            grid-column: 4;
+            margin-top: auto;
+            margin-bottom: 0.2rem;
+        }
+        .desc {
+            grid-column: 4;
+            grid-row: 3;
+            @include mixins.mobile {
+                margin-top: 2rem;
+                grid-column: 1 / span 4;
+            }
+            &.expand {
+                grid-row: 4;
+                img {
+                    float: right;
+                    margin: 0 0 1rem 1rem;
+                    width: 300px;
+                    @include mixins.mobile {
+                        width: 50vw;
+                    }
+                }
+            }
+        }
+        .v-seperator {
+            border: 0.1rem solid colors.$black;
+            margin: 0.5rem 2rem;
+            grid-column: 3;
+            grid-row: 1 / span 4;
+            width: fit-content;
+            @include mixins.mobile {
+                border-color: transparent;
+                margin: 0 1rem;
+            }
+        }
+    }
+    .time {
+        font-family: Open-Sans-Condensed;
+        font-weight: 600;
+        &.hours {
+            font-size: 10rem;
+            line-height: 10rem;
+            letter-spacing: -12px;
+            padding-right: 12px;
+            grid-row: 1/span 2;
+        }
+        &.minutes {
+            font-size: 5rem;
+            margin-top: 0.9rem;
         }
     }
 }

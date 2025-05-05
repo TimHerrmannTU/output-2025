@@ -1,4 +1,4 @@
-<?php /* Template Name: programm */ ?>
+<?php /* Template Name: test */ ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div id="timeline" class="light-bg" style="padding-top: 0">
+    <div id="test-timeline" class="light-bg" style="padding-top: 0">
         <div class="wrapper col gap-2">
             <?php
             $args = array(
@@ -44,31 +44,27 @@
                     $desc = get_field("programm-details-beschreibung");
                     $img = get_field("programm-details-bild")["sizes"]["large"];
                     ?>
-                    <div class="item row mobile-col">
-                        <div class="time row">
-                            <span class="hours"><?= $starting_time[0] ?></span><span class="minutes"><?= $starting_time[1] ?></span>
-                        </div>
-                        <div class="text-content" dd-function="expandable">
-                            <h3 class="row centered" dd-function="trigger">
-                                <?= the_title() ?>
-                                <?php if ($desc_preview) { ?>
-                                    <div class="icon">
-                                        <span class="iconify" data-icon="mdi-chevron-down">
-                                    </div>
-                                <?php } ?>
-                            </h3>
+                    <div class="item" dd-function="expandable">
+                        <div class="time hours"><?= $starting_time[0] ?></div><div class="time minutes"><?= $starting_time[1] ?></div>
+                        <div class="v-seperator"></div>
+                        <h3 class="row centered" dd-function="trigger">
+                            <?= the_title() ?>
                             <?php if ($desc_preview) { ?>
-                                <p><?= $desc_preview ?></p>
+                                <div class="icon ml-1">
+                                    <span class="iconify" data-icon="mdi-chevron-down">
+                                </div>
                             <?php } ?>
-                            <div  class="<?= $desc_preview ? 'expand' : ''; ?>" style="display: <?= $desc_preview ? 'none' : 'block'; ?>">
-                                
-                                <?php 
-                                if (!empty($img)) {
-                                    ?><img src="<?= $img ?>" style="float: right; margin: 0 0 1rem 1rem; width: 300px;"/><?php 
-                                } 
-                                ?>
-                                <p><?= $desc ?></p>
-                            </div>
+                        </h3>
+                        <?php if ($desc_preview) { ?>
+                            <p class="desc"><?= $desc_preview ?></p>
+                        <?php } ?>
+                        <div class="desc <?= $desc_preview ? 'expand' : ''; ?>" style="display: <?= $desc_preview ? 'none' : 'block'; ?>">
+                            <?php 
+                            if (!empty($img)) {
+                                ?><img src="<?= $img ?>"/><?php 
+                            } 
+                            ?>
+                            <p><?= $desc ?></p>
                         </div>
                     </div>
                     <?php

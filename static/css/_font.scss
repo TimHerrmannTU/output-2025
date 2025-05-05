@@ -1,7 +1,19 @@
+@use "mixins";
+
+html {
+    font-size: 75%;
+    @include mixins.mobile {
+        font-size: 60%;
+    }
+}
+* {
+    hyphens: auto;
+    word-break: normal;
+}
+
 body {
     font-family: Open-Sans;
     font-weight: 400;
-    font-size: 1rem;
 }
 
 .fs-s {
