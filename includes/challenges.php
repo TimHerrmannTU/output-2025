@@ -1,5 +1,5 @@
 <div id="challenges" class="dark-bg">
-    <div class="wrapper cards row gap-3">
+    <div class="wrapper cards row gap-3 mobile-col">
         <div class="card gc col gap-1">
             <h3>GEOCACHING</h3>
             <img src="https://output-dd.de/wp-content/uploads/2025/04/challenge_geocaching_huhnchen.png"/>

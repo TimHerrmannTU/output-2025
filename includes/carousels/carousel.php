@@ -36,13 +36,13 @@ if ($query->have_posts()) { ?>
             <div class="carousel-wrapper col gap-2 <?= $car_settings["color"] ?>">
                 <div class="carousel" slide_index="0" slide_count="<?= $slide_count ?>">
 
-                    <div class="slide" style="grid-template-columns: repeat(<?= $items_per_slide ?>, 1fr)"> <!-- SLIDE START -->
+                    <div class="slide"> <!-- SLIDE START -->
                         <?php
                         $items_index = 0;
                         while ($query->have_posts()) {
                             
                             if ( ($items_index % $items_per_slide == 0) && ($items_index != 0) ) { // starts a new slide if the last one is full
-                                ?></div><div class="slide" style="grid-template-columns: repeat(<?= $items_per_slide ?>, 1fr)"><?php
+                                ?></div><div class="slide"><?php
                             }
                             $items_index++;
 
@@ -74,15 +74,15 @@ if ($query->have_posts()) { ?>
                     </div> <!-- SLIDE END -->
 
                 </div>
-                <div class="carousel-controls mt-2">
-                    <div class="slide-dots c1">
+                <div class="carousel-controls mt-2 mobile-col">
+                    <div class="slide-dots">
                         <?php 
                         for ($i = 0; $i < $slide_count; $i++) {
                             ?><a class="dot <?= ($i == 0) ? 'active': '' ?>" index="<?= $i ?>"><div class="<?= $car_settings["color"] ?>"></div></a><?php
                         }  
                         ?>
                     </div>
-                    <a class="more c2 <?= $car_settings["color"] ?>" href="/<?= $car_settings["post_type"] ?>">
+                    <a class="more <?= $car_settings["color"] ?>" href="/<?= $car_settings["post_type"] ?>">
                         <?= $car_settings["button_text"] ?>
                     </a>
                 </div>

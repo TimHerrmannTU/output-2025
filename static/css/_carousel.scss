@@ -1,5 +1,6 @@
 @use "colors";
 @use "functional-elements";
+@use "mixins";
 
 .carousel-wrapper {
     .carousel {
@@ -9,12 +10,20 @@
         .slide {
             min-width: 100%;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            @include mixins.mobile {
+                grid-auto-flow: row;
+                grid-auto-rows: 1fr;
+            }
             gap: 3rem;
             transition: all 1s ease-in-out;
             .item {
+                width: 100%;
+                height: auto;
                 position: relative;
                 justify-content: center;
+                align-items: center;
                 &:hover {
                     filter: none;
                 }
@@ -43,11 +52,21 @@
         $height: 3rem;
         display: grid;
         grid-template-columns:  1fr auto;
+        @include mixins.mobile {
+            grid-template-columns: 100%;
+            grid-auto-flow: row;
+            grid-auto-rows: 1fr;
+            a.more, .slide-dots {
+                grid-column: 1 !important;
+                margin: 0 auto;
+            }
+        }
         gap: 2rem;
         a.more {
             height: $height;
             line-height: $height;
             align-self: flex-end;
+            grid-column: 2;
             @include functional-elements.outline-button(colors.$black, colors.$white);
             &.magenta {
                 @include functional-elements.outline-button(colors.$magenta, colors.$white);
@@ -63,6 +82,7 @@
             }
         }
         .slide-dots {
+            grid-column: 1;
             display: flex;
             flex-direction: row;
             justify-self: center;
