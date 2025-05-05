@@ -18,7 +18,7 @@
     <?php # needs pre-defined $post in order to work! ?>
     <div class="light-bg">
         <div class="wrapper single-project">
-            <h3 class="headline"><?php get_field("sponsor-details-name") ?></h3>
+            <h3 class="headline"><?php the_title() ?></h3>
             <?php
             // post processing :^)
             the_post();
@@ -34,7 +34,7 @@
             ?>
 
             <div class="col">
-                <img class="mb-2" src="<?= $img ?>"/>
+                <img src="<?= $img ?>"/>
                 <?php
                 if ($tier) {
                     ?><h4><?= $tier ?></h4><?php

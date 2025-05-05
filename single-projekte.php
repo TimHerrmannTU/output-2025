@@ -31,15 +31,16 @@
             $acfs = array(
                 "" => get_field("project-details-timeslot"),
                 "Typ" => get_the_terms(get_the_ID(), 'project-type')[0]->name,
-                "Studiengang / Lehrstuhl / Firma" => get_field("project-details-institution"),
+                "Studiengang / Lehrstuhl / Firma<br>" => get_field("project-details-institution"),
                 "Präsentator" => get_field("project-details-presenter"),
                 "Projektbeteiligte" => get_field("project-details-participants"),
             );
             $website = get_field("project-details-website");
+            if ($website) $website_short = implode("/", array_slice(explode("/", $website), 0, 3));
             ?>
 
             <div class="col">
-                <img class="mb-2" src="<?= $img ?>"/>
+                <img src="<?= $img ?>"/>
                 <?php
                 if ($room) {
                     ?><h4><b>Raum</b> <?= $room ?></h4><?php
@@ -50,7 +51,7 @@
                     }
                 }
                 if ($website) {
-                    ?><a class="color-magenta" href="<?= $website ?>"><?= $website ?></a><?php
+                    ?><p><b>Website</b> <a class="color-magenta" href="<?= $website ?>"><?= $website_short ?></a></p><?php
                 }
                 ?>
             </div>

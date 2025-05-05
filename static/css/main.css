@@ -897,8 +897,14 @@ form input[type=submit] {
   display: grid;
   grid-template-columns: 40% 60%;
 }
+.single-project h3 {
+  margin-bottom: 2rem;
+}
 .single-project .col {
-  text-align: right;
+  gap: 1.5rem;
+}
+.single-project .col * {
+  line-height: 1.2;
 }
 .single-project .headline {
   grid-column: 1/span 2;

@@ -9,7 +9,7 @@
         </div>
         <?php
         if (is_user_logged_in()) {
-            ?><a class="login-button" href="/login"><div class="iconify" data-icon="mdi-account-cog"></div></a><?php
+            ?><a class="login-button" href="/projekt-einreichen"><div class="iconify" data-icon="mdi-account-cog"></div></a><?php
         }
         else {
             ?><a class="login-button" href="/login"><div class="iconify" data-icon="mdi-login"></div></a><?php

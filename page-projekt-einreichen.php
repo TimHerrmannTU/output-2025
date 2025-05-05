@@ -145,6 +145,7 @@ if (!is_user_logged_in()) {
                 <?php
                 $args = array(
                     'post_type'      => 'projekte',  // Slug of the category
+                    'post_status'    => ['publish', 'draft', 'pending', 'private'],
                     'author'         => get_current_user_id(),
                     'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
                 );
