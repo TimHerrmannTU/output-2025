@@ -17,35 +17,17 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
             gap: 2rem;
             width: 55%;
             @include mixins.mobile {
-                width: 100%;
-            }
-        }
-        .cube-unfolded {
-            position: absolute;
-            height: 42rem;
-            left: 70%;
-            top: -65px;
-            @include mixins.mobile {
-                display:none;
+                width: auto;
             }
         }
     }
-    &.slim:not(.cube) {
+    &.slim {
         height: fit-content;
         .wrapper {
             .text-content {
                 margin-bottom: 4rem;
                 gap: 1rem;
-                width: 100%;
             }
-            .cube-unfolded {
-                display: none;
-            }
-        }
-    }
-    &.slim.cube {
-        .cube-unfolded {
-            top: 289px;
         }
     }
 }

@@ -1,0 +1,14 @@
+@use "mixins";
+
+.cube-unfolded {
+    position: absolute;
+    top: 30vh;
+    right: 35vh;
+    height: 55vh;
+    @include mixins.ultrawide {
+        right: 19vw;
+    }
+    @include mixins.mobile {
+        display: none;
+    }
+}

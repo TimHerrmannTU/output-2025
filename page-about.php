@@ -13,6 +13,7 @@
     $sub_headline = "Am 19. Juni 2025 präsentiert OUTPUT zum 19. Mal die aktuellen Projekte der Fakultät Informatik";
     $cube = true;
     include get_template_directory() . "/includes/narrow-head.php";
+    include get_template_directory() . "/includes/cube.php";
     ?>
 
     <div class="light-bg">

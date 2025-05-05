@@ -1,20 +1,28 @@
 jQuery(document).ready(function($) {
+    console.log("main.js loaded")
     // scroll event for the magenta cube inside the banner
     var last_y = $(document).scrollTop();
     try {
-        var offset_y = parseInt($("#banner:not(.slim) .cube-unfolded").css("top").replace("px", ""));
+        var current_offset_y = parseInt($(".cube-unfolded").css("top").replace("px", ""))
+        var target_offset_y = $(window).height()
+        target_offset_y = ($(".head.slim").length > 0) ? target_offset_y*0.605 : target_offset_y*0.757 
         $(window).on( "scroll", function() {
-            if (offset_y < 340) {
+            if (current_offset_y < target_offset_y) {
                 var new_y = $(this).scrollTop();
                 if (last_y < new_y) {
-                    offset_y += (new_y - last_y)/2
-                    $("#banner .cube-unfolded").css("top", (offset_y).toString()+"px")
+                    current_offset_y += (new_y - last_y)/1.5
+                    $(".cube-unfolded").css("top", (current_offset_y).toString()+"px")
                 }
                 last_y = $(this).scrollTop()
             }
+            else {
+                $(".cube-unfolded").css("top", (target_offset_y).toString()+"px")
+            }
         })
     }
-    catch(e) {}
+    catch(e) {
+        console.log(e)
+    }
     // labeled input event (keeps the label above if there is content inside the input)
     $(".labeled-input input, .labeled-input textarea").each(function() {
         var parent = $(this).closest(".labeled-input")

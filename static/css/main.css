@@ -198,7 +198,7 @@ code {
 }
 @media (max-width: 768px) {
   .w-50 {
-    width: 100%;
+    width: auto;
   }
 }
 
@@ -969,34 +969,16 @@ nav#tud-navbar a {
 }
 @media (max-width: 768px) {
   #banner .wrapper .text-content {
-    width: 100%;
+    width: auto;
   }
 }
-#banner .wrapper .cube-unfolded {
-  position: absolute;
-  height: 42rem;
-  left: 70%;
-  top: -65px;
-}
-@media (max-width: 768px) {
-  #banner .wrapper .cube-unfolded {
-    display: none;
-  }
-}
-#banner.slim:not(.cube) {
+#banner.slim {
   height: -moz-fit-content;
   height: fit-content;
 }
-#banner.slim:not(.cube) .wrapper .text-content {
+#banner.slim .wrapper .text-content {
   margin-bottom: 4rem;
   gap: 1rem;
-  width: 100%;
-}
-#banner.slim:not(.cube) .wrapper .cube-unfolded {
-  display: none;
-}
-#banner.slim.cube .cube-unfolded {
-  top: 289px;
 }
 
 #footer .last-line {
@@ -1039,6 +1021,23 @@ nav#tud-navbar a {
   width: 100%;
   border: solid 1px white;
   margin: 2rem 0;
+}
+
+.cube-unfolded {
+  position: absolute;
+  top: 30vh;
+  right: 35vh;
+  height: 55vh;
+}
+@media (min-width: 1600px) {
+  .cube-unfolded {
+    right: 19vw;
+  }
+}
+@media (max-width: 768px) {
+  .cube-unfolded {
+    display: none;
+  }
 }
 
 .main {
@@ -1463,7 +1462,7 @@ body#projekte, body#projekte-einreichen {
 }
 
 .wrapper {
-  width: 66vw;
+  width: 66.66vw;
   margin: 0 auto;
 }
 @media (max-width: 768px) {

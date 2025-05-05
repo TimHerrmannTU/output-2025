@@ -21,10 +21,10 @@
                     <h3>WERDE TEIL VON OUTPUT UND<br> REICHE DEIN PROJEKT BIS 5. JUNI EIN!</h3>
                     <button class="white transparent-text mt-3" onclick="location.href='/projekt-einreichen'">PROJEKT EINREICHEN</button>
                 </div>
-                <img class="cube-unfolded" src="<?= get_template_directory_uri(); ?>/static/svg/cube_unfolded.svg" />
             </div>
         </div>
     </div>
+    <?php include get_template_directory() . "/includes/cube.php"; ?>
 
     <div class="light-bg">
         <div class="main wrapper">

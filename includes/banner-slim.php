@@ -9,6 +9,5 @@ if (empty($sub_headline)) $sub_headline = "Set \$sub_headline before including t
             <h2><?= $main_headline ?></h2>
             <h3><?= $sub_headline ?></h3>
         </div>
-        <img class="cube-unfolded" src="<?= get_template_directory_uri(); ?>/static/svg/cube_unfolded.svg" />
     </div>
 </div>

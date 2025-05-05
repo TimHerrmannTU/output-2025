@@ -1,0 +1,1 @@
+<img class="cube-unfolded" src="<?= get_template_directory_uri(); ?>/static/svg/cube_unfolded.svg" />
