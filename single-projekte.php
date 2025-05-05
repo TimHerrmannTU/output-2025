@@ -18,7 +18,17 @@
     <?php # needs pre-defined $post in order to work! ?>
     <div class="light-bg">
         <div class="wrapper single-project">
-            <h3 class="headline"><?php the_title() ?></h3>
+            <div class="headline row gap-1">
+                <h3>
+                    <?php the_title(); ?>
+                </h3>
+                <?php
+                if (is_user_logged_in()) {
+                    ?><a class="color-magenta" href="/projektdetails-bearbeiten?id=<?= $_GET["p"] ?>"><div class="iconify" data-icon="mdi-edit"></div></a><?php
+                }
+                ?>
+            </div>
+
             <?php
             // post processing :^)
             the_post();

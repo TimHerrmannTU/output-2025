@@ -1,4 +1,4 @@
-<?php /* Template Name: projekt-einreichen */ ?>
+<?php /* Template Name: projektdetails-bearbeiten */ ?>
 <?php
 // Überprüfen, ob der Benutzer angemeldet ist
 if (!is_user_logged_in()) {
@@ -17,20 +17,14 @@ if (!is_user_logged_in()) {
 </head>
 <body id="projekt-einreichen" <?php body_class() ?>>
     <?php
-    $main_headline = "MEIN BEREICH";
-    $sub_headline = "PROJEKTE EINREICHEN UND VERWALTEN";
+    $main_headline = "PROJEKT BEARBEITEN";
+    $sub_headline = " ";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
-            
-            <div id="controls" class="default-grid">
-                <button class="r1 c1" dd-target="">MEIN PROFIL</button>
-                <button class="r2 c1 active" dd-target="project-register-form">NEUES PROJEKT</button>
-                <button class="r2 c2" dd-target="my-projects">MEINE PROJEKTE</button>
-            </div>
-            
+                        
             <form id="project-register-form" class="grid conditional" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_project_post">
 
@@ -138,7 +132,7 @@ if (!is_user_logged_in()) {
                     <input type="checkbox" name="publish" required>
                     <span>Ich stimme einer Veröffentlichung des Projektes im Rahmen von Output zu.</span>
                 </label>
-                <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT EINREICHEN</a>
+                <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT BEARBEITEN</a>
             </form>
 
             <div id="my-projects" class="default-grid conditional" style="display:none">

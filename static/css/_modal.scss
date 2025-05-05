@@ -31,9 +31,6 @@
 .single-project {
     display: grid;
     grid-template-columns: 40% 60%;
-    h3 {
-        margin-bottom: 2rem;
-    }
     .col {
         gap: 1.5rem;
         * {
@@ -42,6 +39,19 @@
     }
     .headline {
         grid-column: 1/span 2;
+        margin-bottom: 2rem;
+        align-items: center;
+        h3 {
+            line-height: normal;
+        }
+        a {
+            height: fit-content;
+            line-height: normal;
+            svg {
+                height: 3rem;
+                width: 3rem;
+            }
+        }
     }
     img {
         max-width: 100%;

@@ -2,6 +2,7 @@
 $magenta: #E2007A;
 $yellow: #FFCC00;
 $cyan: #008BD0;
+$red: #FF0000;
 
 $purple: #6D1F80;
 
@@ -15,6 +16,9 @@ $white: #FFFFFF;
 }
 .color-black {
     color: $black !important;
+}
+.color-red, .error {
+    color: $red !important;
 }
 .color-magenta {
     color: $magenta !important;
