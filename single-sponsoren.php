@@ -30,6 +30,7 @@
             $tier = get_the_terms(get_the_ID(), 'sponsor-type')[0]->name;
             $contact = get_field("sponsor-details-contact");
             $website = get_field("sponsor-details-website");
+            if ($website) $website_short = implode("/", array_slice(explode("/", $website), 0, 3));
             ?>
 
             <div class="col">
@@ -42,7 +43,7 @@
                     ?><p>Email: <a class="color-magenta" href="mailto:<?= $contact ?>"><?= $contact ?></a></p><?php
                 }
                 if ($website) {
-                    ?><p>Website: <a class="color-magenta" href="<?= $website ?>"><?= $website ?></a></p><?php
+                    ?><p>Website: <a class="color-magenta" href="<?= $website ?>"><?= $website_short ?></a></p><?php
                 }
                 ?>
             </div>

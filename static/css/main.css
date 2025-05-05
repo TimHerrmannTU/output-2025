@@ -881,8 +881,10 @@ form input[type=submit] {
 
 .single-project {
   display: grid;
-  gap: 1rem;
   grid-template-columns: 40% 60%;
+}
+.single-project .col {
+  text-align: right;
 }
 .single-project .headline {
   grid-column: 1/span 2;
@@ -895,6 +897,7 @@ form input[type=submit] {
 }
 .single-project .desc {
   grid-column: 2;
+  margin-left: 4rem;
 }
 
 nav {
@@ -1083,10 +1086,24 @@ nav#tud-navbar a {
   width: 10rem;
 }
 #sponsoren-tierlist .sponsor img {
+  aspect-ratio: 5/2;
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+#sponsoren-tierlist .sponsor:hover img {
+  filter: saturate(1.2);
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+#sponsor img {
+  aspect-ratio: 5/2;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 #challenges .cards {

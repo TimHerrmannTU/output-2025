@@ -10,9 +10,24 @@
         height: auto;
         width: 10rem;
         img {
+            aspect-ratio: 5/2;
             height: 100%;
             width: 100%;
             object-fit: contain;
         }
+        &:hover img {
+            filter: saturate(1.2);
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+#sponsor {
+    img {
+        aspect-ratio: 5/2;
+        width: 100%;
+        object-fit: contain;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     }
 }

@@ -30,8 +30,10 @@
 
 .single-project {
     display: grid;
-    gap: 1rem;
     grid-template-columns: 40% 60%;
+    .col {
+        text-align: right;
+    }
     .headline {
         grid-column: 1/span 2;
     }
@@ -42,5 +44,6 @@
     }
     .desc {
         grid-column: 2;
+        margin-left: 4rem;
     }
 }
