@@ -31,10 +31,10 @@
 
 $slim-height: 66vh;
 @mixin bg-gradient($offset, $img-url) {
-    background-image: 
+    background-image:
         linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.75) #{$offset}px, 
+            rgba(0, 0, 0, 0.75) #{$offset}px,
             rgba(0, 0, 0, 0.2) #{250+$offset}px),
         url($img-url);
     background-position: center -#{$offset}px;
@@ -62,6 +62,9 @@ body {
     }
     &#projekte, &#projekte-einreichen {
         @include bg-gradient(300, '/wp-content/uploads/2025/04/projekte-banner.jpg');
+    }
+    &#lan-party {
+        @include bg-gradient(300, '/wp-content/uploads/2025/05/lanparty-banner.jpg');
     }
 }
 .head { // contains tud navbar + navbar + banner

@@ -20,8 +20,8 @@
         <div class="wrapper col gap-3">
             <div class="col gap-1">
                 <h4>Wann?</h3>
-                <p>13.06.2025 - 15.06.2025</p>
-                <p> Freitag 16:00 Uhr bis Sonntag 18:00 Uhr</p>
+                    <p>13.06.2025 - 15.06.2025</p>
+                    <p>Freitag 16:00 Uhr bis Sonntag 18:00 Uhr</p>
             </div>
             <div class="col gap-1">
                 <h4>Wo?</h4>
@@ -32,7 +32,7 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-            
+
             <div class="col gap-1">
                 <h4>Wer?</h4>
                 <p>Grundsätzlich ist jeder willkommen.
@@ -46,13 +46,11 @@
                 <h4>Kosten</h4>
                 <p>Teilnahmegebühr: 15€ pro Person</p>
             </div>
-
             <div class="col gap-1">
                 <h4>Weitere Informationen</h4>
                 <p>Weitere Infos zur LAN-Party und zu den Tickets gibt es auf unserem Discord-Server:</p>
                 <a class="discord-link" href="https://discord.com/invite/XuvpKwggVA">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         viewBox="0 -28.5 256 256" version="1.1" preserveAspectRatio="xMidYMid">
                         <g>
                             <path
