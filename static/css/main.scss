@@ -42,12 +42,12 @@ $slim-height: 66vh;
 body {
     color: colors.$black;
     background-color: colors.$white;
-    @include bg-gradient(380, "/wp-content/uploads/2025/04/Banner.jpg");
+    @include bg-gradient(0, "/wp-content/uploads/2025/04/Banner.jpg");
     background-repeat: no-repeat;
-    background-size: auto 100vh;
+    background-size: 100vw auto;
     overflow-x: hidden;
-    @include mixins.ultrawide {
-        background-size: 100vw auto;
+    @include mixins.narrow {
+        background-size: auto 100vh;
     }
     // overwriting background images
     &#about {
@@ -84,6 +84,9 @@ body {
     margin: 0 auto;
     @include mixins.mobile {
         width: 95vw;
+    }
+    @include mixins.narrow {
+        width: 85vw;
     }
     @include mixins.ultrawide {
         width: 50vw;

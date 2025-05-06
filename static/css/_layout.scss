@@ -2,6 +2,9 @@
 
 .w-50 {
     width: 50%;
+    @include mixins.narrow {
+        width: auto;
+    }
     @include mixins.mobile {
         width: auto;
     }

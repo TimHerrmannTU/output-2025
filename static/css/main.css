@@ -214,6 +214,11 @@ code {
 .w-50 {
   width: 50%;
 }
+@media (max-aspect-ratio: 3/2) {
+  .w-50 {
+    width: auto;
+  }
+}
 @media (max-aspect-ratio: 6/10) {
   .w-50 {
     width: auto;
@@ -1011,6 +1016,11 @@ nav#tud-navbar a {
     width: auto;
   }
 }
+@media (max-aspect-ratio: 3/2) {
+  #banner .wrapper .text-content {
+    width: auto;
+  }
+}
 #banner.slim {
   height: -moz-fit-content;
   height: fit-content;
@@ -1078,6 +1088,11 @@ nav#tud-navbar a {
     display: none;
   }
 }
+@media (max-aspect-ratio: 3/2) {
+  .cube-unfolded {
+    display: none;
+  }
+}
 
 .main {
   height: 850px;
@@ -1098,7 +1113,7 @@ nav#tud-navbar a {
   width: 55%;
   box-sizing: border-box;
 }
-@media (max-aspect-ratio: 6/10) {
+@media (max-aspect-ratio: 3/2) {
   .main {
     height: -moz-fit-content;
     height: fit-content;
@@ -1145,6 +1160,7 @@ nav#tud-navbar a {
 }
 
 #challenges .cards {
+  align-items: flex-end;
   justify-content: space-between;
 }
 #challenges .cards .card {
@@ -1156,6 +1172,7 @@ nav#tud-navbar a {
 }
 #challenges .cards .card img {
   aspect-ratio: 1/1;
+  max-width: 85vw;
 }
 #challenges .gc {
   color: #E2007A;
@@ -1528,15 +1545,15 @@ nav#tud-navbar a {
 body {
   color: #232323;
   background-color: #FFFFFF;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 380px, rgba(0, 0, 0, 0.5) 630px), url("/wp-content/uploads/2025/04/Banner.jpg");
-  background-position: center -380px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0px, rgba(0, 0, 0, 0.5) 250px), url("/wp-content/uploads/2025/04/Banner.jpg");
+  background-position: center -0px;
   background-repeat: no-repeat;
-  background-size: auto 100vh;
+  background-size: 100vw auto;
   overflow-x: hidden;
 }
-@media (min-aspect-ratio: 17/9) {
+@media (max-aspect-ratio: 3/2) {
   body {
-    background-size: 100vw auto;
+    background-size: auto 100vh;
   }
 }
 body#about {
@@ -1580,6 +1597,11 @@ body#lan-party {
 @media (max-aspect-ratio: 6/10) {
   .wrapper {
     width: 95vw;
+  }
+}
+@media (max-aspect-ratio: 3/2) {
+  .wrapper {
+    width: 85vw;
   }
 }
 @media (min-aspect-ratio: 17/9) {

@@ -2,6 +2,9 @@
 @mixin mobile {
     @media (max-aspect-ratio: 6/10) { @content; }
 }
+@mixin narrow {
+    @media (max-aspect-ratio: 3/2) { @content; }
+}
 @mixin ultrawide {
     @media (min-aspect-ratio: 17/9) { @content; }
 }

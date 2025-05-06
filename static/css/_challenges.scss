@@ -3,6 +3,7 @@
 
 #challenges {
     .cards {
+        align-items: flex-end;
         justify-content: space-between;
         .card {
             overflow: hidden;
@@ -12,6 +13,7 @@
             }
             img {
                 aspect-ratio: 1/1;
+                max-width: 85vw;
             }
         }
     }

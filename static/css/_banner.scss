@@ -19,6 +19,9 @@ $navbar-height: 14.5rem; // TUD navbar height + normal navbar height
             @include mixins.mobile {
                 width: auto;
             }
+            @include mixins.narrow {
+                width: auto;
+            }
         }
     }
     &.slim {
