@@ -129,10 +129,10 @@
                     <textarea name="description"> </textarea>
                 </div>
 
-                <div class="row gap-3" style="justify-content: space-between">
-                    <label class="labeled-checkbox">
+                <div class="row gap-3" style="justify-content:space-between; grid-column: span 2;">
+                    <label class="labeled-checkbox transparent">
+                        <input name="agb" type="checkbox" required>
                         <span>Ich habe die AGBs gelesen</span>
-                        <input name="agb" type="checkbox" style="margin-left: 1rem" required>
                     </label>
                     <input class="bg-magenta color-white" type="submit" value="Absenden">
                 </div>
