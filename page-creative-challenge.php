@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>>
     <?php
     $main_headline = "Creative Challenge: \"Würfelwelten\"";
-    $sub_headline = "Schickt uns bis zum <b>6. Juni 2025</b> eure Designs zum Motto „Würfelwelten“ - entfaltet eure Kreativität und werdet Teil unserer Ausstellung!";
+    $sub_headline = "Schickt uns bis zum <b>8. Juni 2025</b> eure Designs zum Motto „Würfelwelten“ - entfaltet eure Kreativität und werdet Teil unserer Ausstellung!";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col">
                     <h4>Bis wann ist die Einreichung möglich?</h4>
-                    <p>Kunstwerke können bis zum <b>6. Juni 2025</b> über das Formular auf dieser Seite eingereicht
+                    <p>Kunstwerke können bis zum <b>8. Juni 2025</b> über das Formular auf dieser Seite eingereicht
                         werden.</p>
                 </div>
                 <div class="col" dd-function="expandable">
