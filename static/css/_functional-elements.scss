@@ -78,6 +78,9 @@ a {
         color: blue;
         text-decoration: underline;
     }
+    &.logo, &.icon {
+        line-height: 1;
+    }
 }
 .light-bg a {
     color: colors.$black;

@@ -1,8 +1,12 @@
 // USED FOR MEDIA QUERIES
 @mixin mobile {
-    @media (max-width: 768px) { @content; }
+    @media (max-aspect-ratio: 5/4) { @content; }
+}
+@mixin ultrawide {
+    @media (min-aspect-ratio: 17/9) { @content; }
 }
 
-@mixin ultrawide {
-    @media (min-width: 1600px) { @content; }
-}
+// 16/9 desktop
+// 16/10 dekstop
+// 4/3 desktop/tablet
+// 9/16 phone

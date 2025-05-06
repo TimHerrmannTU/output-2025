@@ -62,7 +62,7 @@ a, p, td, th, li, ul, select, input, textarea, label, code, button {
     font-style: normal;
     font-weight: 400;
     line-height: 1;
-    &:not(button) {
+    &:not(button, a.icon, a.logo, a.login-button) {
         line-height: 2;
     }
 }
