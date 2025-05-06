@@ -68,14 +68,19 @@
                             <span class="iconify" data-icon="mdi-chevron-down">
                         </div>
                     </h4>
-                    <div class="expand" style="display:none;">
-                        <p>Die Siegerehrung der Creative Challenge erfolgt im Rahmen von <b>OUTPUT.DD</b> am <b>19. Juni
-                                2025</b> im APB.</p>
-                        <ul class="indented">
-                            <li><b>Hinweis:</b> Zur Entgegennahme der Preise ist die Anwesenheit bei der
-                                Präsenzveranstaltung in Dresden erforderlich. Eine digitale Übergabe ist nicht möglich.
-                            </li>
-                        </ul>
+                    <div class="expand col gap-1" style="display:none;">
+                        <p>Die Siegerehrung der Creative Challenge erfolgt im Rahmen von <b>OUTPUT.DD</b> am <b>19.
+                                Juni
+                                2025</b> im <b>Andreas Pfitzmann Bau</b>.
+                        </p>
+                        <p>
+                            <b>Hinweis:</b> Zur Entgegennahme der Preise ist die Anwesenheit bei der
+                            Präsenzveranstaltung in Dresden erforderlich. Eine digitale Übergabe ist nicht möglich.
+                        </p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2509.495772963505!2d13.72039477749953!3d51.025463471707724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709c5e2c98006a1%3A0x4cea042f340698d5!2sTUD%20%7C%20Andreas-Pfitzmann-Bau%20(APB)%20%7C%20Fakult%C3%A4t%20Informatik!5e0!3m2!1sde!2sde!4v1746539276113!5m2!1sde!2sde"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="col" dd-function="expandable">
