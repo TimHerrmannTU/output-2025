@@ -1,12 +1,14 @@
 <?php /* Template Name: creative-challenge */ ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php bloginfo('name'); ?> - CC Anmeldung</title>
     <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
     <?php
     $main_headline = "Creative Challenge: \"Würfelwelten\"";
@@ -24,7 +26,8 @@
                 </div>
                 <div class="col">
                     <h4>Bis wann ist die Einreichung möglich?</h4>
-                    <p>Kunstwerke können bis zum <b>6. Juni 2025</b> über das Formular auf dieser Seite eingereicht werden.</p>
+                    <p>Kunstwerke können bis zum <b>6. Juni 2025</b> über das Formular auf dieser Seite eingereicht
+                        werden.</p>
                 </div>
                 <div class="col" dd-function="expandable">
                     <h4 dd-function="trigger">
@@ -34,9 +37,11 @@
                         </div>
                     </h4>
                     <div class="expand" style="display: none">
-                        <p>Sowohl digitale (2D und 3D) als auch traditionelle Kunstwerke, die sich um das Thema „Würfelwelten“ drehen.</p>
+                        <p>Sowohl digitale (2D und 3D) als auch traditionelle Kunstwerke, die sich um das Thema
+                            „Würfelwelten“ drehen.</p>
                         <ul class="indented">
-                            <li>Handgefertigte Zeichnungen oder Gemälde müssen eingescannt oder hochwertig abfotografiert werden.</li>
+                            <li>Handgefertigte Zeichnungen oder Gemälde müssen eingescannt oder hochwertig
+                                abfotografiert werden.</li>
                             <li>3D-Kunst wird nur als gerendertes Bild akzeptiert.</li>
                             <li><b>KI-generierte Bilder sind von der Teilnahme ausgeschlossen.</b></li>
                         </ul>
@@ -52,7 +57,8 @@
                     <ul class="indented expand" style="display: none">
                         <li>Erlaubte Formate: <b>JPEG</b> oder <b>PNG</b>.</li>
                         <li>Dateibenennung: <b>Vorname_Nachname_Titel.jpg/png.</b></li>
-                        <li>Fügt eurem Werk in dem Formular noch einen Titel und eine kurze Beschreibung eurer Idee hinzu.</li>
+                        <li>Fügt eurem Werk in dem Formular noch einen Titel und eine kurze Beschreibung eurer Idee
+                            hinzu.</li>
                     </ul>
                 </div>
                 <div class="col" dd-function="expandable">
@@ -63,9 +69,12 @@
                         </div>
                     </h4>
                     <div class="expand" style="display:none;">
-                        <p>Die Siegerehrung der Creative Challenge erfolgt im Rahmen von <b>OUTPUT.DD</b> am <b>19. Juni 2025</b> im APB.</p>
+                        <p>Die Siegerehrung der Creative Challenge erfolgt im Rahmen von <b>OUTPUT.DD</b> am <b>19. Juni
+                                2025</b> im APB.</p>
                         <ul class="indented">
-                            <li><b>Hinweis:</b> Zur Entgegennahme der Preise ist die Anwesenheit bei der Präsenzveranstaltung in Dresden erforderlich. Eine digitale Übergabe ist nicht möglich.</li>
+                            <li><b>Hinweis:</b> Zur Entgegennahme der Preise ist die Anwesenheit bei der
+                                Präsenzveranstaltung in Dresden erforderlich. Eine digitale Übergabe ist nicht möglich.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -78,16 +87,18 @@
                     </h4>
                     <ul class="indented expand" style="display:none;">
                         <li><b>Plagiate</b> und Verstöße gegen die Teilnahmebedingungen führen zum Ausschluss.</li>
-                        <li>Mit der Teilnahme wird der Veranstalter berechtigt, das eingereichte Bild für Werbezwecke zu nutzen und am <b>19. Juni 2025</b> auszustellen.</li>
+                        <li>Mit der Teilnahme wird der Veranstalter berechtigt, das eingereichte Bild für Werbezwecke zu
+                            nutzen und am <b>19. Juni 2025</b> auszustellen.</li>
                         <li>Die <b>Urheberrechte</b> verbleiben vollständig bei den Künstler*innen.</li>
                     </ul>
                 </div>
                 <p>Wir freuen uns auf eure kreativen Einsendungen!</p>
             </div>
             <h2 class="mt-3">Anmeldung zur Creative-Challenge</h2>
-            <form id="cc-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
+            <form id="cc-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST"
+                enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
-                
+
                 <div class="labeled-input c1">
                     <label for="firstname">Vorname</label>
                     <input name="firstname" type="text" required>
@@ -101,19 +112,15 @@
                     <input name="email" type="email">
                 </div>
                 <div class="labeled-input c2">
-                    <label for="adress">Wohnort</label>
+                    <label for="adress">Künstlername</label>
                     <input name="adress" type="text">
                 </div>
-                <div class="labeled-input full">
-                    <label for="job">Beschäftigung</label>
-                    <input name="job" type="text">
-                </div>
-
                 <div class="labeled-input c1">
                     <label for="title">Title</label>
                     <input name="title" type="text">
                 </div>
-                <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1" style="grid-row:span 2;">
+                <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1"
+                    style="grid-row:span 2;">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
@@ -145,4 +152,5 @@
     wp_footer();
     ?>
 </body>
+
 </html>
