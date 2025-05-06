@@ -1,6 +1,6 @@
 // USED FOR MEDIA QUERIES
 @mixin mobile {
-    @media (max-aspect-ratio: 5/4) { @content; }
+    @media (max-aspect-ratio: 6/10) { @content; }
 }
 @mixin ultrawide {
     @media (min-aspect-ratio: 17/9) { @content; }

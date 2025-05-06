@@ -1,7 +1,7 @@
 html {
   font-size: 75%;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   html {
     font-size: 60%;
   }
@@ -186,19 +186,19 @@ code {
 }
 
 .bg-magenta {
-  background-color: #E2007A;
+  background-color: #E2007A !important;
 }
 
 .bg-yellow {
-  background-color: #FFCC00;
+  background-color: #FFCC00 !important;
 }
 
 .bg-cyan {
-  background-color: #008BD0;
+  background-color: #008BD0 !important;
 }
 
 .bg-purple {
-  background-color: #6D1F80;
+  background-color: #6D1F80 !important;
 }
 
 .dark-bg {
@@ -214,7 +214,7 @@ code {
 .w-50 {
   width: 50%;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .w-50 {
     width: auto;
   }
@@ -248,7 +248,7 @@ code {
   flex-wrap: wrap;
 }
 
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .mobile-col {
     display: flex;
     flex-direction: column;
@@ -969,7 +969,7 @@ nav#navbar .login-button > * {
   height: 3rem;
   width: 3rem;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   nav#navbar .login-button, nav#navbar .links {
     display: none;
   }
@@ -1006,7 +1006,7 @@ nav#tud-navbar a {
   gap: 2rem;
   width: 55%;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   #banner .wrapper .text-content {
     width: auto;
   }
@@ -1073,7 +1073,7 @@ nav#tud-navbar a {
     right: 19vw;
   }
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .cube-unfolded {
     display: none;
   }
@@ -1098,7 +1098,7 @@ nav#tud-navbar a {
   width: 55%;
   box-sizing: border-box;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .main {
     height: -moz-fit-content;
     height: fit-content;
@@ -1194,7 +1194,7 @@ nav#tud-navbar a {
   gap: 3rem;
   transition: all 1s ease-in-out;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .carousel-wrapper .carousel .slide {
     grid-auto-flow: row;
     grid-auto-rows: 1fr;
@@ -1233,7 +1233,7 @@ nav#tud-navbar a {
   grid-template-columns: 1fr auto;
   gap: 2rem;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .carousel-wrapper .carousel-controls {
     grid-template-columns: 100%;
     grid-auto-flow: row;
@@ -1365,7 +1365,7 @@ nav#tud-navbar a {
   padding-left: 1rem;
   border-left: 0.2rem solid #232323;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   #timeline .text-content {
     border-left: none;
     border-top: 0.2rem solid #232323;
@@ -1403,7 +1403,7 @@ nav#tud-navbar a {
   grid-column: 4;
   grid-row: 3;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   #test-timeline .item .desc {
     margin-top: 2rem;
     grid-column: 1/span 4;
@@ -1417,7 +1417,7 @@ nav#tud-navbar a {
   margin: 0 0 1rem 1rem;
   width: 300px;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   #test-timeline .item .desc.expand img {
     width: 50vw;
   }
@@ -1430,7 +1430,7 @@ nav#tud-navbar a {
   width: -moz-fit-content;
   width: fit-content;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   #test-timeline .item .v-seperator {
     border-color: transparent;
     margin: 0 1rem;
@@ -1528,10 +1528,9 @@ nav#tud-navbar a {
 body {
   color: #232323;
   background-color: #FFFFFF;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0px, rgba(0, 0, 0, 0.2) 250px), url("/wp-content/uploads/2025/04/Banner.jpg");
-  background-position: center -0px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 380px, rgba(0, 0, 0, 0.5) 630px), url("/wp-content/uploads/2025/04/Banner.jpg");
+  background-position: center -380px;
   background-repeat: no-repeat;
-  background-position: top center;
   background-size: auto 100vh;
   overflow-x: hidden;
 }
@@ -1541,23 +1540,23 @@ body {
   }
 }
 body#about {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0px, rgba(0, 0, 0, 0.2) 250px), url("/wp-content/uploads/2025/04/about-banner-1.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0px, rgba(0, 0, 0, 0.5) 250px), url("/wp-content/uploads/2025/04/about-banner-1.jpg");
   background-position: center -0px;
 }
 body#programm {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 250px, rgba(0, 0, 0, 0.2) 500px), url("/wp-content/uploads/2025/04/programm-banner-scaled.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 250px, rgba(0, 0, 0, 0.5) 500px), url("/wp-content/uploads/2025/04/programm-banner-scaled.jpg");
   background-position: center -250px;
 }
 body#impressionen {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 400px, rgba(0, 0, 0, 0.2) 650px), url("/wp-content/uploads/2025/04/impressionen-banner-scaled.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 400px, rgba(0, 0, 0, 0.5) 650px), url("/wp-content/uploads/2025/04/impressionen-banner-scaled.jpg");
   background-position: center -400px;
 }
 body#projekte, body#projekte-einreichen {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 300px, rgba(0, 0, 0, 0.2) 550px), url("/wp-content/uploads/2025/04/projekte-banner.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 300px, rgba(0, 0, 0, 0.5) 550px), url("/wp-content/uploads/2025/04/projekte-banner.jpg");
   background-position: center -300px;
 }
 body#lan-party {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 300px, rgba(0, 0, 0, 0.2) 550px), url("/wp-content/uploads/2025/05/lanparty-banner.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 300px, rgba(0, 0, 0, 0.5) 550px), url("/wp-content/uploads/2025/05/lanparty-banner.jpg");
   background-position: center -300px;
 }
 
@@ -1578,7 +1577,7 @@ body#lan-party {
   width: 70vw;
   margin: 0 auto;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .wrapper {
     width: 95vw;
   }
@@ -1592,7 +1591,7 @@ body#lan-party {
 .mobile-only {
   display: none;
 }
-@media (max-aspect-ratio: 5/4) {
+@media (max-aspect-ratio: 6/10) {
   .mobile-only {
     display: initial;
   }

@@ -34,17 +34,16 @@ $slim-height: 66vh;
     background-image:
         linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.75) #{$offset}px,
-            rgba(0, 0, 0, 0.2) #{250+$offset}px),
+            rgba(0, 0, 0, 0.9) #{$offset}px,
+            rgba(0, 0, 0, 0.5) #{250+$offset}px),
         url($img-url);
     background-position: center -#{$offset}px;
 }
 body {
     color: colors.$black;
     background-color: colors.$white;
-    @include bg-gradient(0, "/wp-content/uploads/2025/04/Banner.jpg");
+    @include bg-gradient(380, "/wp-content/uploads/2025/04/Banner.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
     background-size: auto 100vh;
     overflow-x: hidden;
     @include mixins.ultrawide {
