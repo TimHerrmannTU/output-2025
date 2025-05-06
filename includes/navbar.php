@@ -4,7 +4,7 @@
         <div class="links row gap-3">
             <a href="/about" class="<?= (is_page('about')) ? 'active' : ''; ?>">ÜBER OUTPUT</a>
             <a href="/programm" class="<?= (is_page('programm')) ? 'active' : ''; ?>">PROGRAMM</a>
-            <a href="/teilnahme" style="display:none" class="<?= (is_page('teilnahme')) ? 'active' : ''; ?>">TEILNAHME</a>
+            <a href="/teilnahme" class="<?= (is_page('teilnahme')) ? 'active' : ''; ?>">TEILNAHME</a>
             <a href="/projekte" class="<?= (is_page('projekte')) ? 'active' : ''; ?>">PROJEKTE</a>
         </div>
         <?php
