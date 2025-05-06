@@ -44,7 +44,12 @@
 
             <div class="col gap-1">
                 <h4>Kosten</h4>
-                <p>Teilnahmegebühr: 15€ pro Person</p>
+                <p>Teilnahmegebühr:
+                <ul class="indented">
+                    <li>Standard-Ticket: 18€</li>
+                    <li>Student-Ticket: 14€</li>
+                </ul>
+                </p>
             </div>
             <div class="col gap-1">
                 <h4>Weitere Informationen</h4>
