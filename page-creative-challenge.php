@@ -103,7 +103,7 @@
             <form id="cc-register-form" class="grid" action="<?= admin_url('admin-post.php') ?>" method="POST"
                 enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
-
+                <?php wp_nonce_field('submit_art_post_action', 'submit_art_post_nonce'); ?>
                 <div class="labeled-input c1">
                     <label for="firstname">Vorname</label>
                     <input name="firstname" type="text" required>

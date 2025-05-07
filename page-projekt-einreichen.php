@@ -33,7 +33,7 @@ if (!is_user_logged_in()) {
             
             <form id="project-register-form" class="grid conditional" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_project_post">
-
+                <?php wp_nonce_field('submit_project_post_action', 'submit_project_post_nonce'); ?>
                 <div class="labeled-input full">
                     <label for="details-name">Title *</label>
                     <input name="details-name" type="text" required>

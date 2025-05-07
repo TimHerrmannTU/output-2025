@@ -12,7 +12,7 @@ function load_static_folder() {
 add_action('wp_enqueue_scripts', 'load_static_folder');
 
 
-// remap authors
+// remap authors (Why? Only authors can edit their posts! It is not enough to assign them via a acf...)
 function remap_all_authors() {
     $args = [
         'post_type' => 'projekte', // Set your custom post type, or use 'post' for default posts
@@ -40,6 +40,7 @@ function remap_all_authors() {
 }
 // remap_all_authors();
 
+
 // creates project post from form fields
 add_action('admin_post_nopriv_submit_project_post', 'handle_project_post_submission');
 add_action('admin_post_submit_project_post', 'handle_project_post_submission');
@@ -51,6 +52,10 @@ function handle_project_post_submission() {
     echo '</pre>';
     exit;
     */
+    // Verify the nonce
+    if (!isset($_POST['submit_project_post_nonce']) || !wp_verify_nonce($_POST['submit_project_post_nonce'], 'submit_project_post_action')) {
+        wp_die('Nonce verification failed!', 'Security check', ['response' => 403]);
+    }
     // Ensure the form was submitted via POST
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         wp_die('Invalid request method.');
@@ -103,6 +108,10 @@ function handle_project_post_submission() {
 add_action('admin_post_nopriv_submit_art_post', 'handle_art_post_submission');
 add_action('admin_post_submit_art_post', 'handle_art_post_submission');
 function handle_art_post_submission() {
+    // Verify the nonce
+    if (!isset($_POST['submit_art_post_nonce']) || !wp_verify_nonce($_POST['submit_art_post_nonce'], 'submit_art_post_action')) {
+        wp_die('Nonce verification failed!', 'Security check', ['response' => 403]);
+    }
     // Ensure the form was submitted via POST
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         wp_die('Invalid request method.');
