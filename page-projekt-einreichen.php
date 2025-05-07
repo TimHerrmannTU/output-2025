@@ -174,9 +174,12 @@ if (!is_user_logged_in()) {
                             $pro_types = implode(', ', array_map(fn($term) => $term->name, $pro_terms));
                         }
                         // get project image
-                        $img = get_field("project-details-thumbnail")["sizes"]["large"];
+                        $img = get_field("project-details-thumbnail");
                         if (empty($img)) {
                             $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
+                        }
+                        else {
+                            $img = $img["sizes"]["large"];
                         }
                         ?>
                         <a class="pro-item labeled col" href="<?= the_permalink() ?>" dd-year="<?= $pro_years ?>" dd-type="<?= $pro_types ?>">
