@@ -47,7 +47,7 @@
                 <p>Teilnahmegebühr:
                 <ul class="indented">
                     <li>Standard-Ticket: 18€</li>
-                    <li>Student-Ticket: 14€</li>
+                    <li>Studenten-Ticket: 14€</li>
                 </ul>
                 </p>
             </div>
