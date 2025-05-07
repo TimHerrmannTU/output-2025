@@ -23,7 +23,7 @@
                     <p>13.06.2025 - 15.06.2025</p>
                     <p>Freitag 16:00 Uhr bis Sonntag 18:00 Uhr</p>
             </div>
-            <div class="col gap-1">
+            <div class="col gap-1" style="overflow:hidden">
                 <h4>Wo?</h4>
                 <p>Medienkulturzentrum Dresden e.V.<br>Kraftwerk Mitte 3, 01067 Dresden</p>
                 <iframe

@@ -974,9 +974,15 @@ nav#navbar .login-button > * {
   height: 3rem;
   width: 3rem;
 }
+nav#navbar .narrow {
+  display: none;
+}
 @media (max-aspect-ratio: 6/10) {
   nav#navbar .login-button, nav#navbar .links {
     display: none;
+  }
+  nav#navbar .narrow {
+    display: inline-block;
   }
 }
 nav#tud-navbar {

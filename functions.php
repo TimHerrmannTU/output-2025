@@ -12,6 +12,34 @@ function load_static_folder() {
 add_action('wp_enqueue_scripts', 'load_static_folder');
 
 
+// remap authors
+function remap_all_authors() {
+    $args = [
+        'post_type' => 'projekte', // Set your custom post type, or use 'post' for default posts
+        'posts_per_page' => -1,  // Get all posts
+        'post_status' => 'any'   // You can adjust this to filter only published, drafts, etc.
+    ];
+    $posts = get_posts($args);
+    
+    // Iterate over all posts and update the author based on the ACF field
+    foreach ($posts as $post) {
+        // Get the user ID from the ACF field
+        $user_id = get_field("project-intern-user", $post->ID);
+        
+        if ($user_id) {
+            $user = get_user_by('id', $user_id);
+            if ($user && !in_array('administrator', $user->roles)) {
+                // Update the post author to the user fetched from ACF
+                wp_update_post([
+                    'ID' => $post->ID,
+                    'post_author' => $user_id
+                ]);
+            }
+        }
+    }
+}
+// remap_all_authors();
+
 // creates project post from form fields
 add_action('admin_post_nopriv_submit_project_post', 'handle_project_post_submission');
 add_action('admin_post_submit_project_post', 'handle_project_post_submission');

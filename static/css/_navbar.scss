@@ -31,9 +31,15 @@ nav {
                 width: 3rem;
             }
         }
+        .narrow {
+            display: none;
+        }
         @include mixins.mobile {
             .login-button, .links {
                 display: none;
+            }
+            .narrow {
+                display: inline-block;
             }
         }
     }

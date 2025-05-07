@@ -86,8 +86,8 @@ if (!is_user_logged_in()) {
                     <input name="intern-contact-person" type="text" required>
                 </div>
                 <div class="labeled-input c2">
-                    <label for="intern-contact-person-email">E-Mail *</label>
-                    <input name="intern-contact-person-email" type="text" required>
+                    <label for="intern-contact-person-e-mail">E-Mail *</label>
+                    <input name="intern-contact-person-e-mail" type="text" required>
                 </div>
                 <div class="pt-1 full"></div>
                 <!-- START: CONDITIONAL SECTION -->
@@ -143,11 +143,18 @@ if (!is_user_logged_in()) {
 
             <div id="my-projects" class="default-grid conditional" style="display:none">
                 <?php
+                $logged_in_user_id = get_current_user_id();
                 $args = array(
                     'post_type'      => 'projekte',  // Slug of the category
                     'post_status'    => ['publish', 'draft', 'pending', 'private'],
-                    'author'         => get_current_user_id(),
                     'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
+                    'meta_query' => [
+                        [
+                          'key'     => 'project-intern-user',
+                          'value'   => $logged_in_user_id,
+                          'compare' => '='
+                        ]
+                    ]
                 );
                 // Create a custom query
                 $query = new WP_Query($args);

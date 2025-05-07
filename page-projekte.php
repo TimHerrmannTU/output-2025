@@ -45,6 +45,7 @@
                 <?php
                 $args = array(
                     'post_type'      => 'projekte',  // Slug of the category
+                    'post_status'    => 'publish',
                     'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
                 );
                 // Create a custom query
