@@ -161,7 +161,7 @@ function handle_art_post_submission() {
         // File upload handling
         handle_file_upload("upload", "creative-challenge-intern-upload", $post_id);
 
-        wp_redirect(home_url()); // Redirect after successful submission
+        wp_redirect("/danke"); // Redirect after successful submission
         exit;
     } else {
         wp_die('Post creation failed');
