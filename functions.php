@@ -53,6 +53,14 @@ function handle_custom_form_submission() {
         // Optionally, you can prevent WordPress from loading the rest of the page
         exit;
     }
+    if (is_page('page-creative-challenge')) {
+        // Handle form submission
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_art_post_nonce']) && wp_verify_nonce($_POST['submit_art_post_nonce'], 'submit_art_post_action')) {
+            handle_art_post_submission();
+        }
+        // Optionally, you can prevent WordPress from loading the rest of the page
+        exit;
+    }
 }
 
 // creates project post from form fields
