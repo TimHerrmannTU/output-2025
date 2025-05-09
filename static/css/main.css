@@ -724,7 +724,7 @@ textarea {
   color: #C6C6C6;
   position: absolute;
   left: 1rem;
-  top: 1.3rem;
+  top: 0.6rem;
   pointer-events: none;
   transition: all 0.3s ease-in-out;
 }
@@ -733,7 +733,7 @@ textarea {
 }
 .labeled-input:focus-within label, .labeled-input.has-content label, .labeled-input:hover label {
   font-size: 1rem;
-  top: -0.6rem;
+  top: -0.9rem;
   padding: 0rem 1rem;
   color: #6F6F6F;
   background-color: #FFFFFF;

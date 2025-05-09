@@ -234,7 +234,7 @@ textarea {
         color: colors.$light-grey;
         position: absolute;
         left: 1rem;
-        top: 1.3rem;
+        top: 0.6rem;
         pointer-events: none;
         transition: all 0.3s ease-in-out;
     }
@@ -244,7 +244,7 @@ textarea {
         }
         label {
             font-size: 1rem;
-            top: -0.6rem;
+            top: -0.9rem;
             padding: 0rem 1rem;
             color: colors.$grey;
             background-color: colors.$white;
