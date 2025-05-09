@@ -31,7 +31,8 @@ if (!is_user_logged_in()) {
                 <button class="r2 c2" dd-target="my-projects">MEINE PROJEKTE</button>
             </div>
             
-            <form id="project-register-form" class="grid conditional" action="<?= admin_url('admin-post.php') ?>" method="POST" enctype="multipart/form-data">
+            <form id="project-register-form" class="grid conditional" action="<?= esc_url(get_permalink()); ?>" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="form_type" value="project">
                 <input type="hidden" name="action" value="submit_project_post">
                 <?php wp_nonce_field('submit_project_post_action', 'submit_project_post_nonce'); ?>
                 <div class="labeled-input full">

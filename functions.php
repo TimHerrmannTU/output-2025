@@ -41,17 +41,26 @@ function remap_all_authors() {
 // remap_all_authors();
 
 
+// Redirect the custom URL for form submission handling
+add_action('template_redirect', 'handle_custom_form_submission');
+function handle_custom_form_submission() {
+    // Check if the current page is the "submit-post" page
+    if (is_page('page-projekt-einreichen')) {
+        // Handle form submission
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_project_post_nonce']) && wp_verify_nonce($_POST['submit_project_post_nonce'], 'submit_project_post_action')) {
+            handle_project_post_submission();
+        }
+        // Optionally, you can prevent WordPress from loading the rest of the page
+        exit;
+    }
+}
+
 // creates project post from form fields
-add_action('admin_post_nopriv_submit_project_post', 'handle_project_post_submission');
-add_action('admin_post_submit_project_post', 'handle_project_post_submission');
+add_action('template_redirect', 'handle_project_post_submission');
 function handle_project_post_submission() {
-    /*
-    // DEBUGGING
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
-    exit;
-    */
+    if (!isset($_POST['submit_project_post_nonce'])) {
+        return; // Not a project post submission
+    }
     // Verify the nonce
     if (!isset($_POST['submit_project_post_nonce']) || !wp_verify_nonce($_POST['submit_project_post_nonce'], 'submit_project_post_action')) {
         wp_die('Nonce verification failed!', 'Security check', ['response' => 403]);
@@ -105,9 +114,11 @@ function handle_project_post_submission() {
 }
 
 // creates posts of the type creative-challenge based on form fields
-add_action('admin_post_nopriv_submit_art_post', 'handle_art_post_submission');
-add_action('admin_post_submit_art_post', 'handle_art_post_submission');
+add_action('template_redirect', 'handle_art_post_submission');
 function handle_art_post_submission() {
+    if (!isset($_POST['submit_art_post_nonce'])) {
+        return; // Not a project post submission
+    }
     // Verify the nonce
     if (!isset($_POST['submit_art_post_nonce']) || !wp_verify_nonce($_POST['submit_art_post_nonce'], 'submit_art_post_action')) {
         wp_die('Nonce verification failed!', 'Security check', ['response' => 403]);
