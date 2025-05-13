@@ -46,7 +46,11 @@ jQuery(document).ready(function ($) {
     }
     function count_filtered_projects() {
         const PRO_COUNT = $("#projekte .pro-grid .pro-item:visible").length
-        $("#projekte #project-count").text(`${PRO_COUNT} Projekte gefunden!`)
+        var info_text = `${PRO_COUNT} Projekte gefunden!`
+        if (PRO_COUNT == 0) {
+            info_text = "Keine passenden Projekte gefunden..."
+        }
+        $("#projekte #project-count").text(info_text)
     }
     $("#projekte #year").change(function () {
         filter_cascade()

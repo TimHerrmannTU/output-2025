@@ -32,11 +32,7 @@
                     <input type="checkbox" name="Vortrag">
                 </label>
                 <label class="labeled-checkbox r4 c1">
-                    <span>WORKSHOP</span>
-                    <input type="checkbox">
-                </label>
-                <label class="labeled-checkbox r4 c2">
-                    <span>AUSSTELLUNG</span>
+                    <span>SPECIALS</span>
                     <input type="checkbox">
                 </label>
             </div>
