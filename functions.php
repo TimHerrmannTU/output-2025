@@ -11,6 +11,11 @@ function load_static_folder() {
 }
 add_action('wp_enqueue_scripts', 'load_static_folder');
 
+// hides wordpress bar on top of the the page if user is logged in
+add_action('get_header', 'remove_admin_login_header');
+function remove_admin_login_header() {
+	remove_action('wp_head', '_admin_bar_bump_cb');
+}
 
 // remap authors (Why? Only authors can edit their posts! It is not enough to assign them via a acf...)
 function remap_all_authors() {

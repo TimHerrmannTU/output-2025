@@ -1,6 +1,33 @@
 @use "colors";
 @use "mixins";
 
+#mobile-navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: colors.$white;
+    padding: 5rem;
+    box-sizing: border-box;
+    a {
+        font-size: 3rem;
+        color: colors.$black;
+        &:last-of-type {
+            margin-top: auto;
+        }
+    }
+    .close {
+        position: absolute;
+        top: 0%;
+        right: 5%;
+        font-size: 5rem;
+    }
+}
+
 nav {
     position: relative;
     width: 100%;
