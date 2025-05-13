@@ -31,6 +31,11 @@
             $contact = get_field("sponsor-details-contact");
             $website = get_field("sponsor-details-website");
             if ($website) $website_short = implode("/", array_slice(explode("/", $website), 0, 3));
+            $links = array(
+                "Facebook" => get_field("sponsor-social-facebook"),
+                "Instagram" => get_field("sponsor-social-instagram"),
+                "LinkedIn" => get_field("sponsor-social-linkedin")
+            );
             ?>
 
             <div class="col">
@@ -44,6 +49,11 @@
                 }
                 if ($website) {
                     ?><p>Website: <a class="color-magenta" href="<?= $website ?>"><?= $website_short ?></a></p><?php
+                }
+                foreach ($links as $desc => $link) {
+                    if ($link) {
+                        ?><p><?= $desc ?>: <a class="color-magenta" href="<?= $link ?>"><?= $link ?></a></p><?php
+                    }
                 }
                 ?>
             </div>
