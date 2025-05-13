@@ -65,6 +65,7 @@ a, p, td, th, li, ul, select, input, textarea, label, code, button {
     &:not(button, a.icon, a.logo, a.login-button) {
         line-height: 2;
     }
+    word-break: auto-phrase;
 }
 code {
     font-size: 1.5625rem;
