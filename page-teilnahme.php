@@ -17,31 +17,6 @@
     <div class="light-bg">
         <div class="wrapper col gap-3">
             <p>Wir freuen uns, dass Sie dabei sind! Auf dieser Seite finden Sie Informationen und Hinweise zur Veranstaltung.</p>
-                        
-            <div class="grid">
-                <h2 style="grid-column:1 / span 3">OUTPUT APP</h2>
-                <div class="c1 col gap-2">
-                    <p>
-                        Die App bietet Informationen zur Projektschau OUTPUT.DD. Einmal im Jahr werden in diesem Rahmen die Forschungsergebnisse von Studenten 
-                        und Mitarbeitern der breiten Öffentlichkeit präsentiert. Die Besucher erwarten Installationen, Workshops, Vorträge, Präsentationen und 
-                        Ausstellungen zum Entdecken, Erleben und Erforschen. Daneben bietet OUTPUT.DD die Möglichkeit, mit ansässigen Firmen über spannende 
-                        Forschungsfragen ins Gespräch zu kommen. Die App bietet einen Überblick über alle Veranstaltungen und Projekte und verknüpft diese mit 
-                        den jeweiligen Veranstaltungsorten im Fakultätsgebäude.
-                    </p>
-                    <p>
-                        Die Besucher können im Rahmen des integrierten Spiels bei allen Projekten und Firmen Punkte sammeln und sich damit in einer Rangliste 
-                        platzieren. 
-                        <br>
-                        <b>Den ersten fünf Plätzen winken Preise im Wert von insgesamt 500 EURO.</b>
-                    </p>
-                </div>
-                <div>
-                    <img class="c2 app-img" src="https://output-dd.de/wp-content/uploads/2025/05/app_1.png">
-                </div>
-                <div>
-                    <img class="c3 app-img" src="https://output-dd.de/wp-content/uploads/2025/05/app_2.png">
-                </div>
-            </div>
 
             <div class="col gap-2" dd-function="expandable">
                 
@@ -181,6 +156,31 @@
 
                 </div>
 
+            </div>
+            
+            <h2>OUTPUT APP</h2>
+            <div class="grid">
+                <div class="c1 col gap-2">
+                    <p>
+                        Die App bietet Informationen zur Projektschau OUTPUT.DD. Einmal im Jahr werden in diesem Rahmen die Forschungsergebnisse von Studenten 
+                        und Mitarbeitern der breiten Öffentlichkeit präsentiert. Die Besucher erwarten Installationen, Workshops, Vorträge, Präsentationen und 
+                        Ausstellungen zum Entdecken, Erleben und Erforschen. Daneben bietet OUTPUT.DD die Möglichkeit, mit ansässigen Firmen über spannende 
+                        Forschungsfragen ins Gespräch zu kommen. Die App bietet einen Überblick über alle Veranstaltungen und Projekte und verknüpft diese mit 
+                        den jeweiligen Veranstaltungsorten im Fakultätsgebäude.
+                    </p>
+                    <p>
+                        Die Besucher können im Rahmen des integrierten Spiels bei allen Projekten und Firmen Punkte sammeln und sich damit in einer Rangliste 
+                        platzieren. 
+                        <br>
+                        <b>Den ersten fünf Plätzen winken Preise im Wert von insgesamt 500 EURO.</b>
+                    </p>
+                </div>
+                <div>
+                    <img class="c2 app-img" src="https://output-dd.de/wp-content/uploads/2025/05/app_1.png">
+                </div>
+                <div>
+                    <img class="c3 app-img" src="https://output-dd.de/wp-content/uploads/2025/05/app_2.png">
+                </div>
             </div>
 
         </div>
