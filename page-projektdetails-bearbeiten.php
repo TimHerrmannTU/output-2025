@@ -37,6 +37,9 @@ if (!is_user_logged_in()) {
                 </div>
 
                 <div class="dropdown transparent c1">
+                    <div class="icon">
+                        <div class="iconify" data-icon="mdi-triangle-down"></div>
+                    </div>
                     <select id="mode" name="category" required>
                         <option class="template" <?= ($pro_type=="default") ? 'selected="selected"' : "" ?> value="default">Projektkategorie auswählen *</option>
                         <option class="template" <?= ($pro_type=="demo"   ) ? 'selected="selected"' : "" ?> value="demo"   >Projektdemo</option>

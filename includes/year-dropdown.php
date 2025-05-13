@@ -1,5 +1,8 @@
 <div class="dropdown">
     <?php $current_year = "OUTPUT " . date("Y"); ?>
+    <div class="icon">
+        <div class="iconify" data-icon="mdi-triangle-down-outline"></div>
+    </div>
     <select id="year">
         <option value="default"><?= $current_year ?></option>
         <?php // get all options for taxonomy

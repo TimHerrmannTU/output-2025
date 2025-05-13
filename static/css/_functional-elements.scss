@@ -130,18 +130,13 @@ select, .labeled-checkbox {
             color: colors.$light-grey;
         }
     }
-    &::after {
-        content: "";
-        background: url('/wp-content/themes/2025/static/svg/arrow-full.svg') no-repeat center;
-        color: colors.$white;
-        background-size: contain;
+    .icon {
         position: absolute;
-        right: 10px;
+        right: 2.5rem;
         top: 50%;
         transform: translateY(-50%);
-        width: 1.5rem;
-        height: 1.5rem;
-        pointer-events: none;
+        color: white;
+        font-size: 0.8rem;
     }
 }
 .labeled-checkbox, .labeled-checkbox * {
