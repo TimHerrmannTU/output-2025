@@ -60,6 +60,8 @@
 
             <div class="desc">
                 <p><?= get_field("sponsor-details-description") ?></p>
+                <br>
+                <p><i><?= get_field("sponsor-details-intention") ?></i></p>
             </div>
             
         </div>

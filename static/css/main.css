@@ -7,12 +7,6 @@ html {
   }
 }
 
-* {
-  -webkit-hyphens: auto;
-          hyphens: auto;
-  word-break: normal;
-}
-
 body {
   font-family: Open-Sans;
   font-weight: 400;
@@ -1496,6 +1490,28 @@ nav#tud-navbar a {
 #test-timeline .time.minutes {
   font-size: 5rem;
   margin-top: 0.9rem;
+}
+
+#teilnahme div[dd-function=expandable] {
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid #C6C6C6;
+}
+#teilnahme div[dd-function=expandable] *[dd-function=trigger] {
+  display: flex;
+  flex-direction: row;
+}
+#teilnahme div[dd-function=expandable] *[dd-function=trigger] .icon {
+  margin-left: auto;
+}
+#teilnahme .grid {
+  display: grid;
+  grid-template-columns: 50% 20% 20%;
+  gap: 5%;
+}
+#teilnahme .grid img.app-img {
+  border-radius: 1rem;
+  width: 100%;
+  box-shadow: 0px 2px 6px 0px #d1d1d1;
 }
 
 #projekte .controls, #about .controls {
