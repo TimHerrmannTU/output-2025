@@ -1618,8 +1618,16 @@ body#projekte, body#projekte-einreichen {
   background-position: center -300px;
 }
 body#lan-party {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 300px, rgba(0, 0, 0, 0.5) 550px), url("/wp-content/uploads/2025/05/lanparty-banner.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 300px, rgba(0, 0, 0, 0.5) 550px), url("/wp-content/uploads/2025/05/banner_lan_fuchs.png");
   background-position: center -300px;
+}
+body#geo-caching {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 200px, rgba(0, 0, 0, 0.5) 450px), url("/wp-content/uploads/2025/05/banner_geocaching_huhnchen.png");
+  background-position: center -200px;
+}
+body#creative-challenge {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 200px, rgba(0, 0, 0, 0.5) 450px), url("/wp-content/uploads/2025/05/banner_creative_maus.png");
+  background-position: center -200px;
 }
 
 .head {

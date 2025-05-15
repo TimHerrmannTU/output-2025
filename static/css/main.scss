@@ -64,7 +64,13 @@ body {
         @include bg-gradient(300, '/wp-content/uploads/2025/04/projekte-banner.jpg');
     }
     &#lan-party {
-        @include bg-gradient(300, '/wp-content/uploads/2025/05/lanparty-banner.jpg');
+        @include bg-gradient(300, '/wp-content/uploads/2025/05/banner_lan_fuchs.png');
+    }
+    &#geo-caching {
+        @include bg-gradient(200, '/wp-content/uploads/2025/05/banner_geocaching_huhnchen.png');
+    }
+    &#creative-challenge {
+        @include bg-gradient(200, '/wp-content/uploads/2025/05/banner_creative_maus.png');
     }
 }
 .head { // contains tud navbar + navbar + banner

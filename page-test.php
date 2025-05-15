@@ -11,6 +11,7 @@
     <?php 
     $main_headline = "DER VERANSTALTUNGSTAG";
     $sub_headline = "SCHAU NACH, WELCHE TOLLEN EVENTS GEPLANT SIND!";
+    $cube = true;
     include get_template_directory() . "/includes/narrow-head.php";
     include get_template_directory() . "/includes/cube.php";
     ?>

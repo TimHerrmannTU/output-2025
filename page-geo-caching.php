@@ -7,9 +7,9 @@
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body id="geo-caching" <?php body_class(); ?>>
     <?php 
-    $main_headline = "Geo Chaching challenge";
+    $main_headline = "Geo Caching challenge";
     $sub_headline = "Irgendwas mit Boxen finden oder so.";
     include get_template_directory() . "/includes/narrow-head.php";
     

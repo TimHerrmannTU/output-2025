@@ -5,7 +5,7 @@ if (empty($sub_headline)) $sub_headline = "Set \$sub_headline before including t
 
 <div id="banner" class="full slim <?= ($cube) ? "cube" : "" ?>">
     <div class="wrapper" style="position: relative;">
-        <div class="text-content col">
+        <div class="text-content col" <?= $cube ? "" : "style='width:100%;'" ?>>
             <h2><?= $main_headline ?></h2>
             <h3><?= $sub_headline ?></h3>
         </div>

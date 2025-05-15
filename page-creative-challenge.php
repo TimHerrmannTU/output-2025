@@ -9,14 +9,14 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body id="creative-challenge" <?php body_class(); ?>>
     <?php
     $main_headline = "Creative Challenge: \"Würfelwelten\"";
     $sub_headline = "Schickt uns bis zum <b>15. Juni 2025</b> eure Designs zum Motto „Würfelwelten“ - entfaltet eure Kreativität und werdet Teil unserer Ausstellung!";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
-    <div id="creative-challenge" class="light-bg">
+    <div class="light-bg">
         <div class="wrapper col gap-3">
             <h2>FAQ</h2>
             <div class="col gap-3">
