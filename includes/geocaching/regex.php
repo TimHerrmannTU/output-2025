@@ -46,7 +46,12 @@
             </div>
         </div>
         <div class="col gap-2 elevated-box">
-            <div class="row gap-1 wrapped"><p class="fat">Verfolständige diesen Regex:</p><code>[NE][0-9]{ , }°[ - ]{2}.</code></div>
+            <h4 class="color-magenta">RÄTSEL</h4>
+            <div class="row gap-1 wrapped">
+                <p class="fat">Verfolständige diesen Regex:</p>
+                <code>[NE][0-9]{_,_}°[_-_]{2}.________</code>
+                <p>indem du die "_" ersetzt</p>
+            </div>
             <p>
                 Wenn du den Regex korrekt vervollständigt hast, kannst du damit die Koordinanten in diesem Text finden:
             </p>
@@ -56,7 +61,7 @@
                 E3°43.400N5°1.01.501E013°4.3.400 N51°121.501EB013°43.400 M51°01.501E013.43.400
                 E3°43.400N5°1.01.501
             </code>
-            <a class="color-magenta" href="https://regex101.com/">
+            <a class="color-magenta" target="_blank" href="https://regex101.com/">
                 Hier kannst du dein Regex ausprobieren!
             </a>
         </div>

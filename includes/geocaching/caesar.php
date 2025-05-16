@@ -20,9 +20,11 @@
                     <td>1</td>
                     <td>2</td>
                     <td>3</td>
+                    <td>...</td>
                     <td>9</td>
                 </tr>
                 <tr>
+                    <td>↓</td>
                     <td>↓</td>
                     <td>↓</td>
                     <td>↓</td>
@@ -36,6 +38,7 @@
                     <td>5</td>
                     <td>6</td>
                     <td>7</td>
+                    <td>...</td>
                     <td>3</td>
                 </tr>
             </table>

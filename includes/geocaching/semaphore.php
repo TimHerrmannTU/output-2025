@@ -7,12 +7,12 @@
             Zugriff mehrerer Prozesse oder Threads auf gemeinsame Ressourcen zu steuern.
         </p>
 
-        <div class="row gap-3">
+        <div class="row gap-3 mobile-col">
             <div class="col w-50 gap-2">
                 <p>
                     Hier ein anschauliches Beispiel:
                     Stell dir vor, du und 2 Freunde wollen eine Pizza backen. Bestimmte Schritte müssen in der
-                    richtigen Reihenfolge ablaufen, und einige Aufgaben können parallel erledigt werden. Damit die
+                    richtigen Reihenfolge ablaufen und einige Aufgaben können parallel erledigt werden. Damit die
                     Reihenfolge korrekt eingehalten wird, kann man Semaphoren verwenden. Personen sind quasi die
                     Programme.
                 </p>
@@ -52,10 +52,10 @@
         <div class="col">
             <h4 class="mb-1">Semaphoren</h4>
             <div class="row gap-3">
-                <p>teig_semaphore(0)</p>
-                <p>belegt_semaphore(0)</p>
-                <p>ofen_semaphore(0)</p>
-                <p>gebacken_semaphore(0)</p>
+                <p><b>teig_semaphore(0)</b></p>
+                <p><b>belegt_semaphore(0)</b></p>
+                <p><b>ofen_semaphore(0)</b></p>
+                <p><b>gebacken_semaphore(0)</b></p>
             </div>
         </div>
         <table class="center">
@@ -121,47 +121,50 @@
             Koordinaten für den nächsten Cache aus. Viel Glück!
         </p>
 
-        <div>
-            <h4 class="mb-1">Semaphoren</h4>
-            <div class="row gap-3">
-                <p>semaphore_1(0)</p>
-                <p>semaphore_2(0)</p>
-                <p>semaphore_3(1)</p>
+        <div class="col gap-1 elevated-box" style="width: 100%">
+            <h4 class="color-magenta">RÄTSEL</h4>
+            <div>
+                <h4 class="mb-1">Semaphoren</h4>
+                <div class="row gap-3">
+                    <p><b>semaphore_1(0)</b></p>
+                    <p><b>semaphore_2(0)</b></p>
+                    <p><b>semaphore_3(1)</b></p>
+                </div>
             </div>
-        </div>
 
-        <table class="center">
-            <tr>
-                <th>Programm 1</th>
-                <th>Programm 2</th>
-                <th>Programm 3</th>
-            </tr>
-            <tr>
-                <td><b>semaphore_1.down()</b></td>
-                <td><b>semaphore_2.down()</b></td>
-                <td><b>semaphore_3.down()</b></td>
-            </tr>
-            <tr>
-                <td>01.875</td>
-                <td>E013°</td>
-                <td>N51°</td>
-            </tr>
-            <tr>
-                <td><b>semaphore_2.up()</b></td>
-                <td><b>semaphore_1.up()</b></td>
-                <td><b>semaphore_1.up()</b></td>
-            </tr>
-            <tr>
-                <td><b>semaphore_3.down()</b></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>43.644</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+            <table class="center">
+                <tr>
+                    <th>Programm 1</th>
+                    <th>Programm 2</th>
+                    <th>Programm 3</th>
+                </tr>
+                <tr>
+                    <td><b>semaphore_1.down()</b></td>
+                    <td><b>semaphore_2.down()</b></td>
+                    <td><b>semaphore_3.down()</b></td>
+                </tr>
+                <tr>
+                    <td>01.875</td>
+                    <td>E013°</td>
+                    <td>N51°</td>
+                </tr>
+                <tr>
+                    <td><b>semaphore_2.up()</b></td>
+                    <td><b>semaphore_1.up()</b></td>
+                    <td><b>semaphore_1.up()</b></td>
+                </tr>
+                <tr>
+                    <td><b>semaphore_1.down()</b></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>43.644</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
 
     </div>
 </div>

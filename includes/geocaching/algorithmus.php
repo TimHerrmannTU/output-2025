@@ -17,7 +17,10 @@
             Problem zu lösen. In der Informatik sind Algorithmen der Grundbaustein für alles, von Suchmaschinen
             bis zu KI.
             </p>
-            <h4>Der Bubble Sort Algorithmus</h4>
+        </div>
+
+        <div class="col gap-1">
+            <h4>Der "Bubble Sort" Algorithmus</h4>
             <p>
                 Einer der klassischen Sortier-Algorithmen ist "Bubble Sort" - nicht der effizienteste, aber super um
                 zu verstehen, wie Algorithmen funktionieren. Er arbeitet wie Luftblasen, die im Wasser aufsteigen:
@@ -29,7 +32,7 @@
             </ul>
         </div>
 
-        <div class="col gap-1">
+        <div class="col gap-1 elevated-box" style="width:100%">
             <h4 class="color-magenta">Rätsel</h4>
             <p>Sortiere diese durcheinandergewürfelte Zahlenreihe aufsteigend: <b>[7, 5, 3, 1, 9, 8, 6, 4, 2]</b></p>
             <h4>So gehst du vor:</h4>

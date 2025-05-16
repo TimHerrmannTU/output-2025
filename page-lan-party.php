@@ -54,7 +54,7 @@
             <div class="col gap-1">
                 <h4>Weitere Informationen</h4>
                 <p>Weitere Infos zur LAN-Party und zu den Tickets gibt es auf unserem Discord-Server:</p>
-                <a class="discord-link" href="https://discord.com/invite/XuvpKwggVA">
+                <a class="discord-link" target="_blank" href="https://discord.com/invite/XuvpKwggVA">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         viewBox="0 -28.5 256 256" version="1.1" preserveAspectRatio="xMidYMid">
                         <g>

@@ -64,7 +64,7 @@
                     <div class="col gap-1">
                         <h4>Programm</h4>
                         <p>
-                            Um einen Vortrag für OUTPUT einzureichen, muss dieser als Projekt hier angemeldet werden. 
+                            Um einen Vortrag für OUTPUT einzureichen, muss dieser als Projekt <a class="color-magenta" href="/projekt-einreichen">hier angemeldet</a> werden. 
                             Mit dieser Anmeldung wird der Vortrag sowohl auf der Webseite als auch in der OUTPUT-App angezeigt.
                         </p>
                     </div>

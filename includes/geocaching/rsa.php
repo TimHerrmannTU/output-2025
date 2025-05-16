@@ -18,9 +18,9 @@
         <div class="col gap-1">
             <h4>Schlüsselgenerierung</h4>
             <ol type="1" class="ml-2">
-                <li>Zuerst werden zwei (große) Primzahlen gewählt p und q</li>
-                <li>Dann wird das RSA Modul n berechnet als Produkt dieser beiden Zahlen, dieses dient der Ver- und Entschlüsselung und ist somit Teil des privaten und des öffentlichen Schlüssels.</li>
-                <li>Als nächstes berechnet man die Eulersche Phi-Funktion Z von n als Produkt von p-1 und q-1.</li>
+                <li>Zuerst werden zwei (große) <b>Primzahlen</b> gewählt <b>p</b> und <b>q</b></li>
+                <li>Dann wird das RSA Modul <b>n</b> berechnet als <b>Produkt dieser beiden Zahlen</b>, dieses dient der Ver- und Entschlüsselung und ist somit Teil des privaten und des öffentlichen Schlüssels.</li>
+                <li>Als nächstes berechnet man die Eulersche Phi-Funktion <b>z</b> von n als <b>Produkt von p-1 und q-1</b>.</li>
                 <li>Der zweite Teil des öffentlichen Schlüssels e und der zweite Teil des privaten Schlüssels d werden dann mit Hilfe von Z berechnet.</li>
             </ol>
         </div>

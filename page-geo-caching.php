@@ -29,7 +29,7 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Play-Store</th>
+                                <th>Link</th>
                                 <th>Pro/Con</th>
                             </tr>
                         </thead>
@@ -83,17 +83,19 @@
                         </div>
                     </div>
                     
-                    <p><strong>2.</strong> Ein Stift, um dich ins Logbuch einzutragen!</p>
-                    <p><strong>3.</strong> Ein Notizblock, um die Rätsel zu lösen!</p>
+                    <p><strong>2.</strong> Ein Stift, um dich ins Logbuch einzutragen.</p>
+                    <p><strong>3.</strong> Ein Notizblock, um die Rätsel zu lösen.</p>
                     <p><strong>4.</strong> Ca. 2 Stunden Zeit.</p>
                 </div>
                 <div class="col gap-1">
                     <h3 class="pb-1">Wie funktioniert die Challange?</h3>
                     <p>
-                        Wir haben über den Campus Geocaches in Form eines Würfels versteckt. Unten findet ihr die Koordinaten für den ersten Cache!
+                        Wir haben über den Campus Geocaches in Form von Würfeln versteckt. Unten findet ihr das erste Rätsel & ein Bonusrätsel.
+                        Nachdem ihr eins von beiden gelöst habt, bekommt ihr die ersten Koordinaten für einen der Caches.
                         Nutzt jetzt gleich die Möglichkeit heraus zu finden, wie ihr Koordinaten in die App eurer Wahl eintragt!
-                        Habt ihr den Würfel gefunden, findet ihr im Deckel des Würfels einen QR-Code, welcher euch zu einem kleinen Rätsel führt.
-                        Löst es & findet die Koordinaten für den nächsten Würfel! Insgesamt haben wir 7 Würfel quer über den Campus versteckt.<br>
+                        Habt ihr den Würfel gefunden, findet ihr im Deckel des Würfels einen QR-Code, welcher euch zum nächsten Rätsel führt.
+                        Löst es & findet die Koordinaten für den nächsten Würfel! Insgesamt haben wir 7 Würfel quer über den Campus versteckt.
+                        <br>
                         Schaffst du es alle Rätsel zu lösen & den finalen Cache zu finden?
                     </p>
                 </div>

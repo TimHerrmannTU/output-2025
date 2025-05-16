@@ -11,7 +11,7 @@
                 <h4>Warum braucht die Informatik das?</h4>
                 <p>
                     Zum Beispiel muss auf einer Website dein Name an den Server übergeben werden. Das könnte unter
-                    anderem als URL Parameter passieren:
+                    anderem als URL-Parameter passieren:
                 </p>
                 <p>
                     https://www.geocaching.com/p/?<span class="color-cyan">u=Max</span>
@@ -34,7 +34,7 @@
             <div class="col gap-1 elevated-box">
                 <h4 class="color-magenta">Rätsel</h4>
                 <p>
-                    Jetzt wo du die Theorie verstanden hast, schnapp dir einen <a class="color-cyan" href="https://fusionauth.io/dev-tools/base64-encoder-decoder">BASE64-Decoder</a> deiner Wahl & entschlüssel
+                    Jetzt wo du die Theorie verstanden hast, schnapp dir einen <a class="color-cyan" target="_blank" href="https://fusionauth.io/dev-tools/base64-encoder-decoder">BASE64-Decoder</a> deiner Wahl & entschlüssel
                     mit diesem die folgenden Koordinaten:
                 </p>
                 <code class="color-magenta">TjUxsDAxLjU4NycKRTAxM7A0My4zODQn</code>

@@ -6,8 +6,8 @@
             <p>
                 Binäre Kodierung wird in der Informatik verwendet, um Informationen mit nur zwei Zuständen (0 und 1)
                 darzustellen. Computer arbeiten mit elektrischen Signalen, die entweder an (1) oder aus (0) sind.
-                Diese Zustände bilden die Grundlage für alle Datenverarbeitung.
-                Damit können unter anderem dezimal Zahlen gespeichert werden. Unten folgen die Zahlen 0-9 in binär
+                Diese Zustände bilden die Grundlage für digitale Datenverarbeitung.
+                Damit können unter anderem Dezimalzahlen gespeichert werden. Unten folgen die Zahlen 0-9 in binär
                 Kodierung:
             </p>
         </div>
