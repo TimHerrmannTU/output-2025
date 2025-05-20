@@ -23,6 +23,11 @@ if (!is_user_logged_in()) {
     $post = get_post($_GET["id"]);
     $pro_type = get_the_terms($_GET["id"], 'project-type')[0]->slug;
     $pro_type = str_replace("project-", "", $pro_type);
+    // get project image
+    $img = get_field("project-details-thumbnail")["sizes"]["large"];
+    if (empty($img)) {
+        $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
+    }
     ?>
 
     <div class="light-bg">
@@ -47,7 +52,7 @@ if (!is_user_logged_in()) {
                         <option class="template" <?= ($pro_type=="vortrag") ? 'selected="selected"' : "" ?> value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
-                <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
+                <div class="file-upload col gap-1 c2 uploaded" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
@@ -55,7 +60,7 @@ if (!is_user_logged_in()) {
                         Lade hier ein Vorschaubild für dein Projekt hoch<br>
                         (Drag and Drop oder klicke hier)
                     </label>
-                    <img class="preview" src="">
+                    <img class="preview" src="<?= $img ?>">
                 </div>
                 <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
                 <div class="labeled-input c1">

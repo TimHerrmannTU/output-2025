@@ -23,15 +23,15 @@
                     <?php the_title(); ?>
                 </h3>
                 <?php
+                // post processing :^)
+                the_post();
                 if (is_user_logged_in()) {
-                    ?><a class="color-magenta" href="/projektdetails-bearbeiten?id=<?= $_GET["p"] ?>"><div class="iconify" data-icon="mdi-edit"></div></a><?php
+                    ?><a class="color-magenta" href="/projektdetails-bearbeiten?id=<?= the_id() ?>"><div class="iconify" data-icon="mdi-edit"></div></a><?php
                 }
                 ?>
             </div>
 
             <?php
-            // post processing :^)
-            the_post();
             // get project image
             $img = get_field("project-details-thumbnail")["sizes"]["large"];
             if (empty($img)) {
