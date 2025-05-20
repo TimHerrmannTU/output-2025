@@ -1,3 +1,4 @@
+@use "mixins";
 @use "colors";
 
 #projekte, #about {
@@ -6,6 +7,25 @@
         #project-count {
             height: fit-content;
             align-self: center;
+        }
+        
+        @include mixins.narrow {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            > * {
+                grid-column: 1 !important;
+            }
+            .r1, .r2, .r3, .r4 {
+                grid-row: auto;
+            }
+            #project-count {
+                display: none;
+            }
+        }
+    }
+    .pro-grid {
+        @include mixins.narrow {
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

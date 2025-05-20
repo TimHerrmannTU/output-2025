@@ -1523,6 +1523,26 @@ nav#tud-navbar a {
   height: fit-content;
   align-self: center;
 }
+@media (max-aspect-ratio: 3/2) {
+  #projekte .controls, #about .controls {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  #projekte .controls > *, #about .controls > * {
+    grid-column: 1 !important;
+  }
+  #projekte .controls .r1, #projekte .controls .r2, #projekte .controls .r3, #projekte .controls .r4, #about .controls .r1, #about .controls .r2, #about .controls .r3, #about .controls .r4 {
+    grid-row: auto;
+  }
+  #projekte .controls #project-count, #about .controls #project-count {
+    display: none;
+  }
+}
+@media (max-aspect-ratio: 3/2) {
+  #projekte .pro-grid, #about .pro-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 .pro-item {
   position: relative;
