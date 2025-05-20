@@ -46,28 +46,6 @@ function remap_all_authors() {
 //remap_all_authors();
 
 
-// Redirect the custom URL for form submission handling
-add_action('template_redirect', 'handle_custom_form_submission');
-function handle_custom_form_submission() {
-    // Check if the current page is the "submit-post" page
-    if (is_page('page-projekt-einreichen')) {
-        // Handle form submission
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_project_post_nonce']) && wp_verify_nonce($_POST['submit_project_post_nonce'], 'submit_project_post_action')) {
-            handle_project_post_submission();
-        }
-        // Optionally, you can prevent WordPress from loading the rest of the page
-        exit;
-    }
-    if (is_page('page-creative-challenge')) {
-        // Handle form submission
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_art_post_nonce']) && wp_verify_nonce($_POST['submit_art_post_nonce'], 'submit_art_post_action')) {
-            handle_art_post_submission();
-        }
-        // Optionally, you can prevent WordPress from loading the rest of the page
-        exit;
-    }
-}
-
 // creates project post from form fields
 add_action('template_redirect', 'handle_project_post_submission');
 function handle_project_post_submission() {
@@ -84,17 +62,23 @@ function handle_project_post_submission() {
     }
 
     // Sanitize and create post data
+    $edit = $_POST['edit'];
     $current_user = get_current_user_id();
-    $post_data = [
-        'post_title'   => sanitize_text_field($_POST['details-name']),
-        'post_content' => sanitize_textarea_field($_POST['details-description']),
-        'post_status'  => 'pending',
-        'post_type'    => 'projekte',
-        'post_author'  => $current_user,
-    ];
-    $_POST["intern-user"] = $current_user;
-    
-    $post_id = wp_insert_post($post_data);
+    if ($edit) {
+        $post_id = $_POST['post-id'];
+    }
+    else {
+        $post_data = [
+            'post_title'   => sanitize_text_field($_POST['details-name']),
+            'post_content' => sanitize_textarea_field($_POST['details-description']),
+            'post_status'  => 'pending',
+            'post_type'    => 'projekte',
+            'post_author'  => $current_user,
+        ];
+        $_POST["intern-user"] = $current_user;
+        
+        $post_id = wp_insert_post($post_data);
+    }
     // assign taxonomy to post
     wp_set_object_terms( $post_id, "project-".$_POST["category"], "project-type" );
     // get all output-year taxonomies & get the latest year

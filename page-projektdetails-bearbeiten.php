@@ -25,19 +25,16 @@ if (!is_user_logged_in()) {
     $post = get_post($_GET["id"]);
     $pro_type = get_the_terms($_GET["id"], 'project-type')[0]->slug;
     $pro_type = str_replace("project-", "", $pro_type);
-    // get project image
-    $img = get_field("project-details-thumbnail")["sizes"]["large"];
-    if (empty($img)) {
-        $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
-    }
     ?>
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
 
-            <form id="project-register-form" class="grid conditional" action="<?= admin_url('admin-post.php') ?>"
-                method="POST" enctype="multipart/form-data">
+            <form id="project-register-form" class="grid conditional" action="/projektdetails-bearbeiten/?id=<?= the_id() ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_project_post">
+                <?php wp_nonce_field('submit_project_post_action', 'submit_project_post_nonce'); ?>
+                <input type="hidden" name="post-id" value="<?= the_id() ?>">
+                <input type="hidden" name="edit" value="true">
 
                 <div class="labeled-input full">
                     <label for="details-name">Titel *</label>
@@ -59,22 +56,9 @@ if (!is_user_logged_in()) {
                             value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
-                <div class="file-upload col gap-1 c2 uploaded" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
-                    <div class="icon">
-                        <span class="iconify" data-icon="mdi-cloud-upload-outline">
-                    </div>
-                    <label for="details-thumbnail">
-                        Lade hier ein Vorschaubild für dein Projekt hoch<br>
-                        (Drag and Drop oder klicke hier)
-                    </label>
-                    <img class="preview" src="<?= $img ?>">
-                </div>
-                <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1"
-                    required>
                 <div class="labeled-input c1">
                     <label for="details-presenter">Präsentator *</label>
-                    <input name="details-presenter" type="text" value="<?= get_field("project-details-presenter") ?>"
-                        required>
+                    <input name="details-presenter" type="text" value="<?= get_field("project-details-presenter") ?>" required>
                 </div>
                 <div class="labeled-input c1">
                     <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
@@ -104,9 +88,9 @@ if (!is_user_logged_in()) {
                         value="<?= get_field("project-intern-contact-person") ?>" required>
                 </div>
                 <div class="labeled-input c2">
-                    <label for="intern-contact-person-email">E-Mail *</label>
-                    <input name="intern-contact-person-email" type="text"
-                        value="<?= get_field("intern-contact-person-email") ?>" required>
+                    <label for="intern-contact-person-e-mail">E-Mail *</label>
+                    <input name="intern-contact-person-e-mail" type="text"
+                        value="<?= get_field("project-intern-contact-person-e-mail") ?>" required>
                 </div>
                 <div class="pt-1 full"></div>
                 <!-- START: CONDITIONAL SECTION -->
@@ -162,52 +146,6 @@ if (!is_user_logged_in()) {
                 <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT BEARBEITEN</a>
             </form>
 
-            <div id="my-projects" class="default-grid conditional" style="display:none">
-                <?php
-                $args = array(
-                    'post_type'      => 'projekte',  // Slug of the category
-                    'post_status'    => ['publish', 'draft', 'pending', 'private'],
-                    'author'         => get_current_user_id(),
-                    'posts_per_page' => -1,  // Number of posts to show (adjust as needed)
-                );
-                // Create a custom query
-                $query = new WP_Query($args);
-                // Check if posts are available
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                        // retrieve taxonomies of posts (needed for filtering)
-                        $pro_terms = get_the_terms(get_the_ID(), 'output-year');
-                        $pro_years = "";
-                        if (!is_wp_error($pro_terms) && !empty($pro_terms)) {
-                            $pro_years = implode(', ', array_map(fn($term) => $term->name, $pro_terms));
-                        }
-                        $pro_terms = get_the_terms(get_the_ID(), 'project-type');
-                        $pro_types = "";
-                        if (!is_wp_error($pro_terms) && !empty($pro_terms)) {
-                            $pro_types = implode(', ', array_map(fn($term) => $term->name, $pro_terms));
-                        }
-                        // get project image
-                        $img = get_field("project-details-thumbnail")["sizes"]["large"];
-                        if (empty($img)) {
-                            $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
-                        }
-                        ?>
-                <a class="pro-item labeled col" href="<?= the_permalink() ?>" dd-year="<?= $pro_years ?>"
-                    dd-type="<?= $pro_types ?>">
-                    <img src="<?= $img ?>" />
-                    <div class="item-label">
-                        <div class="text-wrapper">
-                            <p><?= get_field("project-details-name")  ?></p>
-                        </div>
-                    </div>
-                </a>
-                <?php
-                    }
-                }
-                ?>
-            </div>
-
         </div>
     </div>
 
@@ -242,8 +180,7 @@ if (!is_user_logged_in()) {
             e.preventDefault(); //  prevents the <a> from acting like a link
             if (mode != "default") {
                 $(`[dd-mode]:not([dd-mode=${mode}])`).remove()
-                $("#project-register-form")[0].reportValidity() && $("#project-register-form").trigger(
-                    "submit")
+                $("#project-register-form")[0].reportValidity() && $("#project-register-form").trigger("submit")
             }
         })
     })
