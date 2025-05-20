@@ -78,7 +78,7 @@ if (!is_user_logged_in()) {
                 </div>
                 <div class="labeled-input c1">
                     <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
-                    <textarea name="details-description"
+                    <textarea name="details-description" maxlength="2000"
                         required><?= get_field("project-details-description") ?></textarea>
                 </div>
 

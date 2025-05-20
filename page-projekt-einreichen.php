@@ -9,12 +9,14 @@ if (!is_user_logged_in()) {
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
+
 <body id="projekt-einreichen" <?php body_class() ?>>
     <?php
     $main_headline = "MEIN BEREICH";
@@ -24,14 +26,15 @@ if (!is_user_logged_in()) {
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
-            
+
             <div id="controls" class="default-grid">
                 <button class="r1 c1" dd-target="">MEIN PROFIL</button>
                 <button class="r2 c1 active" dd-target="project-register-form">NEUES PROJEKT</button>
                 <button class="r2 c2" dd-target="my-projects">MEINE PROJEKTE</button>
             </div>
-            
-            <form id="project-register-form" class="grid conditional" action="<?= esc_url(get_permalink()); ?>" method="POST" enctype="multipart/form-data">
+
+            <form id="project-register-form" class="grid conditional" action="<?= esc_url(get_permalink()); ?>"
+                method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="form_type" value="project">
                 <input type="hidden" name="action" value="submit_project_post">
                 <?php wp_nonce_field('submit_project_post_action', 'submit_project_post_nonce'); ?>
@@ -51,7 +54,8 @@ if (!is_user_logged_in()) {
                         <option class="template" value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
-                <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1" style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
+                <div class="file-upload col gap-1 c2" dd-function="file-upload-trigger" key="1"
+                    style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
@@ -61,14 +65,15 @@ if (!is_user_logged_in()) {
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
+                <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1"
+                    required>
                 <div class="labeled-input c1">
                     <label for="details-presenter">Präsentator *</label>
                     <input name="details-presenter" type="text" required>
                 </div>
                 <div class="labeled-input c1">
                     <label for="details-description">Beschreibung des Projektes (max. 2000 Zeichen) *</label>
-                    <textarea name="details-description" required></textarea>
+                    <textarea name="details-description" maxlength="2000" required></textarea>
                 </div>
 
                 <div class="labeled-input full">
@@ -132,7 +137,8 @@ if (!is_user_logged_in()) {
                         Lade hier dein Poster als PDF hoch (Drag and Drop oder klicke hier)
                     </label>
                 </div>
-                <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3" dd-mode="poster">
+                <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3"
+                    dd-mode="poster">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
                     <input type="checkbox" name="intern-ausgrundung">
@@ -186,15 +192,16 @@ if (!is_user_logged_in()) {
                             $img = $img["sizes"]["large"];
                         }
                         ?>
-                        <a class="pro-item labeled col" href="<?= the_permalink() ?>" dd-year="<?= $pro_years ?>" dd-type="<?= $pro_types ?>">
-                            <img src="<?= $img ?>"/>
-                            <div class="item-label">
-                                <div class="text-wrapper">
-                                    <p><?= get_field("project-details-name")  ?></p>
-                                </div>
-                            </div>
-                        </a>
-                        <?php
+                <a class="pro-item labeled col" href="<?= the_permalink() ?>" dd-year="<?= $pro_years ?>"
+                    dd-type="<?= $pro_types ?>">
+                    <img src="<?= $img ?>" />
+                    <div class="item-label">
+                        <div class="text-wrapper">
+                            <p><?= get_field("project-details-name")  ?></p>
+                        </div>
+                    </div>
+                </a>
+                <?php
                     }
                 }
                 ?>
@@ -208,36 +215,38 @@ if (!is_user_logged_in()) {
     wp_footer();
     ?>
     <script>
-        var mode = "default";
-        jQuery(document).ready(function($) {
-            // init
-            $("[dd-mode]").hide()
-            mode = $("#mode").val()
-            $(`[dd-mode=${mode}]:not(input[type=file])`).show()
-            // control events (switch between different html section)
-            $("#controls button").click(function() {
-                // toggle styling class
-                $("#controls").find("button").removeClass("active")
-                $(this).addClass("active")
-                // toggle relevant section
-                $(".conditional").hide()
-                const TARGET = $(this).attr("dd-target")
-                $(`#${TARGET}`).show()
-            })
-            // user events
-            $("#mode").change(function() {
-                mode = $(this).val()
-                $("[dd-mode]").hide()
-                $(`[dd-mode=${mode}]:not(input[type=file])`).show()
-            })
-            $("#submit").click(function(e) {
-                e.preventDefault(); //  prevents the <a> from acting like a link
-                if (mode != "default") {
-                    $(`[dd-mode]:not([dd-mode=${mode}])`).remove()
-                    $("#project-register-form")[0].reportValidity() && $("#project-register-form").trigger("submit")
-                }
-            })
+    var mode = "default";
+    jQuery(document).ready(function($) {
+        // init
+        $("[dd-mode]").hide()
+        mode = $("#mode").val()
+        $(`[dd-mode=${mode}]:not(input[type=file])`).show()
+        // control events (switch between different html section)
+        $("#controls button").click(function() {
+            // toggle styling class
+            $("#controls").find("button").removeClass("active")
+            $(this).addClass("active")
+            // toggle relevant section
+            $(".conditional").hide()
+            const TARGET = $(this).attr("dd-target")
+            $(`#${TARGET}`).show()
         })
+        // user events
+        $("#mode").change(function() {
+            mode = $(this).val()
+            $("[dd-mode]").hide()
+            $(`[dd-mode=${mode}]:not(input[type=file])`).show()
+        })
+        $("#submit").click(function(e) {
+            e.preventDefault(); //  prevents the <a> from acting like a link
+            if (mode != "default") {
+                $(`[dd-mode]:not([dd-mode=${mode}])`).remove()
+                $("#project-register-form")[0].reportValidity() && $("#project-register-form").trigger(
+                    "submit")
+            }
+        })
+    })
     </script>
 </body>
+
 </html>
