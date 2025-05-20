@@ -25,7 +25,7 @@
                 <?php
                 // post processing :^)
                 the_post();
-                if (is_user_logged_in()) {
+                if ( is_user_logged_in() && (get_field("project-intern-user") == get_current_user_id()) ) {
                     ?><a class="color-magenta" href="/projektdetails-bearbeiten?id=<?= the_id() ?>"><div class="iconify" data-icon="mdi-edit"></div></a><?php
                 }
                 ?>
