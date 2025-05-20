@@ -582,6 +582,7 @@ select, .labeled-checkbox {
 .dropdown {
   background-color: #E2007A;
   position: relative;
+  min-width: 190px;
 }
 .dropdown select {
   appearance: none;

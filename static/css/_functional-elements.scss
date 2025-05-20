@@ -96,6 +96,7 @@ select, .labeled-checkbox {
 .dropdown {
     background-color: colors.$magenta;
     position: relative;
+    min-width: 190px;
     select {
         // overwriting browser default
         appearance: none;
