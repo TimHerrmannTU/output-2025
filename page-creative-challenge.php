@@ -97,6 +97,32 @@
                         <li>Die <b>Urheberrechte</b> verbleiben vollständig bei den Künstler*innen.</li>
                     </ul>
                 </div>
+                <div class="col" dd-function="expandable">
+                    <h4 dd-function="trigger">
+                        Was gibt es zu gewinnen?
+                        <div class="icon ml-1">
+                            <span class="iconify" data-icon="mdi-chevron-down">
+                        </div>
+                    </h4>
+                    <div class="expand" style="display: none">
+
+                        <p>
+                            Wir küren die drei besten Kunstwerke - und zwar doppelt. Einmal durch unsere Jury und einmal
+                            durch das Publikum vor Ort. Man kann also bestenfalls zweimal auf dem Treppchen landen und
+                            somit zwei Preise gewinnen.
+                        </p>
+                        <ul class="indented">
+
+                            <li>2 x 1. Platz: Wunschgutschein im Wert von 50€, Pokal, Urkunde</li>
+                            <li>2 x 2. Platz: Wunschgutschein im Wert von 30€, Urkunde</li>
+                            <li>2 x 3. Platz: Wunschgutschein im Wert von 20€, Urkunde</li>
+                        </ul>
+                        <p>
+                            Außerdem erhalten alle Teilnehmenden eine Teilnehmerurkunde und ein paar Goodies - solange
+                            der Vorrat reicht.
+                        </p>
+                    </div>
+                </div>
                 <p>Wir freuen uns auf eure kreativen Einsendungen!</p>
             </div>
             <h2 class="mt-3">Anmeldung zur Creative-Challenge</h2>
