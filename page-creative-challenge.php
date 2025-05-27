@@ -105,14 +105,12 @@
                         </div>
                     </h4>
                     <div class="expand" style="display: none">
-
                         <p>
                             Wir küren die drei besten Kunstwerke - und zwar doppelt. Einmal durch unsere Jury und einmal
                             durch das Publikum vor Ort. Man kann also bestenfalls zweimal auf dem Treppchen landen und
                             somit zwei Preise gewinnen.
                         </p>
                         <ul class="indented">
-
                             <li>2 x 1. Platz: Wunschgutschein im Wert von 50€, Pokal, Urkunde</li>
                             <li>2 x 2. Platz: Wunschgutschein im Wert von 30€, Urkunde</li>
                             <li>2 x 3. Platz: Wunschgutschein im Wert von 20€, Urkunde</li>
