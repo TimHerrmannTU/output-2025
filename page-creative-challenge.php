@@ -1,4 +1,14 @@
 <?php /* Template Name: creative-challenge */ ?>
+<?php
+// Überprüfe, ob der Benutzer angemeldet ist
+if (!is_user_logged_in()) {
+    // Aktuelle URL für die Rückleitung nach dem Login speichern
+    $current_url = home_url($_SERVER['REQUEST_URI']);
+    // Weiterleitung zur Login-Seite mit Rückleitungsparameter
+    wp_redirect(home_url('/login?redirect_to=' . urlencode($current_url)));
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
