@@ -8,6 +8,26 @@ if (!is_user_logged_in()) {
     wp_redirect(home_url('/login?redirect_to=' . urlencode($current_url)));
     exit;
 }
+
+// Verarbeitung des Formulars
+if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post') {
+    // Nonce-Überprüfung
+    if (!wp_verify_nonce($_POST['submit_art_post_nonce'], 'submit_art_post_action')) {
+        wp_die('Sicherheitsüberprüfung fehlgeschlagen');
+    }
+
+    // Datei-Upload-Überprüfung
+    if (isset($_FILES['upload']) && $_FILES['upload']['error'] === UPLOAD_ERR_OK) {
+        $maxFileSize = 2 * 1024 * 1024; // 2MB in Bytes
+
+        if ($_FILES['upload']['size'] > $maxFileSize) {
+            $error_message = 'Die Datei ist zu groß. Maximale Dateigröße: 2MB. Ihre Datei: ' . round($_FILES['upload']['size'] / 1024 / 1024, 2) . 'MB';
+        } else {
+            // Weitere Verarbeitung der Datei hier...
+            $success_message = 'Datei erfolgreich hochgeladen!';
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -28,6 +48,20 @@ if (!is_user_logged_in()) {
 
     <div class="light-bg">
         <div class="wrapper col gap-3">
+            <?php if (isset($error_message)): ?>
+            <div class="error-message"
+                style="background: #ff6b6b; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                <?php echo esc_html($error_message); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if (isset($success_message)): ?>
+            <div class="success-message"
+                style="background: #51cf66; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                <?php echo esc_html($success_message); ?>
+            </div>
+            <?php endif; ?>
+
             <h2>FAQ</h2>
             <div class="col gap-3">
                 <div class="col">
@@ -185,6 +219,27 @@ if (!is_user_logged_in()) {
             </form>
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.querySelector('input[name="upload"]');
+        const maxSizeInMB = 2;
+        const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
+
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                if (file.size > maxSizeInBytes) {
+                    alert(
+                        `Die Datei ist zu groß. Maximale Dateigröße: ${maxSizeInMB}MB. Ihre Datei: ${(file.size / 1024 / 1024).toFixed(2)}MB`
+                    );
+                    e.target.value = '';
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
 
     <?php
     include get_template_directory() ."/includes/footer.php";
