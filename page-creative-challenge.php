@@ -12,10 +12,10 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
     if (!isset($_FILES['upload']) || $_FILES['upload']['error'] !== UPLOAD_ERR_OK || empty($_FILES['upload']['name'])) {
         $error_message = 'Bitte lade eine Datei hoch.';
     } else {
-        $maxFileSize = 2 * 1024 * 1024; // 2MB in Bytes
+        $maxFileSize = 50 * 1024 * 1024; // 50MB in Bytes
 
         if ($_FILES['upload']['size'] > $maxFileSize) {
-            $error_message = 'Die Datei ist zu groß. Maximale Dateigröße: 2MB. Deine Datei: ' . round($_FILES['upload']['size'] / 1024 / 1024, 2) . 'MB';
+            $error_message = 'Die Datei ist zu groß. Maximale Dateigröße: 50MB. Deine Datei: ' . round($_FILES['upload']['size'] / 1024 / 1024, 2) . 'MB';
         } else {
             // Weitere Verarbeitung der Datei hier...
             $success_message = 'Datei erfolgreich hochgeladen!';
@@ -198,7 +198,8 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
+                <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1"
+                    data-max-size="50000000" required>
                 <div class="labeled-input c1">
                     <label for="description">Beschreibung</label>
                     <textarea name="description"> </textarea>
@@ -218,7 +219,7 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const fileInput = document.querySelector('input[name="upload"]');
-        const maxSizeInMB = 2;
+        const maxSizeInMB = 50;
         const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
 
         fileInput.addEventListener('change', function(e) {

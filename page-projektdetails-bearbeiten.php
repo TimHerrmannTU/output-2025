@@ -78,7 +78,8 @@ if (!is_user_logged_in()) {
                     </label>
                     <img class="preview" src="<?= $img ?>">
                 </div>
-                <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1" data-max-size="2097152">
+                <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1"
+                    data-max-size="50000000">
 
                 <div class="labeled-input c1">
                     <label for="details-presenter">Präsentator *</label>
@@ -133,7 +134,8 @@ if (!is_user_logged_in()) {
                 </label>
                 <div class="labeled-input full" dd-mode="demo">
                     <label for="intern-comment">Sonstige Wünsche oder Kommentare für dein Projektstand</label>
-                    <textarea name="intern-comment" style="min-height: 10rem"><?= get_field("project-intern-comment") ?></textarea>
+                    <textarea name="intern-comment"
+                        style="min-height: 10rem"><?= get_field("project-intern-comment") ?></textarea>
                 </div>
                 <!-- if vortrag -->
                 <div class="labeled-input c1" dd-mode="vortrag">
@@ -148,7 +150,7 @@ if (!is_user_logged_in()) {
                     <label for="details-upload"><?= $file["filename"] ?></label>
                 </div>
                 <input name="details-upload" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag"
-                    data-max-size="2097152">
+                    data-max-size="50000000">
                 <!-- if poster -->
                 <div class="row gap-1 full" dd-function="file-upload-trigger" key="3" dd-mode="poster">
                     <div class="icon">
@@ -157,10 +159,11 @@ if (!is_user_logged_in()) {
                     <label for="details-upload"><?= $file["filename"] ?></label>
                 </div>
                 <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3"
-                    dd-mode="poster" data-max-size="2097152">
+                    dd-mode="poster" data-max-size="50000000">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
-                    <input type="checkbox" name="intern-ausgrundung" <?= (get_field("project-intern-ausgrundung")==1) ? 'checked="checked"' : "" ?>>
+                    <input type="checkbox" name="intern-ausgrundung"
+                        <?= (get_field("project-intern-ausgrundung")==1) ? 'checked="checked"' : "" ?>>
                     <span>Ich habe Interesse an einer Ausgründung.</span>
                 </label>
                 <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT BEARBEITEN</a>
@@ -186,10 +189,10 @@ if (!is_user_logged_in()) {
 
         // File size validation
         $('input[type="file"]').on('change', function() {
-            const maxSize = 2097152; // 2MB in bytes
+            const maxSize = 50000000; // 50mb
             const file = this.files[0];
             if (file && file.size > maxSize) {
-                alert('Die Datei ist zu groß. Maximale Dateigröße: 2MB');
+                alert('Die Datei ist zu groß. Maximale Dateigröße: 50MB');
                 $(this).val(''); // Clear the input
                 return false;
             }
