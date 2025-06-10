@@ -15,7 +15,7 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
         $maxFileSize = 2 * 1024 * 1024; // 2MB in Bytes
 
         if ($_FILES['upload']['size'] > $maxFileSize) {
-            $error_message = 'Die Datei ist zu groß. Maximale Dateigröße: 2MB. Ihre Datei: ' . round($_FILES['upload']['size'] / 1024 / 1024, 2) . 'MB';
+            $error_message = 'Die Datei ist zu groß. Maximale Dateigröße: 2MB. Deine Datei: ' . round($_FILES['upload']['size'] / 1024 / 1024, 2) . 'MB';
         } else {
             // Weitere Verarbeitung der Datei hier...
             $success_message = 'Datei erfolgreich hochgeladen!';
