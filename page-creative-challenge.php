@@ -193,7 +193,8 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
                     </div>
                     <label for="upload">
                         Lade hier dein Kunstwerk hoch<br>
-                        (Drag and Drop oder klicke hier)
+                        (Drag and Drop oder klicke hier)<br>
+                        Maximale Dateigröße: 50MB
                     </label>
                     <img class="preview" src="">
                 </div>

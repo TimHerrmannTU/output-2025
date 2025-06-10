@@ -11,6 +11,11 @@ function load_static_folder() {
 }
 add_action('wp_enqueue_scripts', 'load_static_folder');
 
+// adjust upload limits
+@ini_set( 'upload_max_size' , '50M' );
+@ini_set( 'post_max_size', '100M');
+
+
 // hides wordpress bar on top of the the page if user is logged in
 add_action('get_header', 'remove_admin_login_header');
 function remove_admin_login_header() {

@@ -62,7 +62,8 @@ if (!is_user_logged_in()) {
                     <label for="details-thumbnail">
                         Lade hier ein Vorschaubild für dein Projekt hoch<br>
                         Seitenverhältniss 4:3<br>
-                        (Drag and Drop oder klicke hier)
+                        (Drag and Drop oder klicke hier)<br>
+                        Maximale Dateigröße: 50MB
                     </label>
                     <img class="preview" src="">
                 </div>
@@ -125,7 +126,9 @@ if (!is_user_logged_in()) {
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
                     <label for="details-upload">
-                        Lade hier dein Vortrag als PDF oder PPTX hoch (Drag and Drop oder klicke hier)
+                        Lade hier dein Vortrag als PDF oder PPTX hoch<br>
+                        (Drag and Drop oder klicke hier)<br>
+                        Maximale Dateigröße: 50MB
                     </label>
                 </div>
                 <input name="details-upload" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag"
@@ -136,7 +139,9 @@ if (!is_user_logged_in()) {
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
                     <label for="details-upload">
-                        Lade hier dein Poster als PDF hoch (Drag and Drop oder klicke hier)
+                        Lade hier dein Poster als PDF hoch<br>
+                        (Drag and Drop oder klicke hier)<br>
+                        Maximale Dateigröße: 50MB
                     </label>
                 </div>
                 <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3"
