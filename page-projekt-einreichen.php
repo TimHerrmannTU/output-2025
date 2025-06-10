@@ -67,7 +67,7 @@ if (!is_user_logged_in()) {
                     <img class="preview" src="">
                 </div>
                 <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1"
-                    required>
+                    required data-max-size="2097152">
                 <div class="labeled-input c1">
                     <label for="details-presenter">Präsentator *</label>
                     <input name="details-presenter" type="text" required>
@@ -128,7 +128,8 @@ if (!is_user_logged_in()) {
                         Lade hier dein Vortrag als PDF oder PPTX hoch (Drag and Drop oder klicke hier)
                     </label>
                 </div>
-                <input name="details-upload" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag">
+                <input name="details-upload" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag"
+                    data-max-size="2097152">
                 <!-- if poster -->
                 <div class="row gap-1 full" dd-function="file-upload-trigger" key="3" dd-mode="poster">
                     <div class="icon">
@@ -139,7 +140,7 @@ if (!is_user_logged_in()) {
                     </label>
                 </div>
                 <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3"
-                    dd-mode="poster">
+                    dd-mode="poster" data-max-size="2097152">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
                     <input type="checkbox" name="intern-ausgrundung">
@@ -222,6 +223,19 @@ if (!is_user_logged_in()) {
         $("[dd-mode]").hide()
         mode = $("#mode").val()
         $(`[dd-mode=${mode}]:not(input[type=file])`).show()
+
+        // File size validation
+        $('input[type="file"]').change(function() {
+            const maxSize = parseInt($(this).attr('data-max-size')) || 2097152; // 2MB default
+            const file = this.files[0];
+
+            if (file && file.size > maxSize) {
+                alert('Die Datei ist zu groß. Maximale Dateigröße: 2MB');
+                $(this).val(''); // Clear the input
+                return false;
+            }
+        });
+
         // control events (switch between different html section)
         $("#controls button").click(function() {
             // toggle styling class

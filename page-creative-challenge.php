@@ -1,4 +1,28 @@
 <?php /* Template Name: creative-challenge */ ?>
+<?php
+
+// Verarbeitung des Formulars
+if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post') {
+    // Nonce-Überprüfung
+    if (!wp_verify_nonce($_POST['submit_art_post_nonce'], 'submit_art_post_action')) {
+        wp_die('Sicherheitsüberprüfung fehlgeschlagen');
+    }
+
+    // Datei-Upload-Überprüfung
+    if (!isset($_FILES['upload']) || $_FILES['upload']['error'] !== UPLOAD_ERR_OK || empty($_FILES['upload']['name'])) {
+        $error_message = 'Bitte lade eine Datei hoch.';
+    } else {
+        $maxFileSize = 2 * 1024 * 1024; // 2MB in Bytes
+
+        if ($_FILES['upload']['size'] > $maxFileSize) {
+            $error_message = 'Die Datei ist zu groß. Maximale Dateigröße: 2MB. Deine Datei: ' . round($_FILES['upload']['size'] / 1024 / 1024, 2) . 'MB';
+        } else {
+            // Weitere Verarbeitung der Datei hier...
+            $success_message = 'Datei erfolgreich hochgeladen!';
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -18,6 +42,20 @@
 
     <div class="light-bg">
         <div class="wrapper col gap-3">
+            <?php if (isset($error_message)): ?>
+            <div class="error-message"
+                style="background: #ff6b6b; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                <?php echo esc_html($error_message); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if (isset($success_message)): ?>
+            <div class="success-message"
+                style="background: #51cf66; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                <?php echo esc_html($success_message); ?>
+            </div>
+            <?php endif; ?>
+
             <h2>FAQ</h2>
             <div class="col gap-3">
                 <div class="col">
@@ -97,6 +135,30 @@
                         <li>Die <b>Urheberrechte</b> verbleiben vollständig bei den Künstler*innen.</li>
                     </ul>
                 </div>
+                <div class="col" dd-function="expandable">
+                    <h4 dd-function="trigger">
+                        Was gibt es zu gewinnen?
+                        <div class="icon ml-1">
+                            <span class="iconify" data-icon="mdi-chevron-down">
+                        </div>
+                    </h4>
+                    <div class="expand" style="display: none">
+                        <p>
+                            Wir küren die drei besten Kunstwerke - und zwar doppelt. Einmal durch unsere Jury und einmal
+                            durch das Publikum vor Ort. Man kann also bestenfalls zweimal auf dem Treppchen landen und
+                            somit zwei Preise gewinnen.
+                        </p>
+                        <ul class="indented">
+                            <li>2 x 1. Platz: Wunschgutschein im Wert von 50€, Pokal, Urkunde</li>
+                            <li>2 x 2. Platz: Wunschgutschein im Wert von 30€, Urkunde</li>
+                            <li>2 x 3. Platz: Wunschgutschein im Wert von 20€, Urkunde</li>
+                        </ul>
+                        <p>
+                            Außerdem erhalten alle Teilnehmenden eine Teilnehmerurkunde und ein paar Goodies - solange
+                            der Vorrat reicht.
+                        </p>
+                    </div>
+                </div>
                 <p>Wir freuen uns auf eure kreativen Einsendungen!</p>
             </div>
             <h2 class="mt-3">Anmeldung zur Creative-Challenge</h2>
@@ -135,7 +197,7 @@
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1">
+                <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
                 <div class="labeled-input c1">
                     <label for="description">Beschreibung</label>
                     <textarea name="description"> </textarea>
@@ -151,6 +213,27 @@
             </form>
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.querySelector('input[name="upload"]');
+        const maxSizeInMB = 2;
+        const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
+
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                if (file.size > maxSizeInBytes) {
+                    alert(
+                        `Die Datei ist zu groß. Maximale Dateigröße: ${maxSizeInMB}MB. Ihre Datei: ${(file.size / 1024 / 1024).toFixed(2)}MB`
+                    );
+                    e.target.value = '';
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
 
     <?php
     include get_template_directory() ."/includes/footer.php";

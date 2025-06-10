@@ -68,8 +68,12 @@
                     // Bestimme die Weiterleitungs-URL
                     $redirect_url = '';
 
-                    // Prüfe ob ein HTTP_REFERER existiert
-                    if (isset($_SERVER['HTTP_REFERER'])) {
+                    // Prüfe, ob ein redirect_to Parameter in der URL vorhanden ist
+                    if (isset($_GET['redirect_to']) && !empty($_GET['redirect_to'])) {
+                        $redirect_url = $_GET['redirect_to'];
+                    }
+                    // Fallback: Prüfe ob ein HTTP_REFERER existiert
+                    else if (isset($_SERVER['HTTP_REFERER'])) {
                         $referer = $_SERVER['HTTP_REFERER'];
                         // Stelle sicher, dass es eine URL der eigenen Webseite ist
                         if (strpos($referer, home_url()) === 0) {
@@ -82,7 +86,7 @@
                         }
                     }
 
-                    // Fallback zur Startseite, wenn keine gültige Referer-URL gefunden wurde
+                    // Fallback zur Startseite, wenn keine gültige URL gefunden wurde
                     if (empty($redirect_url)) {
                         $redirect_url = home_url();
                     }
