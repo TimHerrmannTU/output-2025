@@ -1,5 +1,14 @@
 <div class="light-bg">
     <div class="wrapper col gap-3">
+        <div class="col gap-1">
+            <h4 class="color-magenta">Disclaimer</h4>
+            <p>
+                Das ist das letzte Rätsel für dich. Toll das du es so weit geschafft hast & bald den letzten Cache in den Händen hältst.
+                Darin findest du kein QR-Code, aber falls du schnell genug warst ein kleines Souvenir, welches du mitnehmen darfst!<br>
+                Danke fürs knobeln & viel Erfolg beim letzten Rätsel,<br>
+                Output Hünchen
+            </p>
+        </div>
         <h3 class="pb-1">Cäsar Chiffre</h3>
         <div class="col gap-1">
             <h4>Was ist ein Cäsar Chiffre?</h4>

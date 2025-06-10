@@ -20,7 +20,8 @@
             <div class="wrapper col gap-3">
                 <div class="col gap-1">
                     <h3 class="pb-1">Was ist geocachen?</h3>
-                    <iframe width="1200" height="700" src="https://www.youtube.com/embed/1YTqitVK-Ts"></iframe> 
+                    <a class="color-magenta" href="https://www.youtube.com/watch?v=1YTqitVK-Ts">https://www.youtube.com/watch?v=1YTqitVK-Ts</a>
+                    <!-- <iframe width="1200" height="700" src="https://www.youtube.com/embed/1YTqitVK-Ts"></iframe> -->
                 </div>
                 <div class="col gap-1">
                     <h3 class="pb-1">Was brauch ich zum teilnehmen?</h3>
@@ -106,6 +107,11 @@
                     <p><strong>3.</strong> QR im Deckel scanen.</p>
                     <p><strong>4.</strong> Rätsel lösen.</p>
                     <p><strong>5.</strong> Repeat...</p>
+                    <p class="mt-1">
+                        Im siebten Würfel ist kein QR-Code mehr vorhanden. Dafür können sich die ersten 3 Sucher ein Souvenir in Form von einem
+                        kleinen Hünchenwürfel mitnehmen. Wer den Würfel zum Veranstalltungstag von OUTPUT mitbringt, bekommt ein paar Bonuspunkte
+                        in der OUTPUT App & erhöht somit die Chancen tolle Preise zu gewinnen!
+                    </p>
                 </div>
                 <div class="col gap-2">
                     <a class="color-yellow" href="/geo-caching/?sub=binary"><h2>Auf zum ersten Rätsel der Schnitzeljagd!</h2></a>

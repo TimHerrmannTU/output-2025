@@ -61,6 +61,7 @@ if (!is_user_logged_in()) {
                     </div>
                     <label for="details-thumbnail">
                         Lade hier ein Vorschaubild für dein Projekt hoch<br>
+                        Seitenverhältniss 4:3<br>
                         (Drag and Drop oder klicke hier)
                     </label>
                     <img class="preview" src="">
