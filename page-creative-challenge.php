@@ -9,7 +9,9 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
     }
 
     // Datei-Upload-Überprüfung
-    if (isset($_FILES['upload']) && $_FILES['upload']['error'] === UPLOAD_ERR_OK) {
+    if (!isset($_FILES['upload']) || $_FILES['upload']['error'] !== UPLOAD_ERR_OK || empty($_FILES['upload']['name'])) {
+        $error_message = 'Bitte lade eine Datei hoch.';
+    } else {
         $maxFileSize = 2 * 1024 * 1024; // 2MB in Bytes
 
         if ($_FILES['upload']['size'] > $maxFileSize) {
@@ -195,7 +197,7 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
                     </label>
                     <img class="preview" src="">
                 </div>
-                <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1">
+                <input name="upload" type="file" accept="image/*" dd-function="file-upload-input" key="1" required>
                 <div class="labeled-input c1">
                     <label for="description">Beschreibung</label>
                     <textarea name="description"> </textarea>
