@@ -25,12 +25,18 @@ if (!is_user_logged_in()) {
     $post = get_post($_GET["id"]);
     $pro_type = get_the_terms($_GET["id"], 'project-type')[0]->slug;
     $pro_type = str_replace("project-", "", $pro_type);
+    // get project image
+    $img = get_field("project-details-thumbnail")["sizes"]["large"];
+    if (empty($img)) {
+        $img = get_template_directory_uri() . "/static/img/placeholder.jpg";
+    }
+    // get other files
+    $file = get_field("project-details-upload");
     ?>
 
     <div class="light-bg">
         <div class="wrapper col gap-2">
             <?php if (get_field("project-intern-user") == get_current_user_id()) { ?>
-
             <form id="project-register-form" class="grid conditional"
                 action="/projektdetails-bearbeiten/?id=<?= the_id() ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_project_post">
@@ -58,6 +64,22 @@ if (!is_user_logged_in()) {
                             value="vortrag">Fachvortrag</option>
                     </select>
                 </div>
+
+                <div class="file-upload col gap-1 c2 uploaded" dd-function="file-upload-trigger" key="1"
+                    style="grid-row: span 3; aspect-ratio: 4/3; overflow: hidden;">
+                    <div class="icon">
+                        <span class="iconify" data-icon="mdi-cloud-upload-outline">
+                    </div>
+                    <label for="details-thumbnail">
+                        Lade hier ein Vorschaubild für dein Projekt hoch<br>
+                        Seitenverhältniss 4:3<br>
+                        (Drag and Drop oder klicke hier)<br>
+                        Maximale Dateigröße: 50MB
+                    </label>
+                    <img class="preview" src="<?= $img ?>">
+                </div>
+                <input name="details-thumbnail" type="file" accept="image/*" dd-function="file-upload-input" key="1" data-max-size="2097152">
+
                 <div class="labeled-input c1">
                     <label for="details-presenter">Präsentator *</label>
                     <input name="details-presenter" type="text" value="<?= get_field("project-details-presenter") ?>"
@@ -111,8 +133,7 @@ if (!is_user_logged_in()) {
                 </label>
                 <div class="labeled-input full" dd-mode="demo">
                     <label for="intern-comment">Sonstige Wünsche oder Kommentare für dein Projektstand</label>
-                    <textarea name="intern-comment"
-                        style="min-height: 10rem"><?= get_field("project-intern-comment") ?></textarea>
+                    <textarea name="intern-comment" style="min-height: 10rem"><?= get_field("project-intern-comment") ?></textarea>
                 </div>
                 <!-- if vortrag -->
                 <div class="labeled-input c1" dd-mode="vortrag">
@@ -124,11 +145,7 @@ if (!is_user_logged_in()) {
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
-                    <label for="details-upload">
-                        Lade hier dein Vortrag als PDF oder PPTX hoch<br>
-                        (Drag and Drop oder klicke hier)<br>
-                        Maximale Dateigröße: 50MB
-                    </label>
+                    <label for="details-upload"><?= $file["filename"] ?></label>
                 </div>
                 <input name="details-upload" type="file" dd-function="file-upload-input" key="2" dd-mode="vortrag"
                     data-max-size="2097152">
@@ -137,18 +154,13 @@ if (!is_user_logged_in()) {
                     <div class="icon">
                         <span class="iconify" data-icon="mdi-cloud-upload-outline">
                     </div>
-                    <label for="details-upload">
-                        Lade hier dein Poster als PDF hoch<br>
-                        (Drag and Drop oder klicke hier)<br>
-                        Maximale Dateigröße: 50MB
-                    </label>
+                    <label for="details-upload"><?= $file["filename"] ?></label>
                 </div>
                 <input name="details-upload" type="file" accept=".pdf" dd-function="file-upload-input" key="3"
                     dd-mode="poster" data-max-size="2097152">
                 <!-- END CONDITIONAL SECTION -->
                 <label class="labeled-checkbox transparent full">
-                    <input type="checkbox" name="intern-ausgrundung"
-                        <?= (get_field("project-intern-ausgrundung")==1) ? 'checked="checked"' : "" ?>>
+                    <input type="checkbox" name="intern-ausgrundung" <?= (get_field("project-intern-ausgrundung")==1) ? 'checked="checked"' : "" ?>>
                     <span>Ich habe Interesse an einer Ausgründung.</span>
                 </label>
                 <a id="submit" class="bg-magenta color-white pl-2 pr-2">PROJEKT BEARBEITEN</a>
