@@ -231,11 +231,11 @@ if (!is_user_logged_in()) {
 
         // File size validation
         $('input[type="file"]').change(function() {
-            const maxSize = parseInt($(this).attr('data-max-size')) || 2097152; // 2MB default
+            const maxSize = parseInt($(this).attr('data-max-size')) || 50000000; // 50MB default
             const file = this.files[0];
 
             if (file && file.size > maxSize) {
-                alert('Die Datei ist zu groß. Maximale Dateigröße: 2MB');
+                alert('Die Datei ist zu groß. Maximale Dateigröße: 50MB');
                 $(this).val(''); // Clear the input
                 return false;
             }
