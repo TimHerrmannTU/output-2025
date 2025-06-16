@@ -159,9 +159,9 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
                         </p>
                     </div>
                 </div>
-                <p>Wir freuen uns auf eure kreativen Einsendungen!</p>
+                <!-- <p>Wir freuen uns auf eure kreativen Einsendungen!</p> -->
             </div>
-            <h2 class="mt-3">Anmeldung zur Creative-Challenge</h2>
+            <!-- <h2 class="mt-3">Anmeldung zur Creative-Challenge</h2>
             <form id="cc-register-form" class="grid" action="<?= esc_url(get_permalink()); ?>" method="POST"
                 enctype="multipart/form-data">
                 <input type="hidden" name="action" value="submit_art_post">
@@ -212,7 +212,7 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
                     </label>
                     <input class="bg-magenta color-white" type="submit" value="Absenden">
                 </div>
-            </form>
+            </form> -->
         </div>
     </div>
 
