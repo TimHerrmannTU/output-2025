@@ -36,7 +36,7 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
 <body id="creative-challenge" <?php body_class(); ?>>
     <?php
     $main_headline = "Creative Challenge: \"Würfelwelten\"";
-    $sub_headline = "Schickt uns bis zum <b>15. Juni 2025</b> eure Designs zum Motto „Würfelwelten“ - entfaltet eure Kreativität und werdet Teil unserer Ausstellung!";
+    $sub_headline = " ";
     include get_template_directory() . "/includes/narrow-head.php";
     ?>
 
@@ -55,6 +55,13 @@ if ($_POST && isset($_POST['action']) && $_POST['action'] === 'submit_art_post')
                 <?php echo esc_html($success_message); ?>
             </div>
             <?php endif; ?>
+            <p>
+                <strong>
+                    🎨 Einreichung geschlossen</strong> – danke für eure großartigen Beiträge!
+                <br>Unsere Jury taucht nun in eure Würfelwelten ein und kürt die spannendsten Werke.
+                <br>Die Preisverleihung steigt am <strong>19.06.2025 um 18:30 im APB bei OUTPUT.DD</strong> – stay
+                tuned! 🎲✨
+            </p>
 
             <h2>FAQ</h2>
             <div class="col gap-3">
