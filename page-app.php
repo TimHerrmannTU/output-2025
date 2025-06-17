@@ -23,27 +23,25 @@
                 Mit der OUTPUT.DD App hast du alle Informationen zur Veranstaltung immer dabei.
                 Du kannst dir die Projekte anschauen, das Programm einsehen und dich über die Sponsoren informieren.
             </p>
-            <br>
-            <h4 class="fat color-magenta">iOS</h2>
-                <p>App im App Store:
-                    <a href="https://apps.apple.com/de/app/output-dd/id6449925282" target="_blank" rel="noopener"
-                        class="button">
-                        Link
-                    </a>
-                </p>
-                <br>
-                <h4 class="fat color-magenta">Android</h2>
-                    <p>
-                        Leider gab es dieser Jahr technische Probleme bei der Android App, weshalb sie nicht öffentlich
-                        verfügbar ist.<br>
-                        Um die App herunterladen zu können, musst du mit deinem Google-Play-Account <a
-                            href="https://groups.google.com/g/outputdd_2025" target="_blank" rel="noopener">unserer
-                            Google-Gruppe beitreten (klicke hier)</a>.<br>Daraufhin wird man als Beta-Tester der App
-                        eingeladen und kann man die App im <a
-                            href="https://play.google.com/store/apps/details?id=de.android.outputdd" target="_blank"
-                            rel="noopener">Play Store (klicke hier)</a> herunterladen.
+            <h4 class="fat color-magenta">iOS</h4>
+            <p>App im App Store:
+                <a href="https://apps.apple.com/de/app/output-dd/id6449925282" target="_blank" rel="noopener"
+                    class="button">
+                    Link
+                </a>
+            </p>
+            <h4 class="fat color-magenta">Android</h4>
+            <p>
+                Leider gab es dieser Jahr technische Probleme bei der Android App, weshalb sie nicht öffentlich
+                verfügbar ist.<br>
+                Um die App herunterladen zu können, musst du mit deinem Google-Play-Account <a
+                    href="https://groups.google.com/g/outputdd_2025" target="_blank" rel="noopener">unserer
+                    Google-Gruppe beitreten (klicke hier)</a>.<br>Daraufhin wird man als Beta-Tester der App
+                eingeladen und kann man die App im <a
+                    href="https://play.google.com/store/apps/details?id=de.android.outputdd" target="_blank"
+                    rel="noopener">Play Store (klicke hier)</a> herunterladen.
 
-                    </p>
+            </p>
         </div>
     </div>
 
