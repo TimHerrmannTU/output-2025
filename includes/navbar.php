@@ -1,20 +1,28 @@
 <nav id="navbar" class="w-100">
     <div class="wrapper row w-100">
-        <a class="logo" href="<?= get_home_url(); ?>"><img src="<?= get_template_directory_uri(); ?>/static/svg/logo.svg"/></a>
+        <a class="logo" href="<?= get_home_url(); ?>"><img
+                src="<?= get_template_directory_uri(); ?>/static/svg/logo.svg" /></a>
         <div class="links row gap-3">
             <a href="/about" class="<?= (is_page('about')) ? 'active' : ''; ?>">ÜBER OUTPUT</a>
+            <a href="/app" class="<?= (is_page('app')) ? 'active' : ''; ?>">APP</a>
             <a href="/programm" class="<?= (is_page('programm')) ? 'active' : ''; ?>">PROGRAMM</a>
             <a href="/teilnahme" class="<?= (is_page('teilnahme')) ? 'active' : ''; ?>">TEILNAHME</a>
             <a href="/projekte" class="<?= (is_page('projekte')) ? 'active' : ''; ?>">PROJEKTE</a>
         </div>
         <?php
         if (is_user_logged_in()) {
-            ?><a class="login-button" href="/projekt-einreichen"><div class="iconify" data-icon="mdi-account-cog"></div></a><?php
+            ?><a class="login-button" href="/projekt-einreichen">
+            <div class="iconify" data-icon="mdi-account-cog"></div>
+        </a><?php
         }
         else {
-            ?><a class="login-button" href="/login"><div class="iconify" data-icon="mdi-login"></div></a><?php
+            ?><a class="login-button" href="/login">
+            <div class="iconify" data-icon="mdi-login"></div>
+        </a><?php
         }
         ?>
-        <a class="login-button narrow" onclick="jQuery('#mobile-navbar').show()"><div class="iconify" data-icon="mdi-menu"></div></a>
+        <a class="login-button narrow" onclick="jQuery('#mobile-navbar').show()">
+            <div class="iconify" data-icon="mdi-menu"></div>
+        </a>
     </div>
 </nav>
