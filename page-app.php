@@ -34,7 +34,7 @@
                 <br>
                 <h4 class="fat color-magenta">Android</h2>
                     <p>
-                        Leider gab es dieser Jahr technische Probleme mit der Android App, weshalb sie nicht öffentlich
+                        Leider gab es dieser Jahr technische Probleme bei der Android App, weshalb sie nicht öffentlich
                         verfügbar ist.<br>
                         Um die App herunterladen zu können, musst du mit deinem Google-Play-Account <a
                             href="https://groups.google.com/g/outputdd_2025" target="_blank" rel="noopener">unserer
