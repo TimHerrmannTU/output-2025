@@ -32,14 +32,13 @@
             </p>
             <h4 class="fat color-magenta">Android</h4>
             <p>
-                Leider gab es dieser Jahr technische Probleme bei der Android App, weshalb sie nicht öffentlich
-                verfügbar ist.<br>
-                Um die App herunterladen zu können, musst du mit deinem Google-Play-Account <a
-                    href="https://groups.google.com/g/outputdd_2025" target="_blank" rel="noopener">unserer
-                    Google-Gruppe beitreten (klicke hier)</a>.<br>Daraufhin wird man als Beta-Tester der App
-                eingeladen und kann man die App im <a
-                    href="https://play.google.com/store/apps/details?id=de.android.outputdd" target="_blank"
-                    rel="noopener">Play Store (klicke hier)</a> herunterladen.
+                Leider steht das Entwicklerkonto der TU Dresden für die Veröffentlichung von Android Apps für die
+                diesjährige OUTPUT.DD nicht zur Verfügung.
+                Die Android App kannst Du dennoch nutzen, indem Du der <a
+                    href="https://groups.google.com/g/outputdd_2025" target="_blank" rel="noopener">Google Gruppe
+                    OUTPUT.DD_2025</a> beitritts und dem Link in der Gruppennachricht folgst. Über diesen
+                kannst Du die App aus dem <a href="https://play.google.com/store/apps/details?id=de.android.outputdd"
+                    target="_blank" rel="noopener">Google Play Store</a> installieren.
 
             </p>
         </div>
